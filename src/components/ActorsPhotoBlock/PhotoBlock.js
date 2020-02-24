@@ -8,7 +8,7 @@ function PhotoBlock() {
     <div className='photo-section'>
       <div className='actor-container'>
         {actors.map((el) => {
-          return <Card options={el} />;
+          return <Card key={el.id} options={el} />;
         })}
       </div>
     </div>

@@ -1,3 +1,5 @@
+import nanoid from 'nanoid';
+
 export const actors = [
   {
     img: {
@@ -9,6 +11,7 @@ export const actors = [
     age: 16,
     from: 'Marbella, Spain',
     role: 'Eleven / Jane Hopper',
+    id: nanoid(),
   },
   {
     img: {
@@ -20,6 +23,7 @@ export const actors = [
     age: 15,
     from: 'Scarsdale, New York',
     role: 'Will Byers',
+    id: nanoid(),
   },
   {
     img: {
@@ -31,6 +35,7 @@ export const actors = [
     age: 17,
     from: 'Vancouver, Canada',
     role: 'Mike Wheeler',
+    id: nanoid(),
   },
   {
     img: {
@@ -42,6 +47,7 @@ export const actors = [
     age: 17,
     from: 'New Jersey',
     role: 'Dustin Henderson',
+    id: nanoid(),
   },
   {
     img: {
@@ -54,6 +60,7 @@ export const actors = [
     age: 18,
     from: 'Carmel, New York',
     role: 'Lucas Sinclair',
+    id: nanoid(),
   },
   {
     img: {
@@ -65,6 +72,7 @@ export const actors = [
     age: 48,
     from: 'Winona, Minnesota',
     role: 'Joyce Byers',
+    id: nanoid(),
   },
 
   {
@@ -78,6 +86,7 @@ export const actors = [
     age: 44,
     from: 'White Plains, New York',
     role: 'Jim Hopper',
+    id: nanoid(),
   },
   {
     img: {
@@ -90,6 +99,7 @@ export const actors = [
     age: 25,
     from: 'Nashville, Tennessee',
     role: 'Nancy Wheeler',
+    id: nanoid(),
   },
   {
     img: {
@@ -101,6 +111,7 @@ export const actors = [
     age: 27,
     from: 'Newburyport',
     role: 'Steve Harrington',
+    id: nanoid(),
   },
   {
     img: {
@@ -112,6 +123,7 @@ export const actors = [
     age: 26,
     from: 'Leeds',
     role: 'Jonathan Byers',
+    id: nanoid(),
   },
   {
     img: {
@@ -123,6 +135,7 @@ export const actors = [
     age: 17,
     from: 'Brenham, Texas',
     role: 'Maxine "Max" Mayfield',
+    id: nanoid(),
   },
   {
     img: {
@@ -134,6 +147,7 @@ export const actors = [
     age: 25,
     from: 'Perth, Western Australia',
     role: 'Billy Hargrove',
+    id: nanoid(),
   },
   {
     img: {
@@ -145,6 +159,7 @@ export const actors = [
     age: 63,
     from: 'New York City',
     role: 'Sam Owens',
+    id: nanoid(),
   },
   {
     img: {
@@ -156,6 +171,7 @@ export const actors = [
     age: 48,
     from: 'Santa Monica, California',
     role: 'Bob Newby',
+    id: nanoid(),
   },
   {
     img: {
@@ -168,5 +184,6 @@ export const actors = [
     age: 21,
     from: 'New York City',
     role: 'Robin Buckley',
+    id: nanoid(),
   },
 ];
