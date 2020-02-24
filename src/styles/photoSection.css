@@ -1,0 +1,25 @@
+.photo-section {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.actor-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.actor-photo {
+  padding: 0 20px;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  grid-template-columns: 1fr;
+}
+.actor-photo ul {
+  list-style: none;
+}
+.actor-photo-grid-col1 {
+  grid-row: 1/2;
+}
+.actor-photo-grid-col2 {
+  grid-row: 2/3;
+}

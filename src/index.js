@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import SiderDemo from './components/Layout/Layout.js';
+
+// import NavBar from './components/Navigation/Navigation.js';
+// import AdvertisingBanner from './components/AdvertisingBanner/AdvertisingBanner.js';
+// import Anchor from './components/Anchor/Anchor.js';
+// import Path from './components/Breadcrumb/breadcrumb.js';
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <SiderDemo />
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();

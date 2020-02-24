@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  height: 600px;
+  padding: 75px 0;
+  display: flex;
+  flex-direction: column;
+  background-color: grey;
+  justify-content: center;
+}
+
+.headling {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  transition: top 0.2s ease;
+}
+.add-transition {
+  transition: height 0.2s ease;
+}
