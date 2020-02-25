@@ -23,20 +23,22 @@ class Card extends React.Component {
     } = this.props.options;
 
     return (
-      <div className='actor-photo'>
+      <div
+        className='actor-photo'
+        onMouseEnter={this.handleHoverImage}
+        onMouseLeave={this.handleHoverImage}
+      >
         {' '}
         <img
           className='img-actor'
           style={{
             transform: this.state.onHover ? 'translateY(-20px)' : '',
           }}
-          onMouseEnter={this.handleHoverImage}
-          onMouseLeave={this.handleHoverImage}
           src={src}
           alt={alt}
         />
         <ActorInfoList key={id} info={this.props.options} />
-        <HoverButton />
+        <HoverButton indicator={this.state.onHover} />
       </div>
     );
   }
