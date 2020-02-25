@@ -13,7 +13,7 @@ class Block extends React.Component {
   render() {
     return (
       <div
-        className='add-transition'
+        className='transition-background'
         style={{
           background: this.props.color,
           height: this.state.onHover ? '400px' : '150px',

@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import SiderDemo from './components/Layout/Layout.js';
+import ActorsPageLoyout from './components/ActorsInfoPage/Layout/Layout.js';
+import GreetingsPage from './components/FirstGreetingsPage/Layout/Layout.js';
 
 // import NavBar from './components/Navigation/Navigation.js';
 // import AdvertisingBanner from './components/AdvertisingBanner/AdvertisingBanner.js';
@@ -12,7 +13,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <SiderDemo />
+        {/* <GreetingsPage /> */}
+        <ActorsPageLoyout />
       </div>
     );
   }

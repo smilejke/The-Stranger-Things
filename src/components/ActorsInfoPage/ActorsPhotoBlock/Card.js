@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../index.css';
+import '../../../index.css';
 import ActorInfoList from './ActorInfoList.js';
 import HoverButton from '../Button/HoverEffectButton.js';
 

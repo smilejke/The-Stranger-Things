@@ -4,8 +4,8 @@
   padding: 75px 0;
   display: flex;
   flex-direction: column;
-  background-color: grey;
   justify-content: center;
+  background-color: grey;
 }
 
 .headling {
@@ -14,6 +14,6 @@
   text-align: center;
   transition: top 0.2s ease;
 }
-.add-transition {
+.transition-background {
   transition: height 0.2s ease;
 }

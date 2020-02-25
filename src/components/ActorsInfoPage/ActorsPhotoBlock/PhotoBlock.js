@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../index.css';
-import { actors } from '../general/photoBlockData.js';
+import '../../../index.css';
+import { actors } from '../../general/photoBlockData.js';
 import Card from './Card.js';
 
 function PhotoBlock() {
