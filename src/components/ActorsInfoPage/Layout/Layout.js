@@ -1,8 +1,9 @@
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Icon, Typography } from 'antd';
 import React from 'react';
 import PhotoBlock from '../ActorsPhotoBlock/PhotoBlock.js';
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
+const { Title } = Typography;
 
 class ActorsPageLoyout extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class ActorsPageLoyout extends React.Component {
   }
   render() {
     return (
-      <Layout style={{ minHeight: '200vh' }}>
+      <Layout className='actors-layout-heigth'>
         <Sider
           collapsible
           collapsed={this.state.collapsed}
@@ -30,7 +31,7 @@ class ActorsPageLoyout extends React.Component {
           onMouseLeave={this.onCollapse}
         >
           <div className='logo' />
-          <Menu theme='dark' defaultSelectedKeys={['1']} mode='inline'>
+          <Menu theme='dark' defaultSelectedKeys={['2']} mode='inline'>
             <Menu.Item key='actorPageMenuItem1'>
               <Icon type='pie-chart' />
               <span>Option 1</span>
@@ -71,18 +72,20 @@ class ActorsPageLoyout extends React.Component {
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ background: '#fff', padding: 0 }} />
+          <Header className='actors-layout-header'>
+            <Title level={2} className='actors-layout-header-title'>
+              Hello
+            </Title>
+          </Header>
 
-          <Content style={{ margin: '0 16px' }}>
-            <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-              {this.state.photoBlock ? <PhotoBlock /> : ''}
-            </div>
+          <Content className='actors-layout-contentBox'>
+            <div className='photoblock'>{this.state.photoBlock ? <PhotoBlock /> : ''}</div>
             {/* <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
               <AdvertisingBanner />
             </div> */}
           </Content>
 
-          <Footer style={{ textAlign: 'center' }}>
+          <Footer className='actors-layout-footer'>
             The Stranger Things ©2020 Created by Vadim Melnikov
           </Footer>
         </Layout>

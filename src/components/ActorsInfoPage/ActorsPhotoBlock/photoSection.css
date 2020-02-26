@@ -25,3 +25,6 @@
   transition: transform 0.2s ease;
   cursor: pointer;
 }
+.moving-img {
+  transform: translateY(-20px);
+}

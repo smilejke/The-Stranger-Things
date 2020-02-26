@@ -4,10 +4,9 @@ import '../../../index.css';
 function HoverButton(props) {
   const isVisible = props.indicator;
   return (
-    <div className='button_cont' align='center'>
+    <div className='button_cont'>
       <a
-        className='a-button'
-        style={{ opacity: isVisible ? '1' : '0' }}
+        className={isVisible ? 'a-button a-button-shown' : 'a-button a-button-hidden'}
         href='...'
         onClick={(e) => {
           e.preventDefault();

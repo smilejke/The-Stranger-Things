@@ -1,0 +1,25 @@
+.actors-layout-heigth {
+  min-height: 200vh;
+  width: 100%;
+  overflow: auto;
+}
+.actors-layout-header {
+  background: #fff;
+  padding: 0;
+  text-align: center;
+}
+.actors-layout-header-title {
+  height: 100%;
+  padding: 10px 0;
+}
+.actors-layout-contentBox {
+  margin: 0 16px;
+}
+.photoblock {
+  padding: 24;
+  background: #fff;
+  min-height: 360;
+}
+.actors-layout-footer {
+  text-align: center;
+}

@@ -30,10 +30,7 @@ class Card extends React.Component {
       >
         {' '}
         <img
-          className='img-actor'
-          style={{
-            transform: this.state.onHover ? 'translateY(-20px)' : '',
-          }}
+          className={this.state.onHover ? 'img-actor moving-img' : 'img-actor'}
           src={src}
           alt={alt}
         />
