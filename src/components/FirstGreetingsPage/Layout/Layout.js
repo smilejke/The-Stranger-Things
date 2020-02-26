@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu } from 'antd';
 import AdvertisingBanner from '../../AdvertisingBanner/AdvertisingBanner.js';
 
 const { Header, Content, Footer } = Layout;
@@ -7,7 +7,7 @@ const { Header, Content, Footer } = Layout;
 class GreetingsPage extends React.Component {
   render() {
     return (
-      <Layout className='layout'>
+      <Layout className='layout' style={{ height: '200vh' }}>
         <Header>
           <div className='logo' />
           <Menu theme='dark' mode='horizontal' style={{ lineHeight: '64px', textAlign: 'center' }}>
@@ -17,12 +17,7 @@ class GreetingsPage extends React.Component {
           </Menu>
         </Header>
         <Content style={{ padding: '0 50px' }}>
-          <Breadcrumb style={{ margin: '16px 0' }}>
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
-            <Breadcrumb.Item>List</Breadcrumb.Item>
-            <Breadcrumb.Item>App</Breadcrumb.Item>
-          </Breadcrumb>
-          <div style={{ background: '#fff', padding: 24 }}>
+          <div style={{ background: '#fff', margin: '16px 0' }}>
             <AdvertisingBanner />
           </div>
         </Content>
