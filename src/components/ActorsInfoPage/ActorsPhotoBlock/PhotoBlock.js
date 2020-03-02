@@ -1,26 +1,27 @@
 import React from 'react';
 import '../../../index.css';
 import Card from './Card.js';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { uploadInfoForRenderCards } from '../../../store/ActorsCards/actions.js';
 
 class PhotoBlock extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cards: this.props.data,
-    };
-    this.reqURL = 'http://localhost:3001/actors';
-  }
   componentDidMount() {
-    fetch(this.reqURL)
+    const reqURL = 'http://localhost:3001/actors';
+    const { uploadCards } = this.props;
+
+    fetch(reqURL)
       .then((response) => response.json())
-      .then((data) => this.setState({ cards: data }));
+      .then((data) => uploadCards(data));
   }
 
   render() {
+    const { actorCards } = this.props;
+
     return (
       <div className='photo-section'>
         <div className='actor-container'>
-          {this.state.cards.map((el) => {
+          {actorCards.map((el) => {
             return <Card key={el.id} options={el} />;
           })}
         </div>
@@ -29,4 +30,16 @@ class PhotoBlock extends React.Component {
   }
 }
 
-export default PhotoBlock;
+const putStateToActorsProps = (state) => {
+  return {
+    actorCards: state.addCardInfo.actorCards,
+  };
+};
+
+const putActionsToActorsProps = (dispatch) => {
+  return {
+    uploadCards: bindActionCreators(uploadInfoForRenderCards, dispatch),
+  };
+};
+
+export default connect(putStateToActorsProps, putActionsToActorsProps)(PhotoBlock);

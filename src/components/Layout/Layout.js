@@ -4,22 +4,28 @@ import ActorsPageContent from '../ActorsInfoPage/Content/Content.js';
 import ActorsPageHeader from '../ActorsInfoPage/Header/Header.js';
 import GreetingsPage from '../FirstGreetingsPage/Content/Content.js';
 import '../../index.css';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import {
+  hoverSideBarOn,
+  hoverSideBarOff,
+  showActorsPageContent,
+  showGreetingsPageContent,
+} from '../../store/Layout/actions.js';
 
 const { Content, Header, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
-class Loyout extends React.Component {
+class mainLayout extends React.Component {
   render() {
     const {
       pages: { greetings, actors },
-      actorCards,
-      backgroundImages,
       sideBarCollapsed,
       hoverOn,
       hoverOff,
       showActorsContent,
       showGreetingsContent,
-    } = this.props.content;
+    } = this.props;
 
     return (
       <Layout className='actors-layout-heigth'>
@@ -86,11 +92,11 @@ class Loyout extends React.Component {
         </Sider>
         <Layout>
           <Header className='actors-layout-header'>
-            <ActorsPageHeader flag={this.props.content.pages} />
+            <ActorsPageHeader flag={this.props.pages} />
           </Header>
           <Content>
-            {greetings ? <GreetingsPage data={backgroundImages} /> : null}
-            {actors ? <ActorsPageContent data={actorCards} /> : null}
+            {greetings ? <GreetingsPage /> : null}
+            {actors ? <ActorsPageContent /> : null}
           </Content>
 
           <Footer className='actors-layout-footer'>
@@ -102,9 +108,24 @@ class Loyout extends React.Component {
   }
 }
 
-export const COLLAPSE_SIDE_BAR_ON_SHOW = 'COLLAPSE_SIDE_BAR_ON_SHOW';
-export const COLLAPSE_SIDE_BAR_ON_HIDE = 'COLLAPSE_SIDE_BAR_ON_HIDE';
-export const ACTORS_PAGE_IS_SHOWN = 'ACTORS_PAGE_IS_SHOWN';
-export const GREETINGS_PAGE_IS_SHOWN = 'GREETINGS_PAGE_IS_SHOWN';
+const putStateToAppProps = (state) => {
+  return {
+    pages: {
+      greetings: state.layoutReducer.pages.greetings,
+      actors: state.layoutReducer.pages.actors,
+      watch: state.layoutReducer.pages.watch,
+    },
+    sideBarCollapsed: state.layoutReducer.sideBarCollapsed,
+  };
+};
 
-export default Loyout;
+const putActionsToActorsProps = (dispatch) => {
+  return {
+    hoverOn: bindActionCreators(hoverSideBarOn, dispatch),
+    hoverOff: bindActionCreators(hoverSideBarOff, dispatch),
+    showActorsContent: bindActionCreators(showActorsPageContent, dispatch),
+    showGreetingsContent: bindActionCreators(showGreetingsPageContent, dispatch),
+  };
+};
+
+export default connect(putStateToAppProps, putActionsToActorsProps)(mainLayout);

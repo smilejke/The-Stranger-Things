@@ -1,28 +1,43 @@
 import React from 'react';
 import '../../../../index.css';
 import AvertisingLine from '../BannerLine/AdvBannerLiner.js';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { uploadInfoForRenderBanner } from '../../../../store/LiquidBanner/actions.js';
 
 class AdvertisingBanner extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      seasonImg: this.props.background,
-    };
-    this.reqURL = 'http://localhost:3001/banner';
-  }
   componentDidMount() {
-    fetch(this.reqURL)
+    const reqURL = 'http://localhost:3001/banner';
+    const { uploadBackgrounds } = this.props;
+
+    fetch(reqURL)
       .then((response) => response.json())
-      .then((data) => this.setState({ seasonImg: data }));
+      .then((data) => uploadBackgrounds(data));
   }
+
   render() {
+    const { backgroundImages } = this.props;
+
     return (
       <div className='container'>
-        {this.state.seasonImg.map((season) => {
+        {backgroundImages.map((season) => {
           return <AvertisingLine key={season.id} background={season} />;
         })}
       </div>
     );
   }
 }
-export default AdvertisingBanner;
+
+const putStateToBannerProps = (state) => {
+  return {
+    backgroundImages: state.addBannerBackground.backgroundImages,
+  };
+};
+
+const putActionsToBannerProps = (dispatch) => {
+  return {
+    uploadBackgrounds: bindActionCreators(uploadInfoForRenderBanner, dispatch),
+  };
+};
+
+export default connect(putStateToBannerProps, putActionsToBannerProps)(AdvertisingBanner);
