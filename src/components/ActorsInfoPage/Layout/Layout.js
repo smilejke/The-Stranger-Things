@@ -1,34 +1,30 @@
 import { Layout, Menu, Icon, Typography } from 'antd';
 import React from 'react';
 import PhotoBlock from '../ActorsPhotoBlock/PhotoBlock.js';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { hoverSideBarOn, hoverSideBarOff, showActorsPageContent } from '../../../store/actions.js';
+
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 const { Title } = Typography;
 
 class ActorsPageLoyout extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      collapsed: true,
-      photoBlock: false,
-    };
-    this.renderPhoto = this.renderPhoto.bind(this);
-  }
-
-  onCollapse = () => {
-    this.setState({ collapsed: !this.state.collapsed });
-  };
-  renderPhoto() {
-    return !this.state.photoBlock ? this.setState({ photoBlock: !this.state.photoBlock }) : null;
-  }
   render() {
+    const { onCollapse, isPageShown, hoverOn, hoverOff, showContent } = this.props;
+
     return (
       <Layout className='actors-layout-heigth'>
         <Sider
           collapsible
-          collapsed={this.state.collapsed}
-          onMouseEnter={this.onCollapse}
-          onMouseLeave={this.onCollapse}
+          collapsed={onCollapse}
+          onMouseEnter={() => {
+            hoverOn(!onCollapse);
+          }}
+          onMouseLeave={() => {
+            hoverOff(!onCollapse);
+          }}
         >
           <div className='logo' />
           <Menu theme='dark' defaultSelectedKeys={['2']} mode='inline'>
@@ -36,7 +32,12 @@ class ActorsPageLoyout extends React.Component {
               <Icon type='pie-chart' />
               <span>Option 1</span>
             </Menu.Item>
-            <Menu.Item key='actorPageMenuItem2' onClick={this.renderPhoto}>
+            <Menu.Item
+              key='actorPageMenuItem2'
+              onClick={() => {
+                showContent(!isPageShown);
+              }}
+            >
               <Icon type='star' />
               <span>Actors</span>
             </Menu.Item>
@@ -72,17 +73,20 @@ class ActorsPageLoyout extends React.Component {
           </Menu>
         </Sider>
         <Layout>
-          <Header className='actors-layout-header'>
-            <Title level={2} className='actors-layout-header-title'>
-              Hello
-            </Title>
-          </Header>
+          <div>
+            {isPageShown ? (
+              <Header className='actors-layout-header'>
+                <Title level={2} className='actors-layout-header-title'>
+                  The Stranger Things Cast
+                </Title>
+              </Header>
+            ) : (
+              ''
+            )}
+          </div>
 
           <Content className='actors-layout-contentBox'>
-            <div className='photoblock'>{this.state.photoBlock ? <PhotoBlock /> : ''}</div>
-            {/* <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-              <AdvertisingBanner />
-            </div> */}
+            <div className='photoblock'>{isPageShown ? <PhotoBlock /> : ''}</div>
           </Content>
 
           <Footer className='actors-layout-footer'>
@@ -94,4 +98,23 @@ class ActorsPageLoyout extends React.Component {
   }
 }
 
-export default ActorsPageLoyout;
+export const COLLAPSE_SIDE_BAR_ON_SHOW = 'COLLAPSE_SIDE_BAR_ON_SHOW';
+export const COLLAPSE_SIDE_BAR_ON_HIDE = 'COLLAPSE_SIDE_BAR_ON_HIDE';
+export const ACTORS_PAGE_IS_SHOWN = 'ACTORS_PAGE_IS_SHOWN';
+
+const putStateToActorsProps = (state) => {
+  return {
+    onCollapse: state.sideBarCollapsed,
+    isPageShown: state.actorsPageShowed,
+  };
+};
+
+const putActionsToActorsProps = (dispatch) => {
+  return {
+    hoverOn: bindActionCreators(hoverSideBarOn, dispatch),
+    hoverOff: bindActionCreators(hoverSideBarOff, dispatch),
+    showContent: bindActionCreators(showActorsPageContent, dispatch),
+  };
+};
+
+export default connect(putStateToActorsProps, putActionsToActorsProps)(ActorsPageLoyout);

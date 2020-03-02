@@ -1,23 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import ActorsPageLoyout from './components/ActorsInfoPage/Layout/Layout.js';
+import WrappedActorsComponent from './components/ActorsInfoPage/Layout/Layout.js';
+import { createStore } from 'redux';
+import { connect, Provider } from 'react-redux';
+import { rootReducer } from './store/reducers.js';
 import GreetingsPage from './components/FirstGreetingsPage/Layout/Layout.js';
 
-// import NavBar from './components/Navigation/Navigation.js';
-// import AdvertisingBanner from './components/AdvertisingBanner/AdvertisingBanner.js';
-// import Anchor from './components/Anchor/Anchor.js';
-// import Path from './components/Breadcrumb/breadcrumb.js';
+export const store = createStore(rootReducer);
 
 class App extends React.Component {
   render() {
+    const {
+      pages: { greetings, actors },
+    } = this.props;
+
     return (
       <div>
-        {/* <GreetingsPage /> */}
-        <ActorsPageLoyout />
+        {greetings ? <GreetingsPage /> : ''}
+        {actors ? <WrappedActorsComponent /> : ''}
       </div>
     );
   }
 }
+const putStateToAppProps = (state) => {
+  return {
+    pages: {
+      greetings: state.pages.greetings,
+      actors: state.pages.actors,
+      watch: state.pages.watch,
+    },
+  };
+};
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const WrappedAppComponent = connect(putStateToAppProps)(App);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <WrappedAppComponent />
+  </Provider>,
+  document.getElementById('root'),
+);
