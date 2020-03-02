@@ -4,7 +4,7 @@ import '../../../index.css';
 function ListItem(props) {
   return (
     <li>
-      {props.options.text}: {props.options.description}
+      {props.options.text} {props.options.description}
     </li>
   );
 }

@@ -1,41 +1,53 @@
-import { Layout, Menu, Icon, Typography } from 'antd';
+import { Layout, Menu, Icon } from 'antd';
 import React from 'react';
-import PhotoBlock from '../ActorsPhotoBlock/PhotoBlock.js';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import ActorsPageContent from '../ActorsInfoPage/Content/Content.js';
+import ActorsPageHeader from '../ActorsInfoPage/Header/Header.js';
+import GreetingsPage from '../FirstGreetingsPage/Content/Content.js';
+import '../../index.css';
 
-import { hoverSideBarOn, hoverSideBarOff, showActorsPageContent } from '../../../store/actions.js';
-
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Header, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
-const { Title } = Typography;
 
-class ActorsPageLoyout extends React.Component {
+class Loyout extends React.Component {
   render() {
-    const { onCollapse, isPageShown, hoverOn, hoverOff, showContent } = this.props;
+    const {
+      pages: { greetings, actors },
+      actorCards,
+      backgroundImages,
+      sideBarCollapsed,
+      hoverOn,
+      hoverOff,
+      showActorsContent,
+      showGreetingsContent,
+    } = this.props.content;
 
     return (
       <Layout className='actors-layout-heigth'>
         <Sider
           collapsible
-          collapsed={onCollapse}
+          collapsed={sideBarCollapsed}
           onMouseEnter={() => {
-            hoverOn(!onCollapse);
+            hoverOn(!sideBarCollapsed);
           }}
           onMouseLeave={() => {
-            hoverOff(!onCollapse);
+            hoverOff(!sideBarCollapsed);
           }}
         >
           <div className='logo' />
           <Menu theme='dark' defaultSelectedKeys={['2']} mode='inline'>
-            <Menu.Item key='actorPageMenuItem1'>
+            <Menu.Item
+              key='actorPageMenuItem1'
+              onClick={() => {
+                showGreetingsContent(!actors);
+              }}
+            >
               <Icon type='pie-chart' />
               <span>Option 1</span>
             </Menu.Item>
             <Menu.Item
               key='actorPageMenuItem2'
               onClick={() => {
-                showContent(!isPageShown);
+                showActorsContent(!actors);
               }}
             >
               <Icon type='star' />
@@ -73,20 +85,12 @@ class ActorsPageLoyout extends React.Component {
           </Menu>
         </Sider>
         <Layout>
-          <div>
-            {isPageShown ? (
-              <Header className='actors-layout-header'>
-                <Title level={2} className='actors-layout-header-title'>
-                  The Stranger Things Cast
-                </Title>
-              </Header>
-            ) : (
-              ''
-            )}
-          </div>
-
-          <Content className='actors-layout-contentBox'>
-            <div className='photoblock'>{isPageShown ? <PhotoBlock /> : ''}</div>
+          <Header className='actors-layout-header'>
+            <ActorsPageHeader flag={this.props.content.pages} />
+          </Header>
+          <Content>
+            {greetings ? <GreetingsPage data={backgroundImages} /> : null}
+            {actors ? <ActorsPageContent data={actorCards} /> : null}
           </Content>
 
           <Footer className='actors-layout-footer'>
@@ -101,20 +105,6 @@ class ActorsPageLoyout extends React.Component {
 export const COLLAPSE_SIDE_BAR_ON_SHOW = 'COLLAPSE_SIDE_BAR_ON_SHOW';
 export const COLLAPSE_SIDE_BAR_ON_HIDE = 'COLLAPSE_SIDE_BAR_ON_HIDE';
 export const ACTORS_PAGE_IS_SHOWN = 'ACTORS_PAGE_IS_SHOWN';
+export const GREETINGS_PAGE_IS_SHOWN = 'GREETINGS_PAGE_IS_SHOWN';
 
-const putStateToActorsProps = (state) => {
-  return {
-    onCollapse: state.sideBarCollapsed,
-    isPageShown: state.actorsPageShowed,
-  };
-};
-
-const putActionsToActorsProps = (dispatch) => {
-  return {
-    hoverOn: bindActionCreators(hoverSideBarOn, dispatch),
-    hoverOff: bindActionCreators(hoverSideBarOff, dispatch),
-    showContent: bindActionCreators(showActorsPageContent, dispatch),
-  };
-};
-
-export default connect(putStateToActorsProps, putActionsToActorsProps)(ActorsPageLoyout);
+export default Loyout;

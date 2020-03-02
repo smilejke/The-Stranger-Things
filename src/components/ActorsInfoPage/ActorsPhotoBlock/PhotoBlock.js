@@ -1,13 +1,12 @@
 import React from 'react';
 import '../../../index.css';
 import Card from './Card.js';
-import { store } from '../../../index.js';
 
 class PhotoBlock extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: store.getState().actorCards,
+      cards: this.props.data,
     };
     this.reqURL = 'http://localhost:3001/actors';
   }

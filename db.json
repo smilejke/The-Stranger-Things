@@ -196,5 +196,31 @@
       "gender": "Female",
       "id": "MayaST"
     }
+  ],
+  "banner": [
+    {
+      "img": {
+        "src": "https://coverfiles.alphacoders.com/710/71002.jpg",
+        "alt": "Season One"
+      },
+      "id": "S01",
+      "defaultImage": "https://i.pinimg.com/originals/f9/17/2c/f9172c0ecd76d38961986844b80355ac.png"
+    },
+    {
+      "img": {
+        "src": "https://sky-wall.ru/uploads/source/2018/04/db61a7474ede9810e34d46396dc22508.png",
+        "alt": "Season Two"
+      },
+      "id": "S02",
+      "defaultImage": "https://i.pinimg.com/originals/f9/17/2c/f9172c0ecd76d38961986844b80355ac.png"
+    },
+    {
+      "img": {
+        "src": "https://s.aficionados.com.br/imagens/stranger-things-3-nova-sinopse-fala-de-inimigos-novos-e-antigos_f.jpg",
+        "alt": "Season Three"
+      },
+      "id": "S03",
+      "defaultImage": "https://i.pinimg.com/originals/f9/17/2c/f9172c0ecd76d38961986844b80355ac.png"
+    }
   ]
 }

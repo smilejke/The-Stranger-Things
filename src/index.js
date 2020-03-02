@@ -1,24 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import WrappedActorsComponent from './components/ActorsInfoPage/Layout/Layout.js';
+import Loyout from './components/Layout/Layout.js';
 import { createStore } from 'redux';
 import { connect, Provider } from 'react-redux';
 import { rootReducer } from './store/reducers.js';
-import GreetingsPage from './components/FirstGreetingsPage/Layout/Layout.js';
+import { bindActionCreators } from 'redux';
+import {
+  hoverSideBarOn,
+  hoverSideBarOff,
+  showActorsPageContent,
+  showGreetingsPageContent,
+} from './store/actions.js';
 
 export const store = createStore(rootReducer);
 
 class App extends React.Component {
   render() {
-    const {
-      pages: { greetings, actors },
-    } = this.props;
-
     return (
       <div>
-        {greetings ? <GreetingsPage /> : ''}
-        {actors ? <WrappedActorsComponent /> : ''}
+        <Loyout content={this.props} />
       </div>
     );
   }
@@ -30,10 +31,22 @@ const putStateToAppProps = (state) => {
       actors: state.pages.actors,
       watch: state.pages.watch,
     },
+    actorCards: state.actorCards,
+    backgroundImages: state.backgroundImages,
+    sideBarCollapsed: state.sideBarCollapsed,
   };
 };
 
-const WrappedAppComponent = connect(putStateToAppProps)(App);
+const putActionsToActorsProps = (dispatch) => {
+  return {
+    hoverOn: bindActionCreators(hoverSideBarOn, dispatch),
+    hoverOff: bindActionCreators(hoverSideBarOff, dispatch),
+    showActorsContent: bindActionCreators(showActorsPageContent, dispatch),
+    showGreetingsContent: bindActionCreators(showGreetingsPageContent, dispatch),
+  };
+};
+
+const WrappedAppComponent = connect(putStateToAppProps, putActionsToActorsProps)(App);
 
 ReactDOM.render(
   <Provider store={store}>

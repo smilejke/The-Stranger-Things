@@ -1,12 +1,14 @@
 @import '~antd/dist/antd.css';
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Play&display=swap');
-@import './components/AdvertisingBanner/avertisingLines.css';
-@import './components/Breadcrumb/path.css';
+@import './components/FirstGreetingsPage/AdvertisingBanner/BannerContainer/avertisingLines.css';
 @import './components/ActorsInfoPage/ActorsPhotoBlock/photoSection.css';
 @import './components/ActorsInfoPage/Button/hoverbutton.css';
-@import './components/ActorsInfoPage/Layout/actorsPageLayout.css';
-/* font-family: 'Play', sans-serif; */ /* font-family: 'Raleway', sans-serif; */
+@import './components/Layout/actorsPageLayout.css';
+@import './components/ActorsInfoPage/Content/content.css';
+@import './components/ActorsInfoPage/Header/header.css';
+/* font-family: 'Play', sans-serif; */
+/* font-family: 'Raleway', sans-serif; */
 * {
   margin: 0;
   padding: 0;

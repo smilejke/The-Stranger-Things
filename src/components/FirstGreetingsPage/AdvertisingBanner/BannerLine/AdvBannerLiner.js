@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../index.css';
+import '../../../../index.css';
 
 class Block extends React.Component {
   constructor(props) {
@@ -12,14 +12,14 @@ class Block extends React.Component {
   render() {
     const {
       img: { src },
+      defaultImage,
     } = this.props.background;
-    const srcDef = 'https://i.pinimg.com/originals/f9/17/2c/f9172c0ecd76d38961986844b80355ac.png';
 
     return (
       <div
         className='transition-background'
         style={{
-          backgroundImage: `url(${this.state.onHover ? src : srcDef})`,
+          backgroundImage: `url(${this.state.onHover ? src : defaultImage})`,
           backgroundSize: 'cover',
           height: this.state.onHover ? '300px' : '100px',
         }}
