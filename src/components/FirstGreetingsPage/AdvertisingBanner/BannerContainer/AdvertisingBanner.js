@@ -28,16 +28,16 @@ class AdvertisingBanner extends React.Component {
   }
 }
 
-const putStateToBannerProps = (state) => {
+const mapStateToProps = (state) => {
   return {
     backgroundImages: state.addBannerBackground.backgroundImages,
   };
 };
 
-const putActionsToBannerProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     uploadBackgrounds: bindActionCreators(uploadInfoForRenderBanner, dispatch),
   };
 };
 
-export default connect(putStateToBannerProps, putActionsToBannerProps)(AdvertisingBanner);
+export default connect(mapStateToProps, mapDispatchToProps)(AdvertisingBanner);

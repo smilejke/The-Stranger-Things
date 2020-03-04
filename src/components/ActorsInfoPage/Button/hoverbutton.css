@@ -1,6 +1,5 @@
 .a-button {
   border-radius: 3px;
-  /* background: linear-gradient(to right, #67b26b, #4ca2cb) !important; */
   background: #001529 !important;
   border: none;
   color: #ffffff !important;
@@ -12,13 +11,9 @@
   transition: all 0.4s;
   cursor: pointer;
   margin: 5px;
-}
-.a-button-hidden {
   opacity: 0;
 }
-.a-button-shown {
-  opacity: 1;
-}
+
 .a-button span {
   cursor: pointer;
   display: inline-block;

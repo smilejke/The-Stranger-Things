@@ -2,9 +2,13 @@ import React from 'react';
 import '../../../index.css';
 
 function ListItem(props) {
+  const {
+    options: { text, description },
+  } = props;
+
   return (
     <li>
-      {props.options.text} {props.options.description}
+      {text} {description}
     </li>
   );
 }

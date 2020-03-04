@@ -1,17 +1,14 @@
 import React from 'react';
 import '../../../index.css';
 
-function HoverButton(props) {
-  const isVisible = props.indicator;
+function HoverButton() {
+  const stayHere = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className='button_cont'>
-      <a
-        className={isVisible ? 'a-button a-button-shown' : 'a-button a-button-hidden'}
-        href='...'
-        onClick={(e) => {
-          e.preventDefault();
-        }}
-      >
+      <a className='a-button' href='...' onClick={stayHere}>
         <span>Read more</span>
       </a>
     </div>

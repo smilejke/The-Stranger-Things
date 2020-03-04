@@ -1,9 +1,4 @@
-import {
-  COLLAPSE_SIDE_BAR_ON_SHOW,
-  COLLAPSE_SIDE_BAR_ON_HIDE,
-  ACTORS_PAGE_IS_SHOWN,
-  GREETINGS_PAGE_IS_SHOWN,
-} from './actions.js';
+import { COLLAPSE_SIDE_BAR, ACTORS_PAGE_IS_SHOWN, GREETINGS_PAGE_IS_SHOWN } from './actions.js';
 
 const defaultState = {
   pages: {
@@ -16,9 +11,7 @@ const defaultState = {
 
 export const layoutReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case COLLAPSE_SIDE_BAR_ON_SHOW:
-      return { ...state, sideBarCollapsed: action.payload };
-    case COLLAPSE_SIDE_BAR_ON_HIDE:
+    case COLLAPSE_SIDE_BAR:
       return { ...state, sideBarCollapsed: action.payload };
     case ACTORS_PAGE_IS_SHOWN:
       return {

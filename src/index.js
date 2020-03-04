@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Layout from './components/Layout/Layout.js';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import logger from 'redux-logger';
 import rootReducer from './store/reducers.js';
 
-export const store = createStore(rootReducer);
+export const store = createStore(rootReducer, applyMiddleware(logger));
 
 class App extends React.Component {
   render() {

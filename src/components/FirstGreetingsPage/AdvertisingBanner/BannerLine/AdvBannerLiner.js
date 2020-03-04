@@ -9,6 +9,13 @@ class Block extends React.Component {
     };
     this.handleHover = this.handleHover.bind(this);
   }
+
+  handleHover() {
+    this.setState({
+      onHover: !this.state.onHover,
+    });
+  }
+
   render() {
     const {
       img: { src },
@@ -31,11 +38,6 @@ class Block extends React.Component {
         </div> */}
       </div>
     );
-  }
-  handleHover() {
-    this.setState({
-      onHover: !this.state.onHover,
-    });
   }
 }
 export default Block;

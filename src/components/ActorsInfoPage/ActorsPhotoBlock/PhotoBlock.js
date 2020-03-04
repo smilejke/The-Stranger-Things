@@ -7,10 +7,9 @@ import { uploadInfoForRenderCards } from '../../../store/ActorsCards/actions.js'
 
 class PhotoBlock extends React.Component {
   componentDidMount() {
-    const reqURL = 'http://localhost:3001/actors';
     const { uploadCards } = this.props;
 
-    fetch(reqURL)
+    fetch('http://localhost:3001/actors')
       .then((response) => response.json())
       .then((data) => uploadCards(data));
   }
@@ -30,16 +29,16 @@ class PhotoBlock extends React.Component {
   }
 }
 
-const putStateToActorsProps = (state) => {
+const mapStateToProps = (state) => {
   return {
     actorCards: state.addCardInfo.actorCards,
   };
 };
 
-const putActionsToActorsProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     uploadCards: bindActionCreators(uploadInfoForRenderCards, dispatch),
   };
 };
 
-export default connect(putStateToActorsProps, putActionsToActorsProps)(PhotoBlock);
+export default connect(mapStateToProps, mapDispatchToProps)(PhotoBlock);

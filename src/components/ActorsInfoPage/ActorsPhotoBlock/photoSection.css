@@ -9,22 +9,28 @@
   justify-content: center;
   margin-top: 20px;
 }
+
 .actor-photo {
   padding: 10px 20px;
   width: 240px;
   height: 480px;
   text-align: center;
+  cursor: default;
+}
+.actor-photo:hover .img-actor {
+  transform: translateY(-20px);
+}
+.actor-photo:hover .a-button {
+  opacity: 1;
 }
 
 .actor-photo ul {
   list-style: none;
 }
+
 .img-actor {
   width: 200px;
   height: 300px;
   transition: transform 0.2s ease;
   cursor: pointer;
-}
-.moving-img {
-  transform: translateY(-20px);
 }

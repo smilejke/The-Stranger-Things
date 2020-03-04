@@ -1,18 +1,10 @@
-export const COLLAPSE_SIDE_BAR_ON_SHOW = 'COLLAPSE_SIDE_BAR_ON_SHOW';
-export const COLLAPSE_SIDE_BAR_ON_HIDE = 'COLLAPSE_SIDE_BAR_ON_HIDE';
+export const COLLAPSE_SIDE_BAR = 'COLLAPSE_SIDE_BAR';
 export const ACTORS_PAGE_IS_SHOWN = 'ACTORS_PAGE_IS_SHOWN';
 export const GREETINGS_PAGE_IS_SHOWN = 'GREETINGS_PAGE_IS_SHOWN';
 
-export const hoverSideBarOn = (isHover) => {
+export const hoverSideBar = (isHover) => {
   return {
-    type: COLLAPSE_SIDE_BAR_ON_SHOW,
-    payload: isHover,
-  };
-};
-
-export const hoverSideBarOff = (isHover) => {
-  return {
-    type: COLLAPSE_SIDE_BAR_ON_HIDE,
+    type: COLLAPSE_SIDE_BAR,
     payload: isHover,
   };
 };
