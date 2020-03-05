@@ -1,12 +1,11 @@
 import React from 'react';
 
-import PhotoBlock from '../ActorsPhotoBlock/PhotoBlock.js';
+import PhotoBlockContainer from '../ActorsPhotoBlock/PhotoBlock/PhotoBlockContainer.js';
 
-function actorsPageContent(props) {
-  const actorsCards = props.data;
+function actorsPageContent() {
   return (
     <div className='actors-layout-contentBox'>
-      <div className='photoblock'>{<PhotoBlock data={actorsCards} />}</div>
+      <div className='photoblock'>{<PhotoBlockContainer />}</div>
     </div>
   );
 }

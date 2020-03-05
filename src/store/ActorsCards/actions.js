@@ -6,3 +6,7 @@ export const uploadInfoForRenderCards = (data) => {
     payload: data,
   };
 };
+
+export const loadData = () => (dispatch, getState) => {
+  console.log(getState());
+};

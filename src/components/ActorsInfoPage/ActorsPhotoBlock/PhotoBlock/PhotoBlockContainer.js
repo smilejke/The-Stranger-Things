@@ -1,11 +1,10 @@
 import React from 'react';
-import '../../../index.css';
-import Card from './Card.js';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { uploadInfoForRenderCards } from '../../../store/ActorsCards/actions.js';
+import { uploadInfoForRenderCards } from '../../../../store/ActorsCards/actions.js';
+import PhotoBlock from './PhotoBlock.js';
 
-class PhotoBlock extends React.Component {
+class PhotoBlockContainer extends React.Component {
   componentDidMount() {
     const { uploadCards } = this.props;
 
@@ -16,16 +15,7 @@ class PhotoBlock extends React.Component {
 
   render() {
     const { actorCards } = this.props;
-
-    return (
-      <div className='photo-section'>
-        <div className='actor-container'>
-          {actorCards.map((el) => {
-            return <Card key={el.id} options={el} />;
-          })}
-        </div>
-      </div>
-    );
+    return <PhotoBlock data={actorCards} />;
   }
 }
 
@@ -41,4 +31,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PhotoBlock);
+export default connect(mapStateToProps, mapDispatchToProps)(PhotoBlockContainer);

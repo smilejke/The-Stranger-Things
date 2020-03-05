@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Play&display=swap');
 @import './components/FirstGreetingsPage/AdvertisingBanner/BannerContainer/avertisingLines.css';
 @import './components/ActorsInfoPage/ActorsPhotoBlock/photoSection.css';
-@import './components/ActorsInfoPage/Button/hoverbutton.css';
+@import './components/ActorsInfoPage/ActorsPhotoBlock/ActorCard/hoverbutton.css';
 @import './components/Layout/actorsPageLayout.css';
 @import './components/ActorsInfoPage/Content/content.css';
 @import './components/ActorsInfoPage/Header/header.css';
