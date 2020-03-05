@@ -6,7 +6,6 @@ import ActorsPageHeader from '../ActorsInfoPage/Header/Header.js';
 import '../../index.css';
 import { bindActionCreators } from 'redux';
 import { connect, useDispatch } from 'react-redux';
-
 import { hoverSideBar, loadData } from '../../store/Layout/actions.js';
 
 const { Content, Header, Footer, Sider } = Layout;

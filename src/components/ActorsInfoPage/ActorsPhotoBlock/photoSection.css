@@ -35,3 +35,10 @@
   transition: transform 0.2s ease;
   cursor: pointer;
 }
+
+.filter {
+  margin: 15px 100px 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+}
