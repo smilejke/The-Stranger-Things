@@ -6,42 +6,42 @@ import { selectAllRoles, selectAnyRole } from '../../../../store/FilterRoles/act
 
 const CheckboxGroup = Checkbox.Group;
 
-class FilterCheckbox extends React.Component {
-  render() {
-    const plainOptions = ['Maincast', 'Secondary'];
-    const { indeterminate, checkAll, checkedList, selectAllRoles, selectAnyRole } = this.props;
+function FilterCheckbox(props) {
+  const plainOptions = ['Maincast', 'Secondary'];
 
-    return (
-      <div>
-        <div className='site-checkbox-all-wrapper'>
-          <Checkbox
-            indeterminate={indeterminate}
-            onChange={() => {
-              selectAllRoles(!checkAll);
-            }}
-            checked={checkAll}
-          >
-            Check all
-          </Checkbox>
-        </div>
-        <br />
-        <CheckboxGroup
-          options={plainOptions}
-          value={checkedList}
-          onChange={(e) => {
-            selectAnyRole(e);
+  const { indeterminate, checkAll, checkedList, selectAllRoles, selectAnyRole } = props;
+  console.log(props);
+  return (
+    <div>
+      <div className='site-checkbox-all-wrapper'>
+        <Checkbox
+          indeterminate={indeterminate}
+          onChange={() => {
+            selectAllRoles(!checkAll);
           }}
-        />
+          checked={checkAll}
+        >
+          Check all
+        </Checkbox>
       </div>
-    );
-  }
+      <br />
+      <CheckboxGroup
+        options={plainOptions}
+        value={checkedList}
+        onChange={(e) => {
+          selectAnyRole(e);
+        }}
+      />
+    </div>
+  );
 }
 
 const mapStateToProps = (state) => {
   return {
-    checkedList: state.filterReducer.checkedList,
-    indeterminate: state.filterReducer.indeterminate,
-    checkAll: state.filterReducer.checkAll,
+    checkedList: state.filter.checkedList,
+    indeterminate: state.filter.indeterminate,
+    checkAll: state.filter.checkAll,
+    loading: state.layout.loading,
   };
 };
 

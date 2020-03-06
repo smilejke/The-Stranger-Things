@@ -5,7 +5,7 @@ import { filterReducer } from './FilterRoles/reducers.js';
 import { addBannerBackground } from './LiquidBanner/reducers.js';
 
 export default combineReducers({
-  layoutReducer,
-  filterReducer,
+  layout: layoutReducer,
+  filter: filterReducer,
   addBannerBackground,
 });

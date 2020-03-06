@@ -6,18 +6,26 @@ import ActorsPageHeader from '../ActorsInfoPage/Header/Header.js';
 import '../../index.css';
 import { bindActionCreators } from 'redux';
 import { connect, useDispatch } from 'react-redux';
-import { hoverSideBar, loadData } from '../../store/Layout/actions.js';
+import { hoverSideBar, getActorsData } from '../../store/Layout/actions.js';
+import Loading from './loadingEffect/loading.js';
 
 const { Content, Header, Footer, Sider } = Layout;
 
 function MainLayout(props) {
+  const { sideBarCollapsed, actorCards, hoverSideBar, loading } = props;
+
   const dispatch = useDispatch();
   const getActors = () => {
-    dispatch(loadData());
+    dispatch(getActorsData(loading, 'http://localhost:3001/actors'));
   };
+  // const getMaincast = () => {
+  //   dispatch(getActorsData(loading, 'http://localhost:3001/actors?majority=maincast'));
+  // };
+  //  const getSecondaryActors = () => {
+  //   dispatch(getActorsData(loading, 'http://localhost:3001/actors?majority=secondary'));
+  // };
 
-  const { sideBarCollapsed, actorCards, hoverSideBar } = props;
-
+  console.log(props);
   return (
     <Layout className='actors-layout-heigth'>
       <Sider
@@ -52,8 +60,10 @@ function MainLayout(props) {
         <Header className='actors-layout-header'>
           <ActorsPageHeader text={'Welcome to Hawkins'} />
         </Header>
+
         <Content>
           {/* <GreetingsPage />  */}
+          {loading ? <Loading /> : ''}
           <PhotoBlockContainer actors={actorCards} />
         </Content>
 
@@ -67,8 +77,9 @@ function MainLayout(props) {
 
 const mapStateToProps = (state) => {
   return {
-    actorCards: state.layoutReducer.actorCards,
-    sideBarCollapsed: state.layoutReducer.sideBarCollapsed,
+    actorCards: state.layout.actorCards,
+    sideBarCollapsed: state.layout.sideBarCollapsed,
+    loading: state.layout.loading,
   };
 };
 
