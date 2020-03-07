@@ -1,8 +1,6 @@
-import { Layout } from 'antd';
 import React from 'react';
 import PhotoBlockContainer from '../ActorsInfoPage/ActorsPhotoBlock/PhotoBlock/PhotoBlockContainer.js';
 import PageHeader from './Header/Header.js';
-// import GreetingsPage from '../FirstGreetingsPage/Content/Content.js';
 import '../../index.css';
 import { bindActionCreators } from 'redux';
 import { connect, useDispatch } from 'react-redux';
@@ -10,14 +8,32 @@ import { hoverSideBar, getActorsData } from '../../store/Layout/actions.js';
 import Sidebar from './SideSlider/slider.js';
 import Loading from './loadingEffect/loading.js';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Layout } from 'antd';
 const { Content, Header, Footer } = Layout;
 
 function MainLayout(props) {
   const { sideBarCollapsed, actorCards, hoverSideBar, loading } = props;
 
   const dispatch = useDispatch();
+
   const getActors = () => {
     dispatch(getActorsData(loading, 'http://localhost:3001/actors'));
+  };
+
+  const filterActions = {
+    getActors,
+    getMaincast: () => {
+      dispatch(getActorsData(loading, 'http://localhost:3001/actors?majority=maincast'));
+    },
+    getSecondaryActors: () => {
+      dispatch(getActorsData(loading, 'http://localhost:3001/actors?majority=secondary'));
+    },
+    getMaleActors: () => {
+      dispatch(getActorsData(loading, 'http://localhost:3001/actors?gender=Male'));
+    },
+    getFemaleActors: () => {
+      dispatch(getActorsData(loading, 'http://localhost:3001/actors?gender=Female'));
+    },
   };
 
   const sidebarOptions = {
@@ -30,12 +46,6 @@ function MainLayout(props) {
       news: '/news',
     },
   };
-  // const getMaincast = () => {
-  //   dispatch(getActorsData(loading, 'http://localhost:3001/actors?majority=maincast'));
-  // };
-  //  const getSecondaryActors = () => {
-  //   dispatch(getActorsData(loading, 'http://localhost:3001/actors?majority=secondary'));
-  // };
 
   return (
     <Router>
@@ -54,7 +64,9 @@ function MainLayout(props) {
             <Switch>
               {loading ? <Loading /> : ''}
               <Route path='/news'>{null}</Route>
-              <Route path='/actors'>{<PhotoBlockContainer actors={actorCards} />}</Route>
+              <Route path='/actors'>
+                {<PhotoBlockContainer actors={actorCards} actions={filterActions} />}
+              </Route>
               <Route path='/'>{null}</Route>
             </Switch>
           </Content>

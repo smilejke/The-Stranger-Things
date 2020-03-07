@@ -1,26 +1,31 @@
-import { SELECT_ALL_ROLES, SELECT_ANY_ROLE } from './actions.js';
+import {
+  SELECT_MAINCAST,
+  SELECT_SECONDARY,
+  SELECT_MALE,
+  SELECT_FEMALE,
+  SELECT_ALL_ACTORS,
+} from './actions.js';
 
 const defaultState = {
-  checkedList: ['Maincast', 'Secondary'],
-  indeterminate: false,
-  checkAll: true,
+  maincast: false,
+  secondary: false,
+  male: false,
+  female: false,
+  all: true,
 };
 
 export const filterReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case SELECT_ALL_ROLES:
-      return {
-        checkedList: action.payload ? defaultState.checkedList : [],
-        indeterminate: false,
-        checkAll: action.payload,
-      };
-    case SELECT_ANY_ROLE:
-      return {
-        checkedList: action.payload,
-        indeterminate:
-          !!action.payload.length && action.payload.length < defaultState.checkedList.length,
-        checkAll: action.payload.length === defaultState.checkedList.length,
-      };
+    case SELECT_MAINCAST:
+      return { ...defaultState, maincast: action.payload, all: false };
+    case SELECT_SECONDARY:
+      return { ...defaultState, secondary: action.payload, all: false };
+    case SELECT_MALE:
+      return { ...defaultState, male: action.payload, all: false };
+    case SELECT_FEMALE:
+      return { ...defaultState, female: action.payload, all: false };
+    case SELECT_ALL_ACTORS:
+      return { ...defaultState, all: action.payload };
 
     default:
       return state;

@@ -5,7 +5,7 @@
 @import './components/ActorsInfoPage/ActorsPhotoBlock/photoSection.css';
 @import './components/ActorsInfoPage/ActorsPhotoBlock/ActorCard/hoverbutton.css';
 @import './components/Layout/actorsPageLayout.css';
-@import './components/ActorsInfoPage/Header/header.css';
+@import './components/Layout/Header/header.css';
 @import './components/Layout/loadingEffect/spin.css';
 /* font-family: 'Play', sans-serif; */
 /* font-family: 'Raleway', sans-serif; */
