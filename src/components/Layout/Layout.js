@@ -1,15 +1,16 @@
-import { Layout, Menu, Icon } from 'antd';
+import { Layout } from 'antd';
 import React from 'react';
 import PhotoBlockContainer from '../ActorsInfoPage/ActorsPhotoBlock/PhotoBlock/PhotoBlockContainer.js';
-import ActorsPageHeader from '../ActorsInfoPage/Header/Header.js';
+import PageHeader from './Header/Header.js';
 // import GreetingsPage from '../FirstGreetingsPage/Content/Content.js';
 import '../../index.css';
 import { bindActionCreators } from 'redux';
 import { connect, useDispatch } from 'react-redux';
 import { hoverSideBar, getActorsData } from '../../store/Layout/actions.js';
+import Sidebar from './SideSlider/slider.js';
 import Loading from './loadingEffect/loading.js';
-
-const { Content, Header, Footer, Sider } = Layout;
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+const { Content, Header, Footer } = Layout;
 
 function MainLayout(props) {
   const { sideBarCollapsed, actorCards, hoverSideBar, loading } = props;
@@ -18,6 +19,17 @@ function MainLayout(props) {
   const getActors = () => {
     dispatch(getActorsData(loading, 'http://localhost:3001/actors'));
   };
+
+  const sidebarOptions = {
+    collapsedStatus: sideBarCollapsed,
+    hoverSideBar,
+    getActorsData: getActors,
+    routes: {
+      home: '/',
+      actors: '/actors',
+      news: '/news',
+    },
+  };
   // const getMaincast = () => {
   //   dispatch(getActorsData(loading, 'http://localhost:3001/actors?majority=maincast'));
   // };
@@ -25,53 +37,34 @@ function MainLayout(props) {
   //   dispatch(getActorsData(loading, 'http://localhost:3001/actors?majority=secondary'));
   // };
 
-  console.log(props);
   return (
-    <Layout className='actors-layout-heigth'>
-      <Sider
-        collapsible
-        collapsed={sideBarCollapsed}
-        onCollapse={() => {
-          hoverSideBar(!sideBarCollapsed);
-        }}
-      >
-        <div className='logo' />
-        <Menu theme='dark' mode='inline'>
-          <Menu.Item key='layoutMenuItem1'>
-            <Icon type='pie-chart' />
-            <span>Home</span>
-          </Menu.Item>
-          <Menu.Item
-            key='layoutMenuItem2'
-            onClick={() => {
-              getActors();
-            }}
-          >
-            <Icon type='star' />
-            <span>Actors</span>
-          </Menu.Item>
-          <Menu.Item key='layoutMenuItem3'>
-            <Icon type='file' />
-            <span>Watch</span>
-          </Menu.Item>
-        </Menu>
-      </Sider>
-      <Layout>
-        <Header className='actors-layout-header'>
-          <ActorsPageHeader text={'Welcome to Hawkins'} />
-        </Header>
+    <Router>
+      <Layout className='actors-layout-heigth'>
+        <Sidebar sidebarOptions={sidebarOptions} />
+        <Layout>
+          <Header className='actors-layout-header'>
+            <Switch>
+              <Route path='/news'>{<PageHeader text={'Serial news'} />}</Route>
+              <Route path='/actors'>{<PageHeader text={'The Stranger things cast'} />}</Route>
+              <Route path='/'>{<PageHeader text={'Welcome to Hawkins!'} />}</Route>
+            </Switch>
+          </Header>
 
-        <Content>
-          {/* <GreetingsPage />  */}
-          {loading ? <Loading /> : ''}
-          <PhotoBlockContainer actors={actorCards} />
-        </Content>
+          <Content>
+            <Switch>
+              {loading ? <Loading /> : ''}
+              <Route path='/news'>{null}</Route>
+              <Route path='/actors'>{<PhotoBlockContainer actors={actorCards} />}</Route>
+              <Route path='/'>{null}</Route>
+            </Switch>
+          </Content>
 
-        <Footer className='actors-layout-footer'>
-          The Stranger Things ©2020 Created by Vadim Melnikov
-        </Footer>
+          <Footer className='actors-layout-footer'>
+            The Stranger Things ©2020 Created by Vadim Melnikov
+          </Footer>
+        </Layout>
       </Layout>
-    </Layout>
+    </Router>
   );
 }
 
