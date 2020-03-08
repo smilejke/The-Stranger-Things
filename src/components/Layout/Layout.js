@@ -44,7 +44,7 @@ function MainLayout(props) {
     getActorsData: getActors,
     routes: {
       home: '/',
-      actors: '/actors',
+      actors: '/actors/all',
       news: '/news',
     },
   };

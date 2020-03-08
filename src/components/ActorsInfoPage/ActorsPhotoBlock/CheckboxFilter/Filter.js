@@ -27,7 +27,14 @@ function FilterCheckbox(props) {
   } = props;
 
   const checkboxOptions = [
-    { flag: all, select: selectAll, getData: getActors, text: 'All cast', id: nanoid(), url: ' ' },
+    {
+      flag: all,
+      select: selectAll,
+      getData: getActors,
+      text: 'All cast',
+      id: nanoid(),
+      adress: 'all',
+    },
     {
       flag: maincast,
       select: selectMaincast,
