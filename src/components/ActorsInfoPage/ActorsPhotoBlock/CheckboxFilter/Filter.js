@@ -10,10 +10,8 @@ import {
   selectAll,
 } from '../../../../store/FilterRoles/actions.js';
 import Checkbox from './CheckboxCreator/FilterCheckbox.js';
-import { Link, useRouteMatch } from 'react-router-dom';
 
 function FilterCheckbox(props) {
-  let match = useRouteMatch();
   const {
     selectAll,
     selectMaincast,
@@ -36,7 +34,7 @@ function FilterCheckbox(props) {
       getData: getMaincast,
       text: 'Maincast',
       id: nanoid(),
-      url: 'maincast',
+      adress: 'maincast',
     },
     {
       flag: secondary,
@@ -44,7 +42,7 @@ function FilterCheckbox(props) {
       getData: getSecondaryActors,
       text: 'Secondary actors',
       id: nanoid(),
-      url: 'secondary',
+      adress: 'secondary',
     },
 
     {
@@ -53,7 +51,7 @@ function FilterCheckbox(props) {
       getData: getMaleActors,
       text: 'Male',
       id: nanoid(),
-      url: 'male',
+      adress: 'male',
     },
     {
       flag: female,
@@ -61,18 +59,14 @@ function FilterCheckbox(props) {
       getData: getFemaleActors,
       text: 'Female',
       id: nanoid(),
-      url: 'female',
+      adress: 'female',
     },
   ];
 
   return (
     <div className='site-checkbox-all-wrapper'>
       {checkboxOptions.map((checkbox) => {
-        return (
-          <Link key={checkbox.id} to={`${match.url}/${checkbox.url}`}>
-            {<Checkbox options={checkbox} />}
-          </Link>
-        );
+        return <Checkbox key={checkbox.id} options={checkbox} />;
       })}
     </div>
   );

@@ -9,6 +9,8 @@ import Sidebar from './SideSlider/slider.js';
 import Loading from './loadingEffect/loading.js';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Layout } from 'antd';
+import Profile from '../ActorsInfoPage/ActorsPersonalPage/ActorProfile.js';
+
 const { Content, Header, Footer } = Layout;
 
 function MainLayout(props) {
@@ -46,7 +48,6 @@ function MainLayout(props) {
       news: '/news',
     },
   };
-
   return (
     <Router>
       <Layout className='actors-layout-heigth'>
@@ -67,6 +68,7 @@ function MainLayout(props) {
               <Route path='/actors'>
                 {<PhotoBlockContainer actors={actorCards} actions={filterActions} />}
               </Route>
+              <Route path='/cast' children={<Profile />} />
               <Route path='/'>{null}</Route>
             </Switch>
           </Content>

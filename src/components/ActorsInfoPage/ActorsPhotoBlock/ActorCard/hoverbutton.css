@@ -7,7 +7,7 @@
   text-transform: uppercase;
   font-size: 11px;
   padding: 10px;
-  width: 100px;
+  width: 150px;
   transition: all 0.4s;
   cursor: pointer;
   margin: 5px;
@@ -35,6 +35,6 @@
   opacity: 1;
   right: 0;
 }
-.button_cont {
+/* .button_cont {
   margin-top: 20px;
-}
+} */

@@ -1,17 +1,14 @@
 import React from 'react';
 import '../../../../index.css';
+import { Link } from 'react-router-dom';
 
-function HoverButton() {
-  const stayHere = (e) => {
-    e.preventDefault();
-  };
-
+function HoverButton(props) {
   return (
-    <div className='button_cont'>
-      <a className='a-button' href='...' onClick={stayHere}>
+    <Link to={`cast/${props.urlData.id}`}>
+      <button className='a-button'>
         <span>Read more</span>
-      </a>
-    </div>
+      </button>
+    </Link>
   );
 }
 export default HoverButton;

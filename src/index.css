@@ -7,6 +7,7 @@
 @import './components/Layout/actorsPageLayout.css';
 @import './components/Layout/Header/header.css';
 @import './components/Layout/loadingEffect/spin.css';
+@import './components/ActorsInfoPage/ActorsPersonalPage/profile.css';
 /* font-family: 'Play', sans-serif; */
 /* font-family: 'Raleway', sans-serif; */
 * {

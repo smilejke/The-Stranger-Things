@@ -1,8 +1,10 @@
 import React from 'react';
 import { Checkbox } from 'antd';
+import { Link, useRouteMatch } from 'react-router-dom';
 
 function FilerCheckbox(props) {
-  const { flag, select, getData, text } = props.options;
+  const { adress, flag, select, getData, text } = props.options;
+  let match = useRouteMatch();
 
   const action = function() {
     if (flag) {
@@ -14,9 +16,11 @@ function FilerCheckbox(props) {
   };
 
   return (
-    <Checkbox onChange={action} checked={flag}>
-      <span onClick={action}>{text}</span>
-    </Checkbox>
+    <Link to={`${match.url}/${adress}`}>
+      <Checkbox onChange={action} checked={flag}>
+        <span onClick={action}>{text}</span>
+      </Checkbox>
+    </Link>
   );
 }
 

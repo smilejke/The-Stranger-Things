@@ -14,7 +14,7 @@ function Card(props) {
       {' '}
       <img className='img-actor' src={src} alt={alt} />
       <ActorInfoList key={id} info={props.options} />
-      <HoverButton />
+      <HoverButton urlData={props.options} />
     </div>
   );
 }
