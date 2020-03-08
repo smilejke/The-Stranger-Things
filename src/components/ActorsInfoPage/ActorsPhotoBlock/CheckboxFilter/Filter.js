@@ -10,8 +10,10 @@ import {
   selectAll,
 } from '../../../../store/FilterRoles/actions.js';
 import Checkbox from './CheckboxCreator/FilterCheckbox.js';
+import { Link, useRouteMatch } from 'react-router-dom';
 
 function FilterCheckbox(props) {
+  let match = useRouteMatch();
   const {
     selectAll,
     selectMaincast,
@@ -27,13 +29,14 @@ function FilterCheckbox(props) {
   } = props;
 
   const checkboxOptions = [
-    { flag: all, select: selectAll, getData: getActors, text: 'All cast', id: nanoid() },
+    { flag: all, select: selectAll, getData: getActors, text: 'All cast', id: nanoid(), url: ' ' },
     {
       flag: maincast,
       select: selectMaincast,
       getData: getMaincast,
       text: 'Maincast',
       id: nanoid(),
+      url: 'maincast',
     },
     {
       flag: secondary,
@@ -41,15 +44,35 @@ function FilterCheckbox(props) {
       getData: getSecondaryActors,
       text: 'Secondary actors',
       id: nanoid(),
+      url: 'secondary',
     },
-    { flag: male, select: selectMale, getData: getMaleActors, text: 'Male', id: nanoid() },
-    { flag: female, select: selectFemale, getData: getFemaleActors, text: 'Female', id: nanoid() },
+
+    {
+      flag: male,
+      select: selectMale,
+      getData: getMaleActors,
+      text: 'Male',
+      id: nanoid(),
+      url: 'male',
+    },
+    {
+      flag: female,
+      select: selectFemale,
+      getData: getFemaleActors,
+      text: 'Female',
+      id: nanoid(),
+      url: 'female',
+    },
   ];
 
   return (
     <div className='site-checkbox-all-wrapper'>
       {checkboxOptions.map((checkbox) => {
-        return <Checkbox key={checkbox.id} options={checkbox} />;
+        return (
+          <Link key={checkbox.id} to={`${match.url}/${checkbox.url}`}>
+            {<Checkbox options={checkbox} />}
+          </Link>
+        );
       })}
     </div>
   );
