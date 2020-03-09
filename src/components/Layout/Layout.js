@@ -14,7 +14,7 @@ import Profile from '../ActorsInfoPage/ActorsPersonalPage/ActorProfile.js';
 const { Content, Header, Footer } = Layout;
 
 function MainLayout(props) {
-  const { sideBarCollapsed, actorCards, hoverSideBar, loading } = props;
+  const { sideBarCollapsed, actorCards, hoverSideBar, loading, actor } = props;
 
   const dispatch = useDispatch();
 
@@ -68,7 +68,7 @@ function MainLayout(props) {
               <Route path='/actors'>
                 {<PhotoBlockContainer actors={actorCards} actions={filterActions} />}
               </Route>
-              <Route path='/cast' children={<Profile />} />
+              <Route path='/profile'>{<Profile actor={actor} />}</Route>
               <Route path='/'>{null}</Route>
             </Switch>
           </Content>
@@ -87,6 +87,7 @@ const mapStateToProps = (state) => {
     actorCards: state.layout.actorCards,
     sideBarCollapsed: state.layout.sideBarCollapsed,
     loading: state.layout.loading,
+    actor: state.getActor.actor,
   };
 };
 
