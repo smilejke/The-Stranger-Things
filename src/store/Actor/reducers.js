@@ -1,9 +1,22 @@
-import { GET_ACTOR } from './actions.js';
+import { GET_CURRENT_ACTOR_ID, FIND_CURRENT_ACTOR_BY_ID } from './actions.js';
 
-export const getActor = (state = { actor: 'unitiled' }, action) => {
-  if (action.type === GET_ACTOR) {
-    return { actor: action.payload };
-  } else {
-    return state;
+const defaultState = {
+  currentActorId: '',
+  profileToSearch: null,
+};
+
+export const getActor = (state = defaultState, action) => {
+  switch (action.type) {
+    case GET_CURRENT_ACTOR_ID:
+      return { ...state, currentActorId: action.payload };
+    case FIND_CURRENT_ACTOR_BY_ID: {
+      return {
+        ...state,
+        profileToSearch: action.payload.find((el) => el.id === state.currentActorId),
+      };
+    }
+
+    default:
+      return state;
   }
 };

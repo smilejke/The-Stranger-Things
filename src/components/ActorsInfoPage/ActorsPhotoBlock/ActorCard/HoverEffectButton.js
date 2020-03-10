@@ -1,22 +1,22 @@
 import React from 'react';
 import '../../../../index.css';
 import { Link } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { getCurrentActor } from '../../../../store/Actor/actions.js';
+import { connect, useDispatch } from 'react-redux';
+import { getActorsData } from '../../../../store/Actor/actions.js';
 
 function HoverButton(props) {
   const {
-    getActor,
     urlData: { id },
   } = props;
+
+  const dispatch = useDispatch();
 
   return (
     <Link to={`/profile/${id}`}>
       <button
         className='a-button'
         onClick={() => {
-          getActor(props.urlData);
+          dispatch(getActorsData(id));
         }}
       >
         <span>Read more</span>
@@ -27,14 +27,9 @@ function HoverButton(props) {
 
 const mapStateToProps = (state) => {
   return {
-    actor: state.getActor.actor,
+    currentActorId: state.getActor.currentActorId,
+    profileToSearch: state.getActor.profileToSearch,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getActor: bindActionCreators(getCurrentActor, dispatch),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(HoverButton);
+export default connect(mapStateToProps)(HoverButton);

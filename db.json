@@ -211,6 +211,354 @@
       "id": "SeanTST"
     }
   ],
+  "profiles": [
+    {
+      "img": {
+        "image1": {
+          "src": "https://images3.yesmagazine.ru/upload/cache_img/f5c/f5cd78273e6c34b89c7c0d2bbcd9a105_fitted_990x495.jpg",
+          "alt": "MillieBobbyBrown"
+        },
+        "image2": {
+          "src": "https://image.insider.com/59f36759d3684039008b463d?width=1200&format=jpeg",
+          "alt": "MillieBobbyBrown"
+        },
+        "image3": {
+          "src": "https://i.ytimg.com/vi/IrBOCLkw86M/maxresdefault.jpg",
+          "alt": "MillieBobbyBrown"
+        },
+        "image4": {
+          "src": "https://pbs.twimg.com/media/DTH_HKZW4AAjgFL.jpg",
+          "alt": "MillieBobbyBrown"
+        }
+      },
+      "name": "Millie Bobby Brown",
+      "text": "",
+      "id": "MillieTST"
+    },
+    {
+      "img": {
+        "image1": {
+          "src": "https://pbs.twimg.com/media/DonsD3dXoAI7Zcv.jpg",
+          "alt": "NoahSchnapp"
+        },
+        "image2": {
+          "src": "https://www.gannett-cdn.com/presto/2019/07/09/USAT/f3fdb1eb-729c-4970-bd2f-cc143bc4f740-EPA_USA_TELEVISION_PREMIERE_STRANGER_THINGS.JPG?crop=4999,2800,x0,y132&width=1600&height=800&fit=bounds",
+          "alt": "NoahSchnapp"
+        },
+        "image3": {
+          "src": "https://krot.info/uploads/posts/2019-09/1569829694_instagram-noa-shnapp-63.jpg",
+          "alt": "NoahSchnapp"
+        },
+        "image4": {
+          "src": "https://i.ytimg.com/vi/39jo374MO18/maxresdefault.jpg",
+          "alt": "NoahSchnapp"
+        }
+      },
+      "name": "Noah Schnapp",
+      "text": "",
+      "id": "NoahTST"
+    },
+    {
+      "img": {
+        "image1": {
+          "src": "https://avatars.mds.yandex.net/get-pdb/1866711/a7ef012a-1078-43ac-bb2c-9459e432ea20/s1200",
+          "alt": "NataliaDyer"
+        },
+        "image2": {
+          "src": "https://www.etonline.com/sites/default/files/styles/840x470/public/images/2017-10/Natalia_Dyer_1280_GettyImages-847194682.jpg?itok=_Bc0JZbG",
+          "alt": "NataliaDyer"
+        },
+        "image3": {
+          "src": "http://138.r.photoshare.ru/01387/00d3bf8ee4a07b3bbca98fc98958e48914fb812e.jpg",
+          "alt": "NataliaDyer"
+        },
+        "image4": {
+          "src": "https://w3.mdco.me/i/F2oys86co3a1Ldcb8LF7qPU0zs0.jpeg",
+          "alt": "NataliaDyer"
+        }
+      },
+      "name": "Natalia Dyer",
+      "text": "",
+      "id": "NataliaTST"
+    },
+    {
+      "img": {
+        "image1": {
+          "src": "https://pbs.twimg.com/media/DTwRKIrX4AEphbG.jpg",
+          "alt": "FinnWolfhard"
+        },
+        "image2": {
+          "src": "https://fotografias.antena3.com/clipping/cmsimages02/2017/11/09/7B38BEBD-3F80-4A43-B8F2-607CE6E8A624/58.jpg",
+          "alt": "FinnWolfhard"
+        },
+        "image3": {
+          "src": "http://i1.ytimg.com/vi/nmHO7_ExKMo/maxresdefault.jpg",
+          "alt": "FinnWolfhard"
+        },
+        "image4": {
+          "src": "https://cdn1.thr.com/sites/default/files/2017/10/gettyimages-848566514-h_2017.jpg",
+          "alt": "FinnWolfhard"
+        }
+      },
+      "name": "Finn Wolfhard",
+      "text": "",
+      "id": "FinnTST"
+    },
+    {
+      "img": {
+        "image1": {
+          "src": "https://pbs.twimg.com/media/EBJyAMVXUAE8ghc.jpg",
+          "alt": "SadieSink"
+        },
+        "image2": {
+          "src": "https://vertigo.com.ua/wp-content/uploads/2017/02/002-4.jpg",
+          "alt": "SadieSink"
+        },
+        "image3": {
+          "src": "http://i1.ytimg.com/vi/TAsx6JXimVg/maxresdefault.jpg",
+          "alt": "SadieSink"
+        },
+        "image4": {
+          "src": "https://pbs.twimg.com/media/D3JCExNXQAIU_qx.jpg",
+          "alt": "SadieSink"
+        }
+      },
+      "name": "Sadie Sink",
+      "text": "",
+      "id": "SadieTST"
+    },
+    {
+      "img": {
+        "image1": {
+          "src": "https://s.yimg.com/uu/api/res/1.2/0weovpWAD_jm.3KUKu.cMA--~B/aD03MjM7dz0xNDQwO3NtPTE7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/esquire_269/b9663bcaea41a7ea78d058267dc402be",
+          "alt": "GatenMatarazzo"
+        },
+        "image2": {
+          "src": "https://medialeaks.ru/wp-content/uploads/2019/06/gaten_matarazzo-getty-h_2019_.jpg",
+          "alt": "GatenMatarazzo"
+        },
+        "image3": {
+          "src": "https://krot.info/uploads/posts/2019-09/1569837545_1.jpg",
+          "alt": "GatenMatarazzo"
+        },
+        "image4": {
+          "src": "https://www.gannett-cdn.com/-mm-/f5e78ef7acd203c9289442415a1e9ea4dc6490ce/c=0-815-3707-2909/local/-/media/2017/09/06/Phoenix/Phoenix/636402986176276992-GettyImages-843011536.jpg?width=1600&height=800&fit=crop",
+          "alt": "GatenMatarazzo"
+        }
+      },
+      "name": "Gaten Matarazzo",
+      "text": "",
+      "id": "GatenTST"
+    },
+    {
+      "img": {
+        "image1": {
+          "src": "https://pbs.twimg.com/media/D_s92ChXYAEIV7E.jpg",
+          "alt": "MayaHawke"
+        },
+        "image2": {
+          "src": "https://pbs.twimg.com/media/D-t2CwVWsAE4wae.jpg",
+          "alt": "MayaHawke"
+        },
+        "image3": {
+          "src": "http://lamcdn.net/wonderzine.com/post-og_image/KE7iAMuwZMyMttB-JL5Q2A.png",
+          "alt": "MayaHawke"
+        },
+        "image4": {
+          "src": "https://www.yournextshoes.com/wp-content/uploads/2018/05/Maya-Hawke-and-Kathryn-Newton-FB.jpg",
+          "alt": "MayaHawke"
+        }
+      },
+      "name": "Maya Hawke",
+      "text": "",
+      "id": "MayaTST"
+    },
+    {
+      "img": {
+        "image1": {
+          "src": "https://i.pinimg.com/originals/5d/32/00/5d320013fac73066050bdf515aefe569.jpg",
+          "alt": "CalebMcLaughlin"
+        },
+        "image2": {
+          "src": "https://static3.srcdn.com/wordpress/wp-content/uploads/2019/04/Caleb-McLaughlin-as-Lucas-in-Stranger-Things.jpg",
+          "alt": "CalebMcLaughlin"
+        },
+        "image3": {
+          "src": "https://i.ytimg.com/vi/qOYNlN2NS-4/maxresdefault.jpg",
+          "alt": "CalebMcLaughlin"
+        },
+        "image4": {
+          "src": "https://pbs.twimg.com/media/Dcki6yFW4AAzIXl.jpg",
+          "alt": "CalebMcLaughlin"
+        }
+      },
+      "name": "Caleb McLaughlin",
+      "text": "",
+      "id": "CalebTST"
+    },
+    {
+      "img": {
+        "image1": {
+          "src": "https://krot.info/uploads/posts/2019-09/1569268054_vajnona-rajder-35.jpg",
+          "alt": "WinonaRyder"
+        },
+        "image2": {
+          "src": "https://sm-news.ru/wp-content/uploads/2019/07/02/vajnona-1024x576.jpg",
+          "alt": "WinonaRyder"
+        },
+        "image3": {
+          "src": "https://www.wmj.ru/thumb/1200x628/smart/filters:quality(75)/imgs/2017/10/27/19/1141564/b21e6a6b6574f73527b18e422e3bfb45d0b20855.jpg",
+          "alt": "WinonaRyder"
+        },
+        "image4": {
+          "src": "https://boombo.pro/uploads/posts/2019-07/thumbs/1563152183_winona-ryder-wallpapers-27465-1227132.jpg",
+          "alt": "WinonaRyder"
+        }
+      },
+      "name": "Winona Ryder",
+      "text": "",
+      "id": "WinonaTST"
+    },
+    {
+      "img": {
+        "image1": {
+          "src": "https://i.pinimg.com/736x/29/b0/66/29b066e4b851dd01ea9d20c86665aef0.jpg",
+          "alt": "DacreMontgomery"
+        },
+        "image2": {
+          "src": "https://img.huffingtonpost.com/asset/5d382c19240000cd3d936661.jpeg?cache=zAmQ0XqXZO&ops=1200_630",
+          "alt": "DacreMontgomery"
+        },
+        "image3": {
+          "src": "https://i.ytimg.com/vi/6VdAgD-klGc/maxresdefault.jpg",
+          "alt": "DacreMontgomery"
+        },
+        "image4": {
+          "src": "https://krot.info/uploads/posts/2019-10/1570188144_instagram-dakre-montgomeri-36.jpg",
+          "alt": "DacreMontgomery"
+        }
+      },
+      "name": "Dacre Montgomery",
+      "text": "",
+      "id": "DacreTST"
+    },
+    {
+      "img": {
+        "image1": {
+          "src": "https://avatars.mds.yandex.net/get-pdb/1520606/7f1ae8d1-6fb3-401e-9466-ee7fa9b17b0d/s1200?webp=false",
+          "alt": "DavidHarbour"
+        },
+        "image2": {
+          "src": "https://www.soyuz.ru/public/uploads/files/3/7261110/20190403221042b227dc85a1.jpg",
+          "alt": "DavidHarbour"
+        },
+        "image3": {
+          "src": "https://imgix.bustle.com/uploads/getty/2018/1/30/5b13f130-8109-4666-b711-3781cd58643a-getty-825369336.jpg?w=1200&h=630&q=70&fit=crop&crop=faces&fm=jpg",
+          "alt": "DavidHarbour"
+        },
+        "image4": {
+          "src": "https://tv.ua/i/97/36/81/973681/image_main/c6a6c1ef9c48a9b8d1b77ec7039cc0b8-resize_crop_1Xquality_100Xallow_enlarge_0Xw_1200Xh_630.jpg",
+          "alt": "DavidHarbour"
+        }
+      },
+      "name": "David Harbour",
+      "text": "",
+      "id": "DavidTST"
+    },
+    {
+      "img": {
+        "image1": {
+          "src": "https://avatars.mds.yandex.net/get-pdb/2976609/872b085a-f711-4069-9113-1742d538db38/s1200",
+          "alt": "JoeKeery"
+        },
+        "image2": {
+          "src": "https://pbs.twimg.com/media/EEwqyY_X4AAYZ7l.jpg:large",
+          "alt": "JoeKeery"
+        },
+        "image3": {
+          "src": "https://pixel.nymag.com/imgs/daily/vulture/2019/09/16/16-joe-kerry.w1200.h630.jpg",
+          "alt": "JoeKeery"
+        },
+        "image4": {
+          "src": "http://pixel.nymag.com/imgs/daily/vulture/2016/08/16/16-joe-keery.w1200.h630.jpg",
+          "alt": "JoeKeery"
+        }
+      },
+      "name": "Joe Keery",
+      "text": "",
+      "id": "JoeTST"
+    },
+    {
+      "img": {
+        "image1": {
+          "src": "https://img.movietimes.com/unsafe/1200x627/https://assets.movietimes.com/v1/celebrity_images/66965/banre0FIv1gPhorO4SlvN5VqsUE.jpg",
+          "alt": "CharlieHeaton"
+        },
+        "image2": {
+          "src": "http://kinoprizma.ru/images/series/212/chapter-five-the-flea-and-the-acrobat-1-5-chapter-five-the-flea-and-the-acrobat.jpg",
+          "alt": "CharlieHeaton"
+        },
+        "image3": {
+          "src": "https://avatars.mds.yandex.net/get-pdb/2850356/aa683e29-0e77-49dd-a214-1ab0d0d8210e/s1200",
+          "alt": "CharlieHeaton"
+        },
+        "image4": {
+          "src": "https://gl-images.condecdn.net/image/JZkENWJQlko/crop/1020/0.5235602094240838/f/charlie-heaton_glamour_30oct17_gettyimages-860280292_p.jpg",
+          "alt": "CharlieHeaton"
+        }
+      },
+      "name": "Charlie Heaton",
+      "text": "",
+      "id": "CharlieTST"
+    },
+    {
+      "img": {
+        "image1": {
+          "src": "https://cdn1.thr.com/sites/default/files/2014/09/paul_reiser_a_l.jpg",
+          "alt": "PaulReiser"
+        },
+        "image2": {
+          "src": "https://www.kino-teatr.ru/news/10195/99938.jpg",
+          "alt": "PaulReiser"
+        },
+        "image3": {
+          "src": "https://ewedit.files.wordpress.com/2017/02/gettyimages-615677130.jpg?crop=0px,0px,2700px,1417.5px&resize=1200,630",
+          "alt": "PaulReiser"
+        },
+        "image4": {
+          "src": "https://i.ytimg.com/vi/F6zOcjvwMeg/maxresdefault.jpg",
+          "alt": "PaulReiser"
+        }
+      },
+      "name": "Paul Reiser",
+      "text": "",
+      "id": "PaulTST"
+    },
+    {
+      "img": {
+        "image1": {
+          "src": "https://1366x768.ru/man/55/Sean-Astin-wallpaper-1366x768.jpg",
+          "alt": "SeanAstin"
+        },
+        "image2": {
+          "src": "https://as00.epimg.net/tikitakas/imagenes/2016/11/08/portada/1478605282_950347_1478605661_noticia_normal.jpg",
+          "alt": "SeanAstin"
+        },
+        "image3": {
+          "src": "https://www.okchicas.com/wp-content/uploads/2016/12/Actores-del-señor-de-los-anillos-después-de-15-años-7.jpg",
+          "alt": "SeanAstin"
+        },
+        "image4": {
+          "src": "http://cdn01.cdn.justjared.com/wp-content/uploads/headlines/2017/11/astin-lord-intriguing.jpg",
+          "alt": "SeanAstin"
+        }
+      },
+      "name": "Sean Astin",
+      "text": "",
+      "id": "SeanTST"
+    }
+  ],
+
   "banner": [
     {
       "img": {

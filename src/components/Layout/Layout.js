@@ -14,7 +14,7 @@ import Profile from '../ActorsInfoPage/ActorsPersonalPage/ActorProfile.js';
 const { Content, Header, Footer } = Layout;
 
 function MainLayout(props) {
-  const { sideBarCollapsed, actorCards, hoverSideBar, loading, actor } = props;
+  const { sideBarCollapsed, actorCards, hoverSideBar, loading, profileToSearch } = props;
 
   const dispatch = useDispatch();
 
@@ -45,7 +45,7 @@ function MainLayout(props) {
     routes: {
       home: '/',
       actors: '/actors/all',
-      news: '/news',
+      news: '/profile',
     },
   };
   return (
@@ -55,6 +55,10 @@ function MainLayout(props) {
         <Layout>
           <Header className='actors-layout-header'>
             <Switch>
+              <Route path='/profile'>
+                {<PageHeader text={profileToSearch !== null ? profileToSearch.name : ''} />}
+              </Route>
+
               <Route path='/news'>{<PageHeader text={'Serial news'} />}</Route>
               <Route path='/actors'>{<PageHeader text={'The Stranger things cast'} />}</Route>
               <Route path='/'>{<PageHeader text={'Welcome to Hawkins!'} />}</Route>
@@ -68,7 +72,9 @@ function MainLayout(props) {
               <Route path='/actors'>
                 {<PhotoBlockContainer actors={actorCards} actions={filterActions} />}
               </Route>
-              <Route path='/profile'>{<Profile actor={actor} />}</Route>
+              <Route path='/profile'>
+                {<Profile actor={profileToSearch !== null ? profileToSearch : null} />}
+              </Route>
               <Route path='/'>{null}</Route>
             </Switch>
           </Content>
@@ -87,7 +93,7 @@ const mapStateToProps = (state) => {
     actorCards: state.layout.actorCards,
     sideBarCollapsed: state.layout.sideBarCollapsed,
     loading: state.layout.loading,
-    actor: state.getActor.actor,
+    profileToSearch: state.getActor.profileToSearch,
   };
 };
 
