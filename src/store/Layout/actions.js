@@ -33,26 +33,24 @@ export const uploadInfoForRenderCards = (data) => {
   };
 };
 
-export const startLoading = (flag) => {
+export const startLoading = () => {
   return {
     type: LAUNCH_LOADING,
-    payload: flag,
   };
 };
 
-export const stopLoading = (flag) => {
+export const stopLoading = () => {
   return {
     type: STOP_LOADING,
-    payload: flag,
   };
 };
 
-export const getActorsData = (flag, url) => (dispatch) => {
-  dispatch(startLoading(!flag));
+export const getActorsData = (url) => (dispatch) => {
+  dispatch(startLoading());
   setTimeout(() => {
     fetch(url)
       .then((response) => response.json())
-      .then((data) => dispatch(uploadInfoForRenderCards(data)));
-    dispatch(stopLoading(flag));
-  }, 500);
+      .then((data) => dispatch(uploadInfoForRenderCards(data)))
+      .then(dispatch(stopLoading()));
+  }, 1000);
 };

@@ -3,21 +3,21 @@ import { Checkbox } from 'antd';
 import { Link, useRouteMatch } from 'react-router-dom';
 
 function FilerCheckbox(props) {
-  const { adress, flag, select, getData, text } = props.options;
+  const { category, adress, select, getData, text } = props.options;
   let match = useRouteMatch();
 
   const action = function() {
-    if (flag) {
+    if (category) {
       return null;
     } else {
-      select(!flag);
+      select(!category);
       getData();
     }
   };
 
   return (
     <Link to={`${match.url}/${adress}`}>
-      <Checkbox onChange={action} checked={flag}>
+      <Checkbox onChange={action} checked={category}>
         <span onClick={action}>{text}</span>
       </Checkbox>
     </Link>

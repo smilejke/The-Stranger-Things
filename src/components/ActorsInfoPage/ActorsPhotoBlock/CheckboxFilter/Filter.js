@@ -1,7 +1,6 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import nanoid from 'nanoid';
 import {
   selectMaincast,
   selectSecondary,
@@ -28,44 +27,43 @@ function FilterCheckbox(props) {
 
   const checkboxOptions = [
     {
-      flag: all,
+      category: all,
       select: selectAll,
       getData: getActors,
       text: 'All cast',
-      id: nanoid(),
+      id: 'catAll',
       adress: 'all',
     },
     {
-      flag: maincast,
+      category: maincast,
       select: selectMaincast,
       getData: getMaincast,
       text: 'Maincast',
-      id: nanoid(),
+      id: 'catMaincast',
       adress: 'maincast',
     },
     {
-      flag: secondary,
+      category: secondary,
       select: selectSecondary,
       getData: getSecondaryActors,
       text: 'Secondary actors',
-      id: nanoid(),
+      id: 'catSecondary',
       adress: 'secondary',
     },
-
     {
-      flag: male,
+      category: male,
       select: selectMale,
       getData: getMaleActors,
       text: 'Male',
-      id: nanoid(),
+      id: 'catMale',
       adress: 'male',
     },
     {
-      flag: female,
+      category: female,
       select: selectFemale,
       getData: getFemaleActors,
       text: 'Female',
-      id: nanoid(),
+      id: 'catFemale',
       adress: 'female',
     },
   ];

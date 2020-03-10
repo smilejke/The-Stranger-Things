@@ -2,12 +2,12 @@ import React from 'react';
 
 import { Spin } from 'antd';
 
-function Loading() {
+function LoadingSpinner() {
   return (
-    <div className='example'>
+    <div className='loader-spinner'>
       <Spin size='large' />
     </div>
   );
 }
 
-export default Loading;
+export default LoadingSpinner;

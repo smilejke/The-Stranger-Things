@@ -4,6 +4,7 @@ import {
   LAUNCH_LOADING,
   STOP_LOADING,
 } from './actions.js';
+import { updateObject } from '../../global/global.js';
 
 const defaultState = {
   loading: false,
@@ -11,18 +12,14 @@ const defaultState = {
   sideBarCollapsed: true,
 };
 
-function updateObject(oldObject, newValues) {
-  return Object.assign({}, oldObject, newValues);
-}
-
 export const layoutReducer = (state = defaultState, action) => {
   switch (action.type) {
     case COLLAPSE_SIDE_BAR:
       return updateObject(state, { sideBarCollapsed: action.payload });
     case LAUNCH_LOADING:
-      return updateObject(state, { loading: action.payload });
+      return updateObject(state, { loading: true });
     case STOP_LOADING:
-      return updateObject(state, { loading: action.payload });
+      return updateObject(state, { loading: false });
     case DOWNLOAD_INFO_FOR_ACTORS_CARDS:
       return updateObject(state, { actorCards: action.payload });
 

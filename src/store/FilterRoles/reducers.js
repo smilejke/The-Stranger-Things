@@ -5,6 +5,7 @@ import {
   SELECT_FEMALE,
   SELECT_ALL_ACTORS,
 } from './actions.js';
+import { updateObject } from '../../global/global.js';
 
 const defaultState = {
   maincast: false,
@@ -13,10 +14,6 @@ const defaultState = {
   female: false,
   all: true,
 };
-
-function updateObject(oldObject, newValues) {
-  return Object.assign({}, oldObject, newValues);
-}
 
 export const filterReducer = (state = defaultState, action) => {
   switch (action.type) {
