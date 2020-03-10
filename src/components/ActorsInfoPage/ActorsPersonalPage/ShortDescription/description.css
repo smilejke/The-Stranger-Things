@@ -1,0 +1,8 @@
+.short-description {
+  font-style: italic;
+  margin: 10px 10px;
+}
+
+.short-description ul li {
+  list-style: none;
+}

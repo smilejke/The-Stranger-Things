@@ -1,6 +1,15 @@
+@import './ShortDescription/description.css';
+@import './Biography/biography.css';
+@import './CharacterInfo/CharacterInfo.css';
+@import './Filmography/Filmography.css';
+
 .profile-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.actor-profile-main-cointainer h3 {
+  margin: 25px 0 15px 15px;
 }
