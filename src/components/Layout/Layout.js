@@ -1,5 +1,5 @@
 import React from 'react';
-import PhotoBlockContainer from '../ActorsInfoPage/ActorsPhotoBlock/PhotoBlock/PhotoBlockContainer.js';
+import ActorsMainPage from '../ActorsInfoPage/ActorsPhotoBlock/PhotoBlock/PhotoBlockContainer.js';
 import PageHeader from './Header/Header.js';
 import '../../index.css';
 import { bindActionCreators } from 'redux';
@@ -12,7 +12,7 @@ import { Layout } from 'antd';
 import Profile from '../ActorsInfoPage/ActorsPersonalPage/ActorProfile.js';
 import { categoryUrls } from '../../global/global.js';
 
-const { Content, Header, Footer } = Layout;
+const { Content, Footer } = Layout;
 
 function MainLayout(props) {
   const { sideBarCollapsed, actorCards, hoverSideBar, loading, profileToSearch } = props;
@@ -55,29 +55,25 @@ function MainLayout(props) {
       <Layout className='actors-layout-heigth'>
         <Sidebar sidebarOptions={sidebarOptions} />
         <Layout>
-          <Header className='actors-layout-header'>
-            <Switch>
-              <Route path='/profile'>
-                {<PageHeader text={profileToSearch !== null ? profileToSearch.name : ''} />}
-              </Route>
-
-              <Route path='/news'>{<PageHeader text={'Serial news'} />}</Route>
-              <Route path='/actors'>{<PageHeader text={'The Stranger things cast'} />}</Route>
-              <Route path='/'>{<PageHeader text={'Welcome to Hawkins!'} />}</Route>
-            </Switch>
-          </Header>
-
           <Content>
             <Switch>
               {loading ? <LoadingSpinner /> : ''}
-              <Route path='/news'>{null}</Route>
-              <Route path='/actors'>
-                {<PhotoBlockContainer actors={actorCards} actions={filterActions} />}
+
+              <Route path='/news'>{<PageHeader text={'Serial news'} />}</Route>
+
+              <Route path='/actors/:id'>
+                <PageHeader text={'The Stranger things cast'} />
+                <ActorsMainPage actors={actorCards} actions={filterActions} />
               </Route>
-              <Route path='/profile'>
-                {<Profile actor={profileToSearch !== null ? profileToSearch : null} />}
+
+              <Route path='/actor-profiles/:id'>
+                <div>
+                  <PageHeader text={profileToSearch === null ? null : profileToSearch.name} />
+                  <Profile actor={profileToSearch} />{' '}
+                </div>
               </Route>
-              <Route path='/'>{null}</Route>
+
+              <Route path='/'>{<PageHeader text={'Welcome to Hawkins!'} />}</Route>
             </Switch>
           </Content>
 

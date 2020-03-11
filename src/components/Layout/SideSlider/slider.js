@@ -12,6 +12,17 @@ function Sidebar(props) {
     routes: { home, actors, news },
   } = props.sidebarOptions;
 
+  const linkOptionsToCreate = [
+    { adressToCreateLink: home, iconType: 'pie-chart', spanToShow: 'Home', onClick: null },
+    {
+      adressToCreateLink: actors,
+      iconType: 'star',
+      spanToShow: 'Actors',
+      onClick: () => getActorsData(),
+    },
+    { adressToCreateLink: news, iconType: 'file', spanToShow: 'News', onClick: null },
+  ];
+
   return (
     <Sider
       collapsible
@@ -22,31 +33,16 @@ function Sidebar(props) {
     >
       <div className='logo' />
       <Menu theme='dark' mode='inline'>
-        <Menu.Item key='layoutMenuItem1'>
-          <Link to={home}>
-            <Icon type='pie-chart' />
-            <span>Home</span>
-          </Link>
-        </Menu.Item>
-
-        <Menu.Item
-          key='layoutMenuItem2'
-          onClick={() => {
-            getActorsData();
-          }}
-        >
-          <Link to={actors}>
-            <Icon type='star' />
-            <span>Actors</span>
-          </Link>
-        </Menu.Item>
-
-        <Menu.Item key='layoutMenuItem3'>
-          <Link to={news}>
-            <Icon type='file' />
-            <span>News</span>{' '}
-          </Link>
-        </Menu.Item>
+        {linkOptionsToCreate.map((item) => {
+          return (
+            <Menu.Item key={'menuItem' + linkOptionsToCreate.indexOf(item)} onClick={item.onClick}>
+              <Link to={item.adressToCreateLink}>
+                <Icon type={item.iconType} />
+                <span>{item.spanToShow}</span>
+              </Link>
+            </Menu.Item>
+          );
+        })}
       </Menu>
     </Sider>
   );

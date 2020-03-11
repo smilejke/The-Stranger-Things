@@ -2,12 +2,14 @@ import React from 'react';
 import FilterCheckbox from '../CheckboxFilter/Filter.js';
 import Card from '../ActorCard/Card.js';
 import '../../../../index.css';
+import { useParams } from 'react-router-dom';
 
-function PhotoBlockContainer(props) {
+function ActorsMainPage(props) {
   const cardInfo = props.actors;
+  let { id } = useParams();
 
   return (
-    <div>
+    <div id={id}>
       <div className='filter'>
         {cardInfo.length > 1 ? <FilterCheckbox actions={props.actions} /> : ''}
       </div>
@@ -20,4 +22,4 @@ function PhotoBlockContainer(props) {
   );
 }
 
-export default PhotoBlockContainer;
+export default ActorsMainPage;

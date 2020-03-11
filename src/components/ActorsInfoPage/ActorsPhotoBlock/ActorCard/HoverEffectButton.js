@@ -13,7 +13,7 @@ function HoverButton(props) {
   const dispatch = useDispatch();
 
   return (
-    <Link to={`/profile/${id}`}>
+    <Link to={`/actor-profiles/${id}`}>
       <button
         className='a-button'
         onClick={() => {

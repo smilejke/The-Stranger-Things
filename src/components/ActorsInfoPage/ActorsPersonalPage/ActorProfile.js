@@ -5,20 +5,27 @@ import ShortDescription from './ShortDescription/ShortDescription.js';
 import Biography from './Biography/Biography.js';
 import CharacterInfo from './CharacterInfo/CharacterInfo.js';
 import Filmography from './Filmography/Filmography.js';
+import { useParams } from 'react-router-dom';
 
 function Profile(props) {
-  if (props.actor === null) return <div>Data is not found</div>;
+  let { id } = useParams();
+
+  if (props.actor === null) return <div>Loading...</div>;
+
+  id = props.actor.id;
+
+  const { shortDescription, biography, characterInfo, films } = props.actor;
 
   return (
-    <div className='actor-profile-main-cointainer'>
-      <ShortDescription shortDescr={props.actor.shortDescription} />
+    <div className='actor-profile-main-cointainer' id={id}>
+      <ShortDescription shortDescr={shortDescription} />
 
       <div className='profile-container'>
         <Carousel actor={props.actor} />
       </div>
-      <Biography bio={props.actor.biography} />
-      <CharacterInfo text={props.actor.characterInfo} />
-      <Filmography films={props.actor.films} />
+      <Biography bio={biography} />
+      <CharacterInfo text={characterInfo} />
+      <Filmography films={films} />
     </div>
   );
 }

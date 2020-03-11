@@ -1,10 +1,9 @@
 import React from 'react';
 import { Checkbox } from 'antd';
-import { Link, useRouteMatch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function FilerCheckbox(props) {
   const { category, adress, select, getData, text } = props.options;
-  let match = useRouteMatch();
 
   const action = function() {
     if (category) {
@@ -16,7 +15,7 @@ function FilerCheckbox(props) {
   };
 
   return (
-    <Link to={`${match.url}/${adress}`}>
+    <Link to={`/actors/${adress}`}>
       <Checkbox onChange={action} checked={category}>
         <span onClick={action}>{text}</span>
       </Checkbox>
