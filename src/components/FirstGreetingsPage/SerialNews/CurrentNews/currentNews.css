@@ -1,0 +1,21 @@
+.current-news-content img {
+  width: 400px;
+  height: 200px;
+  float: right;
+  margin-left: 20px;
+}
+.current-news-header {
+  margin: 30px 0 30px 0;
+  border-bottom: 1px solid black;
+}
+.current-news-header p {
+  font-style: italic;
+}
+
+.current-news-container {
+  padding: 100px 200px;
+}
+
+.current-news-content p {
+  text-align: justify;
+}

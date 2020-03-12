@@ -11,6 +11,7 @@ import { Layout } from 'antd';
 import Profile from '../ActorsInfoPage/ActorsPersonalPage/ActorProfile.js';
 import { categoryUrls } from '../../global/global.js';
 import GreetingsPage from '../FirstGreetingsPage/GreetingsPage.js';
+import CurrentNews from '../FirstGreetingsPage/SerialNews/CurrentNews/CurrentNews.js';
 
 const { Content, Footer } = Layout;
 
@@ -64,17 +65,17 @@ function MainLayout(props) {
           <Content>
             <Switch>
               {loading ? <LoadingSpinner /> : ''}
-
               <Route path='/watch'>{<div>Hello</div>}</Route>
-
               <Route path='/actors/:id'>
                 <ActorsMainPage actors={actorCards} actions={filterActions} />
               </Route>
-
               <Route path='/actor-profiles/:id'>
                 <Profile actor={profileToSearch} />
               </Route>
-
+              <Route path='/news/:id'>
+                <CurrentNews />
+              </Route>
+              /breaking-news
               <Route path='/'>
                 <GreetingsPage />
               </Route>

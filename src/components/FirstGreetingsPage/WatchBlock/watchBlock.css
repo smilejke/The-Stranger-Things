@@ -30,4 +30,5 @@
 .watch-block-season img {
   height: 300px;
   width: 180px;
+  cursor: pointer;
 }

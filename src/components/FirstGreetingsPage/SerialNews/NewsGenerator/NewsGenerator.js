@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function News(props) {
   const {
     newsDate: { num, month },
     newsContent: { header, content },
+    id,
   } = props.news;
 
   return (
@@ -15,7 +17,9 @@ function News(props) {
         </div>
         <div className='one-new-news'>
           <div className='news-title'>
-            <strong>{header}</strong>
+            <Link to={`/news/${id}`} onClick={null}>
+              <strong>{header}</strong>
+            </Link>
           </div>
           <div className='news-body'>{content}</div>
         </div>

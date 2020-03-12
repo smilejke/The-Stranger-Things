@@ -2,6 +2,7 @@
 @import './Anatomy/anatomy.css';
 @import './SerialNews/NewsBlock.css';
 @import './SerialSidebar/serialSidebar.css';
+@import './SerialNews/CurrentNews/currentNews.css';
 
 .greetings-page-main-container {
   width: 100%;

@@ -9,4 +9,5 @@
 .serial-sidebar ul li {
   list-style-type: none;
   margin: 15px 0;
+  cursor: pointer;
 }

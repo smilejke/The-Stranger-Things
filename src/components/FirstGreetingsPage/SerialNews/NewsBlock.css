@@ -24,7 +24,13 @@
 
 .news-title {
   text-align: justify;
+  font-size: 1rem;
   margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.news-title a {
+  color: black;
 }
 
 .news-body {

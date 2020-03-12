@@ -22,6 +22,7 @@ function GreetingsPage() {
   });
 
   if (!data) return <LoadingSpinner />;
+
   const { header, shortDescription, watchBlock, anatomy, news } = data;
 
   return (
@@ -43,4 +44,5 @@ function GreetingsPage() {
     </div>
   );
 }
+
 export default GreetingsPage;
