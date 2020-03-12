@@ -1,6 +1,5 @@
 import React from 'react';
 import ActorsMainPage from '../ActorsInfoPage/ActorsPhotoBlock/PhotoBlock/PhotoBlockContainer.js';
-import PageHeader from './Header/Header.js';
 import '../../index.css';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -66,22 +65,17 @@ function MainLayout(props) {
             <Switch>
               {loading ? <LoadingSpinner /> : ''}
 
-              <Route path='/news'>{<PageHeader text={'Serial news'} />}</Route>
+              <Route path='/news'>{null}</Route>
 
               <Route path='/actors/:id'>
-                <PageHeader text={'The Stranger things cast'} />
                 <ActorsMainPage actors={actorCards} actions={filterActions} />
               </Route>
 
               <Route path='/actor-profiles/:id'>
-                <div>
-                  <PageHeader text={profileToSearch === null ? null : profileToSearch.name} />
-                  <Profile actor={profileToSearch} />{' '}
-                </div>
+                <Profile actor={profileToSearch} />
               </Route>
 
               <Route path='/'>
-                <PageHeader text={'Welcome to Hawkins!'} />
                 <GreetingsPage />
               </Route>
             </Switch>

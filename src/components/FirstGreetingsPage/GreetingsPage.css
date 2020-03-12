@@ -3,7 +3,17 @@
 @import './SerialNews/NewsBlock.css';
 
 .greetings-page-main-container {
-  padding: 0 70px;
+  width: 100%;
+  display: flex;
+}
+
+.greetings-page-left-content {
+  width: 75%;
+  padding: 0 150px;
+}
+
+.greetings-page-right-content {
+  width: 25%;
 }
 
 .greetings-page-main-container p {
