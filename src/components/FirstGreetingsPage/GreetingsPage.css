@@ -1,0 +1,19 @@
+@import './WatchBlock/watchBlock.css';
+@import './Anatomy/anatomy.css';
+@import './SerialNews/NewsBlock.css';
+
+.greetings-page-main-container {
+  padding: 0 70px;
+}
+
+.greetings-page-main-container p {
+  text-align: justify;
+}
+
+.greetings-page-main-container h4 {
+  margin-bottom: 50px;
+}
+
+.greetings-page-main-container h2 {
+  margin-top: 30px;
+}

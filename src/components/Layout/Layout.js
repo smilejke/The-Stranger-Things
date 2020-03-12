@@ -3,7 +3,7 @@ import ActorsMainPage from '../ActorsInfoPage/ActorsPhotoBlock/PhotoBlock/PhotoB
 import PageHeader from './Header/Header.js';
 import '../../index.css';
 import { bindActionCreators } from 'redux';
-import { connect, useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import { hoverSideBar, getActorsData } from '../../store/Layout/actions.js';
 import Sidebar from './SideSlider/slider.js';
 import LoadingSpinner from './loadingEffect/loading.js';
@@ -11,32 +11,38 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Layout } from 'antd';
 import Profile from '../ActorsInfoPage/ActorsPersonalPage/ActorProfile.js';
 import { categoryUrls } from '../../global/global.js';
+import GreetingsPage from '../FirstGreetingsPage/GreetingsPage.js';
 
 const { Content, Footer } = Layout;
 
 function MainLayout(props) {
-  const { sideBarCollapsed, actorCards, hoverSideBar, loading, profileToSearch } = props;
+  const {
+    sideBarCollapsed,
+    actorCards,
+    hoverSideBar,
+    loading,
+    profileToSearch,
+    getActorsData,
+  } = props;
   const { all, maincast, secondary, male, female } = categoryUrls;
 
-  const dispatch = useDispatch();
-
   const getActors = () => {
-    dispatch(getActorsData(all));
+    getActorsData(all);
   };
 
   const filterActions = {
     getActors,
     getMaincast: () => {
-      dispatch(getActorsData(maincast));
+      getActorsData(maincast);
     },
     getSecondaryActors: () => {
-      dispatch(getActorsData(secondary));
+      getActorsData(secondary);
     },
     getMaleActors: () => {
-      dispatch(getActorsData(male));
+      getActorsData(male);
     },
     getFemaleActors: () => {
-      dispatch(getActorsData(female));
+      getActorsData(female);
     },
   };
 
@@ -50,6 +56,7 @@ function MainLayout(props) {
       news: '/profile',
     },
   };
+
   return (
     <Router>
       <Layout className='actors-layout-heigth'>
@@ -73,7 +80,10 @@ function MainLayout(props) {
                 </div>
               </Route>
 
-              <Route path='/'>{<PageHeader text={'Welcome to Hawkins!'} />}</Route>
+              <Route path='/'>
+                <PageHeader text={'Welcome to Hawkins!'} />
+                <GreetingsPage />
+              </Route>
             </Switch>
           </Content>
 
@@ -98,6 +108,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     hoverSideBar: bindActionCreators(hoverSideBar, dispatch),
+    getActorsData: bindActionCreators(getActorsData, dispatch),
   };
 };
 

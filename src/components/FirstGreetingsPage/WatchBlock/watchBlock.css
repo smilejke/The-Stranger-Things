@@ -1,0 +1,33 @@
+.watch-block-container {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0 !important;
+}
+
+.watch-block-header {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  height: 50px;
+}
+
+.watch-block-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 600px;
+  height: 300px;
+}
+
+.watch-block-season {
+  background-color: yellow;
+  height: 300px;
+  width: 180px;
+}
+.watch-block-season img {
+  height: 300px;
+  width: 180px;
+}

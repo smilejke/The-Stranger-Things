@@ -9,6 +9,7 @@
 @import './components/Layout/loadingEffect/spin.css';
 @import './components/ActorsInfoPage/ActorsPersonalPage/profile.css';
 @import './components/ActorsInfoPage/ActorsPersonalPage/Carousel/carousel.css';
+@import './components/FirstGreetingsPage/GreetingsPage.css';
 /* font-family: 'Play', sans-serif; */
 /* font-family: 'Raleway', sans-serif; */
 * {
