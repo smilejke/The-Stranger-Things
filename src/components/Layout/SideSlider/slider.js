@@ -20,7 +20,7 @@ function Sidebar(props) {
       spanToShow: 'Actors',
       onClick: () => getActorsData(),
     },
-    { adressToCreateLink: news, iconType: 'file', spanToShow: 'News', onClick: null },
+    { adressToCreateLink: news, iconType: 'file', spanToShow: 'Watch', onClick: null },
   ];
 
   return (

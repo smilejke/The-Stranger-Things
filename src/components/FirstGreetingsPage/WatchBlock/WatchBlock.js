@@ -4,12 +4,10 @@ function WatchBlock(props) {
   const images = props.images;
 
   return (
-    <div className='watch-block-container'>
+    <div className='watch-block-container content-width'>
       <div className='watch-block-header'>
-        <span>
-          <strong>Все сезоны</strong>
-        </span>
-        <span>3 сезона</span>
+        <h3>Все сезоны</h3>
+        <h3>3 сезона</h3>
       </div>
       <div className='watch-block-content'>
         {images.map((elem) => {

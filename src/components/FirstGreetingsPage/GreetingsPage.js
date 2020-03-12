@@ -6,6 +6,7 @@ import SerialAnatomy from './Anatomy/Anatomy.js';
 import SerialNews from './SerialNews/SerialNews.js';
 import PageHeader from '../Layout/Header/Header.js';
 import LoadingSpinner from '../Layout/loadingEffect/loading.js';
+import SerialSidebar from './SerialSidebar/SerialSidebar.js';
 
 function GreetingsPage() {
   const [data, setData] = useState(false);
@@ -35,7 +36,9 @@ function GreetingsPage() {
           <SerialAnatomy data={anatomy} />
           <SerialNews news={news} />
         </div>
-        <div className='greetings-page-right-content'></div>
+        <div className='greetings-page-right-content'>
+          <SerialSidebar />
+        </div>
       </div>
     </div>
   );

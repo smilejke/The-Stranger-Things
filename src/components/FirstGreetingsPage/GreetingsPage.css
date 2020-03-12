@@ -1,6 +1,7 @@
 @import './WatchBlock/watchBlock.css';
 @import './Anatomy/anatomy.css';
 @import './SerialNews/NewsBlock.css';
+@import './SerialSidebar/serialSidebar.css';
 
 .greetings-page-main-container {
   width: 100%;
@@ -26,4 +27,12 @@
 
 .greetings-page-main-container h2 {
   margin-top: 30px;
+}
+
+.content-width {
+  min-width: 600px;
+}
+
+.description {
+  width: 100%;
 }

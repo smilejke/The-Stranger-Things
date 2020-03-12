@@ -1,0 +1,12 @@
+.serial-sidebar {
+  margin-top: 30px;
+}
+
+.serial-sidebar span {
+  font-size: large;
+}
+
+.serial-sidebar ul li {
+  list-style-type: none;
+  margin: 15px 0;
+}

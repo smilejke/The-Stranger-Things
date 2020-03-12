@@ -10,7 +10,7 @@ function News(props) {
     <div>
       <div className='single-news-container'>
         <div className='news-date'>
-          <span>{num}</span>
+          <span className='news-number-date'>{num}</span>
           <span>{month}</span>
         </div>
         <div className='one-new-news'>

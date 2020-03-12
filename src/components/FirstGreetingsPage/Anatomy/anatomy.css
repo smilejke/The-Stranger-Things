@@ -8,3 +8,7 @@
 .anatomy-container h2 {
   margin-bottom: 30px;
 }
+
+.anatomy-container {
+  min-width: 600px;
+}

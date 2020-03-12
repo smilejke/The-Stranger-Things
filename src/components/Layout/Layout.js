@@ -52,7 +52,7 @@ function MainLayout(props) {
     routes: {
       home: '/',
       actors: '/actors/all',
-      news: '/profile',
+      news: '/watch',
     },
   };
 
@@ -65,7 +65,7 @@ function MainLayout(props) {
             <Switch>
               {loading ? <LoadingSpinner /> : ''}
 
-              <Route path='/news'>{null}</Route>
+              <Route path='/watch'>{<div>Hello</div>}</Route>
 
               <Route path='/actors/:id'>
                 <ActorsMainPage actors={actorCards} actions={filterActions} />

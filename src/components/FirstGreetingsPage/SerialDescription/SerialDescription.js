@@ -2,7 +2,7 @@ import React from 'react';
 
 function SerialDescription(props) {
   return (
-    <div>
+    <div className='content-width description'>
       {props.description.map((p) => {
         return <p key={'paragraph' + props.description.indexOf(p)}>{p}</p>;
       })}
