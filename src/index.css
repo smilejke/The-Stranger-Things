@@ -1,10 +1,9 @@
 @import '~antd/dist/antd.css';
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Play&display=swap');
-@import './components/FirstGreetingsPage/AdvertisingBanner/BannerContainer/avertisingLines.css';
 @import './components/ActorsInfoPage/ActorsPhotoBlock/photoSection.css';
 @import './components/ActorsInfoPage/ActorsPhotoBlock/ActorCard/hoverbutton.css';
-@import './components/Layout/actorsPageLayout.css';
+@import './components/Layout/Layout.css';
 @import './components/Layout/Header/header.css';
 @import './components/Layout/loadingEffect/spin.css';
 @import './components/ActorsInfoPage/ActorsPersonalPage/profile.css';

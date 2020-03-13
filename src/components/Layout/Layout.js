@@ -3,8 +3,7 @@ import ActorsMainPage from '../ActorsInfoPage/ActorsPhotoBlock/PhotoBlock/PhotoB
 import '../../index.css';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { hoverSideBar, getActorsData } from '../../store/Layout/actions.js';
-import Sidebar from './SideSlider/slider.js';
+import { getActorsData } from '../../store/Layout/actions.js';
 import LoadingSpinner from './loadingEffect/loading.js';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Layout } from 'antd';
@@ -13,6 +12,7 @@ import Footer from './Footer/Footer.js';
 import { categoryUrls } from '../../global/global.js';
 import GreetingsPage from '../FirstGreetingsPage/GreetingsPage.js';
 import CurrentNews from '../FirstGreetingsPage/SerialNews/CurrentNews/CurrentNews.js';
+import ActorsPageHeader from './Header/Header.js';
 
 //equal states on main page
 //checkbox on back
@@ -21,15 +21,7 @@ import CurrentNews from '../FirstGreetingsPage/SerialNews/CurrentNews/CurrentNew
 const { Content } = Layout;
 
 function MainLayout(props) {
-  const {
-    sideBarCollapsed,
-    actorCards,
-    hoverSideBar,
-    loading,
-    profileToSearch,
-    getActorsData,
-    currentNews,
-  } = props;
+  const { actorCards, loading, profileToSearch, getActorsData, currentNews } = props;
   const { all, maincast, secondary, male, female } = categoryUrls;
 
   const getActors = () => {
@@ -51,10 +43,8 @@ function MainLayout(props) {
     },
   };
 
-  const sidebarOptions = {
-    collapsedStatus: sideBarCollapsed,
-    hoverSideBar,
-    getActorsData: getActors,
+  const navOptions = {
+    getActors,
     routes: {
       home: '/',
       actors: '/actors/all',
@@ -65,29 +55,28 @@ function MainLayout(props) {
   return (
     <Router>
       <Layout className='actors-layout-heigth'>
-        <Sidebar sidebarOptions={sidebarOptions} />
-        <Layout>
-          <Content>
-            <Switch>
-              {loading ? <LoadingSpinner /> : ''}
-              <Route path='/watch'>{<div>Hello</div>}</Route>
-              <Route path='/actors/:id'>
-                <ActorsMainPage actors={actorCards} actions={filterActions} />
-              </Route>
-              <Route path='/actor-profiles/:id'>
-                <Profile actor={profileToSearch} />
-              </Route>
-              <Route path='/news/:id'>
-                <CurrentNews current={currentNews} />
-              </Route>
-              /breaking-news
-              <Route path='/'>
-                <GreetingsPage />
-              </Route>
-            </Switch>
-          </Content>
-          <Footer />
-        </Layout>
+        <ActorsPageHeader data={navOptions} />
+
+        <Content>
+          <Switch>
+            {loading ? <LoadingSpinner /> : ''}
+            <Route path='/watch'>{<div>Hello</div>}</Route>
+            <Route path='/actors/:id'>
+              <ActorsMainPage actors={actorCards} actions={filterActions} />
+            </Route>
+            <Route path='/actor-profiles/:id'>
+              <Profile actor={profileToSearch} />
+            </Route>
+            <Route path='/news/:id'>
+              <CurrentNews current={currentNews} />
+            </Route>
+            <Route path='/'>
+              <GreetingsPage />
+            </Route>
+          </Switch>
+        </Content>
+
+        <Footer />
       </Layout>
     </Router>
   );
@@ -96,7 +85,6 @@ function MainLayout(props) {
 const mapStateToProps = (state) => {
   return {
     actorCards: state.layout.actorCards,
-    sideBarCollapsed: state.layout.sideBarCollapsed,
     loading: state.layout.loading,
     profileToSearch: state.getActor.profileToSearch,
     currentNews: state.newsDataSetter.currentNews,
@@ -105,7 +93,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    hoverSideBar: bindActionCreators(hoverSideBar, dispatch),
     getActorsData: bindActionCreators(getActorsData, dispatch),
   };
 };

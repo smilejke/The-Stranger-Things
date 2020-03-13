@@ -1,13 +1,9 @@
 .actors-layout-heigth {
-  min-height: 200vh;
+  min-height: 100vh;
   width: 100%;
   overflow: auto;
 }
-.actors-layout-header {
-  background: #fff;
-  padding: 0;
-  text-align: center;
-}
+
 .actors-layout-footer {
   text-align: center;
 }

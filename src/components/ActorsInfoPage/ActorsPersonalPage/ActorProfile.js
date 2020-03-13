@@ -6,7 +6,6 @@ import Biography from './Biography/Biography.js';
 import CharacterInfo from './CharacterInfo/CharacterInfo.js';
 import Filmography from './Filmography/Filmography.js';
 import { useParams } from 'react-router-dom';
-import PageHeader from '../../Layout/Header/Header.js';
 
 function Profile(props) {
   let { id } = useParams();
@@ -15,22 +14,18 @@ function Profile(props) {
 
   id = props.actor.id;
 
-  const { shortDescription, biography, characterInfo, films, name } = props.actor;
+  const { shortDescription, biography, characterInfo, films } = props.actor;
 
   return (
-    <div>
-      <PageHeader text={name} />
+    <div className='actor-profile-main-cointainer' id={id}>
+      <ShortDescription shortDescr={shortDescription} />
 
-      <div className='actor-profile-main-cointainer' id={id}>
-        <ShortDescription shortDescr={shortDescription} />
-
-        <div className='profile-container'>
-          <Carousel actor={props.actor} />
-        </div>
-        <Biography bio={biography} />
-        <CharacterInfo text={characterInfo} />
-        <Filmography films={films} />
+      <div className='profile-container'>
+        <Carousel actor={props.actor} />
       </div>
+      <Biography bio={biography} />
+      <CharacterInfo text={characterInfo} />
+      <Filmography films={films} />
     </div>
   );
 }

@@ -4,7 +4,6 @@ import SerialDescription from './SerialDescription/SerialDescription.js';
 import WatchBlock from './WatchBlock/WatchBlock.js';
 import SerialAnatomy from './Anatomy/Anatomy.js';
 import SerialNews from './SerialNews/SerialNews.js';
-import PageHeader from '../Layout/Header/Header.js';
 import LoadingSpinner from '../Layout/loadingEffect/loading.js';
 import SerialSidebar from './SerialSidebar/SerialSidebar.js';
 import { setNewsData } from '../../store/News/actions.js';
@@ -32,8 +31,6 @@ function GreetingsPage(props) {
 
   return (
     <div>
-      <PageHeader text={'Welcome to Hawkins!'} />
-
       <div className='greetings-page-main-container'>
         <div className='greetings-page-left-content'>
           <GreetTittle header={header} />
