@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { getCurrentNews } from '../../../../store/News/actions.js';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 function News(props) {
   const {
@@ -7,6 +10,7 @@ function News(props) {
     newsContent: { header, content },
     id,
   } = props.news;
+  const { getCurrentNews } = props;
 
   return (
     <div>
@@ -17,7 +21,12 @@ function News(props) {
         </div>
         <div className='one-new-news'>
           <div className='news-title'>
-            <Link to={`/news/${id}`} onClick={null}>
+            <Link
+              to={`/news/${id}`}
+              onClick={() => {
+                getCurrentNews(id);
+              }}
+            >
               <strong>{header}</strong>
             </Link>
           </div>
@@ -28,4 +37,15 @@ function News(props) {
   );
 }
 
-export default News;
+const mapStateToProps = (state) => {
+  return {
+    currentNews: state.newsDataSetter.currentNews,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getCurrentNews: bindActionCreators(getCurrentNews, dispatch),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(News);

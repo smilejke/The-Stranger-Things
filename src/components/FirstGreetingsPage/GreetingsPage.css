@@ -6,16 +6,19 @@
 
 .greetings-page-main-container {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 .greetings-page-left-content {
-  width: 75%;
   padding: 0 150px;
+  grid-column: 1/2;
 }
 
 .greetings-page-right-content {
-  width: 25%;
+  grid-column: 2/3;
+  padding: 0 50px;
 }
 
 .greetings-page-main-container p {

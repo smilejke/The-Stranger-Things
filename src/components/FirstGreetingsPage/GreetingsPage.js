@@ -7,23 +7,28 @@ import SerialNews from './SerialNews/SerialNews.js';
 import PageHeader from '../Layout/Header/Header.js';
 import LoadingSpinner from '../Layout/loadingEffect/loading.js';
 import SerialSidebar from './SerialSidebar/SerialSidebar.js';
+import { setNewsData } from '../../store/News/actions.js';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-function GreetingsPage() {
-  const [data, setData] = useState(false);
+function GreetingsPage(props) {
+  const [newsData, setData] = useState(false);
+  const { setNewsData } = props;
 
   useEffect(() => {
-    if (!data) {
+    if (!newsData) {
       setTimeout(() => {
         fetch('http://localhost:3001/greetings')
           .then((response) => response.json())
           .then((data) => setData(data));
       }, 1000);
     }
+    setNewsData(newsData.news);
   });
 
-  if (!data) return <LoadingSpinner />;
+  if (!newsData) return <LoadingSpinner />;
 
-  const { header, shortDescription, watchBlock, anatomy, news } = data;
+  const { header, shortDescription, watchBlock, anatomy, news } = newsData;
 
   return (
     <div>
@@ -45,4 +50,16 @@ function GreetingsPage() {
   );
 }
 
-export default GreetingsPage;
+const mapStateToProps = (state) => {
+  return {
+    news: state.newsDataSetter.news,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setNewsData: bindActionCreators(setNewsData, dispatch),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(GreetingsPage);

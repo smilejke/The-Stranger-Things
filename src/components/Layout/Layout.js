@@ -23,13 +23,13 @@ function MainLayout(props) {
     loading,
     profileToSearch,
     getActorsData,
+    currentNews,
   } = props;
   const { all, maincast, secondary, male, female } = categoryUrls;
 
   const getActors = () => {
     getActorsData(all);
   };
-
   const filterActions = {
     getActors,
     getMaincast: () => {
@@ -73,7 +73,7 @@ function MainLayout(props) {
                 <Profile actor={profileToSearch} />
               </Route>
               <Route path='/news/:id'>
-                <CurrentNews />
+                <CurrentNews current={currentNews} />
               </Route>
               /breaking-news
               <Route path='/'>
@@ -97,6 +97,7 @@ const mapStateToProps = (state) => {
     sideBarCollapsed: state.layout.sideBarCollapsed,
     loading: state.layout.loading,
     profileToSearch: state.getActor.profileToSearch,
+    currentNews: state.newsDataSetter.currentNews,
   };
 };
 
