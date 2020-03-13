@@ -1,7 +1,6 @@
 import React from 'react';
 
 function CurrentNews(props) {
-  console.log(props.current);
   const {
     header: { text, date },
     paragraphs,

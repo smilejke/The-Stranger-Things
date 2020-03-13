@@ -9,11 +9,16 @@ import LoadingSpinner from './loadingEffect/loading.js';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Layout } from 'antd';
 import Profile from '../ActorsInfoPage/ActorsPersonalPage/ActorProfile.js';
+import Footer from './Footer/Footer.js';
 import { categoryUrls } from '../../global/global.js';
 import GreetingsPage from '../FirstGreetingsPage/GreetingsPage.js';
 import CurrentNews from '../FirstGreetingsPage/SerialNews/CurrentNews/CurrentNews.js';
 
-const { Content, Footer } = Layout;
+//equal states on main page
+//checkbox on back
+//кол-во просмотров
+
+const { Content } = Layout;
 
 function MainLayout(props) {
   const {
@@ -81,10 +86,7 @@ function MainLayout(props) {
               </Route>
             </Switch>
           </Content>
-
-          <Footer className='actors-layout-footer'>
-            The Stranger Things ©2020 Created by Vadim Melnikov
-          </Footer>
+          <Footer />
         </Layout>
       </Layout>
     </Router>
