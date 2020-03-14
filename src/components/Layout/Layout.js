@@ -8,7 +8,6 @@ import LoadingSpinner from './loadingEffect/loading.js';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Layout } from 'antd';
 import Profile from '../ActorsInfoPage/ActorsPersonalPage/ActorProfile.js';
-import Footer from './Footer/Footer.js';
 import { categoryUrls } from '../../global/global.js';
 import GreetingsPage from '../FirstGreetingsPage/GreetingsPage.js';
 import CurrentNews from '../FirstGreetingsPage/SerialNews/CurrentNews/CurrentNews.js';
@@ -75,8 +74,6 @@ function MainLayout(props) {
             </Route>
           </Switch>
         </Content>
-
-        <Footer />
       </Layout>
     </Router>
   );

@@ -9,6 +9,7 @@ import SerialSidebar from './SerialSidebar/SerialSidebar.js';
 import { setNewsData } from '../../store/News/actions.js';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import Footer from '../Layout/Footer/Footer.js';
 
 function GreetingsPage(props) {
   const [newsData, setData] = useState(false);
@@ -43,6 +44,7 @@ function GreetingsPage(props) {
           <SerialSidebar />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

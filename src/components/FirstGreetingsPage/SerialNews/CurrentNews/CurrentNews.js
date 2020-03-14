@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../../Layout/Footer/Footer.js';
 
 function CurrentNews(props) {
   const {
@@ -22,6 +23,7 @@ function CurrentNews(props) {
           })}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

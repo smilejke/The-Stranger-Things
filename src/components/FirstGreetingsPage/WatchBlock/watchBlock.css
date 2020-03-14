@@ -13,6 +13,10 @@
   width: 600px;
   height: 50px;
 }
+.watch-block-header span {
+  font-size: 1.1rem;
+  color: #fff;
+}
 
 .watch-block-content {
   display: flex;
@@ -23,7 +27,6 @@
 }
 
 .watch-block-season {
-  background-color: yellow;
   height: 300px;
   width: 180px;
 }
@@ -31,4 +34,10 @@
   height: 300px;
   width: 180px;
   cursor: pointer;
+  border: 1px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.watch-block-season img:hover {
+  transform: scale(1.1);
 }

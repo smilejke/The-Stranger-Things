@@ -6,8 +6,8 @@ function WatchBlock(props) {
   return (
     <div className='watch-block-container content-width'>
       <div className='watch-block-header'>
-        <h3>Все сезоны</h3>
-        <h3>3 сезона</h3>
+        <span>Все сезоны</span>
+        <span>3 сезона</span>
       </div>
       <div className='watch-block-content'>
         {images.map((elem) => {

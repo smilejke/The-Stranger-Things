@@ -22,13 +22,18 @@ function ActorsPageHeader(props) {
   ];
 
   return (
-    <Header>
-      <div className='logo' />
+    <Header className='page-nav-header'>
+      <div className='logo'>
+        <img
+          src='https://ochen-strannye-dela.online/images/logo-stranger-things.png'
+          alt='logo'
+        ></img>
+      </div>
       <Menu
+        className='page-nav-menu'
         theme='dark'
         mode='horizontal'
         // defaultSelectedKeys={['2']}
-        style={{ lineHeight: '64px' }}
       >
         {linkOptionsToCreate.map((item) => {
           return (

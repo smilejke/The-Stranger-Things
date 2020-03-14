@@ -1,4 +1,28 @@
-.actors-layout-header-title {
-  height: 100%;
-  padding: 10px 0;
+.page-nav-header {
+  background: transparent;
+  display: flex;
+  padding: 0 250px;
+}
+
+.page-nav-menu {
+  background: transparent;
+  line-height: 64px;
+}
+
+.page-nav-header a {
+  color: #fff !important;
+  font-size: 1.2rem;
+}
+
+.ant-menu.ant-menu-dark .ant-menu-item-selected {
+  background-color: transparent;
+}
+
+.ant-menu-item:hover {
+  text-decoration: underline;
+}
+
+.logo img {
+  width: 100px;
+  margin-right: 30px;
 }

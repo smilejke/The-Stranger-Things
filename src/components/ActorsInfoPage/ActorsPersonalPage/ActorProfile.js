@@ -6,6 +6,7 @@ import Biography from './Biography/Biography.js';
 import CharacterInfo from './CharacterInfo/CharacterInfo.js';
 import Filmography from './Filmography/Filmography.js';
 import { useParams } from 'react-router-dom';
+import Footer from '../../Layout/Footer/Footer.js';
 
 function Profile(props) {
   let { id } = useParams();
@@ -26,6 +27,7 @@ function Profile(props) {
       <Biography bio={biography} />
       <CharacterInfo text={characterInfo} />
       <Filmography films={films} />
+      <Footer />
     </div>
   );
 }

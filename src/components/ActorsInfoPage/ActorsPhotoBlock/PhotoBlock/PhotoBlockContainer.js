@@ -3,6 +3,7 @@ import FilterCheckbox from '../CheckboxFilter/Filter.js';
 import Card from '../ActorCard/Card.js';
 import '../../../../index.css';
 import { useParams } from 'react-router-dom';
+import Footer from '../../../Layout/Footer/Footer.js';
 
 function ActorsMainPage(props) {
   const cardInfo = props.actors;
@@ -20,6 +21,7 @@ function ActorsMainPage(props) {
           })}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

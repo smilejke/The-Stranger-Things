@@ -3,15 +3,17 @@
   width: 100%;
   height: 150px;
   margin-bottom: 30px;
-  /* border: 1px solid black; */
   padding: 0 10px;
+  color: #cdcdcd;
 }
+
 .news-date {
   width: 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #fff;
 }
 
 .one-new-news {
@@ -30,7 +32,7 @@
 }
 
 .news-title a {
-  color: black;
+  color: #fff;
 }
 
 .news-body {
