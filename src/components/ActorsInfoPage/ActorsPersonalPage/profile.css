@@ -12,4 +12,9 @@
 
 .actor-profile-main-cointainer h3 {
   margin: 25px 0 15px 15px;
+  color: #fff;
+}
+
+.actor-profile-main-cointainer {
+  padding: 0 150px;
 }

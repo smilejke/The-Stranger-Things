@@ -6,19 +6,23 @@ function ActorCarousel(props) {
 
   const {
     img: { image1, image2, image3, image4 },
+    name,
   } = props.actor;
   const carouselData = [image1, image2, image3, image4];
 
   return (
-    <Carousel>
-      {carouselData.map((image) => {
-        return (
-          <div key={'carouselImage' + carouselData.indexOf(image)}>
-            <img src={image.src} alt={image.alt}></img>
-          </div>
-        );
-      })}
-    </Carousel>
+    <div className='carousel-box'>
+      <h2>{name}</h2>
+      <Carousel>
+        {carouselData.map((image) => {
+          return (
+            <div key={'carouselImage' + carouselData.indexOf(image)}>
+              <img src={image.src} alt={image.alt}></img>
+            </div>
+          );
+        })}
+      </Carousel>
+    </div>
   );
 }
 

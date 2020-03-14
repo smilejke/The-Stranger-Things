@@ -20,7 +20,6 @@ function Profile(props) {
   return (
     <div className='actor-profile-main-cointainer' id={id}>
       <ShortDescription shortDescr={shortDescription} />
-
       <div className='profile-container'>
         <Carousel actor={props.actor} />
       </div>

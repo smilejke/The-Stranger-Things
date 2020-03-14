@@ -1,4 +1,8 @@
 .actor-profile-text-decorator {
   text-align: justify;
   margin: 0 50px;
+  color: #cdcdcd;
+}
+.actor-biography {
+  margin: 50px 0;
 }

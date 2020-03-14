@@ -18,3 +18,9 @@
   height: 400px;
   width: 750px;
 }
+.carousel-box {
+  text-align: right;
+}
+.carousel-box h2 {
+  color: #fff;
+}
