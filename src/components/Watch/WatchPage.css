@@ -1,0 +1,33 @@
+@import './HeaderContainer/HeaderContainer.css';
+@import './SeriesBlock/Series.css';
+@import './SeasonDescription/SeasonDescription.css';
+
+.watch {
+  color: #fff;
+  text-align: justify;
+}
+.watch h2,
+.watch h3 {
+  color: #fff;
+}
+
+.watch-page-main-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr;
+  padding: 0 100px;
+  margin-top: 50px;
+  min-height: 100vh;
+}
+
+.watch-page-left-content {
+  padding: 0 150px;
+  grid-column: 1/2;
+  min-width: 1000px;
+}
+
+.watch-page-right-content {
+  grid-column: 2/3;
+  padding: 0 50px;
+}

@@ -1,0 +1,49 @@
+.watch-header img {
+  width: 170px;
+  height: 240px;
+}
+.watch-header {
+  display: flex;
+  width: 100%;
+  color: #fff;
+  margin-top: 30px;
+}
+.watch-header h2 {
+  color: #fff;
+}
+.watch-header-picture {
+  width: 180px;
+  margin-right: 25px;
+}
+.header-season {
+  border-bottom: 1px solid #fff;
+}
+
+.rate {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+.rate-stars {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.rate-stars span {
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+}
+.rate-number {
+  font-size: 1.6rem;
+  color: black;
+  background: #cdcdcd;
+  border-radius: 5px;
+  padding: 0.5em;
+}
+.season-block-header-roles {
+  margin-top: 20px;
+}
+.stars svg {
+  margin: 0 5px;
+  font-size: 1.8rem;
+}
