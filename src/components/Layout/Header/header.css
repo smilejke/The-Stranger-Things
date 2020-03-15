@@ -9,7 +9,8 @@
   line-height: 64px;
 }
 
-.page-nav-header a {
+.page-nav-header a,
+.ant-menu-submenu-title {
   color: #fff !important;
   font-size: 1.2rem;
 }
@@ -18,7 +19,8 @@
   background-color: transparent;
 }
 
-.ant-menu-item:hover {
+.ant-menu-item:hover,
+.ant-menu-submenu-title:hover {
   text-decoration: underline;
 }
 

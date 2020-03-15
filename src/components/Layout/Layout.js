@@ -47,7 +47,11 @@ function MainLayout(props) {
     routes: {
       home: '/',
       actors: '/actors/all',
-      news: '/watch',
+      watch: {
+        seasonOne: '/watch/seasonOne',
+        seasonTwo: '/watch/seasonTwo',
+        seasonThree: '/watch/seasonThree',
+      },
     },
   };
 
