@@ -13,7 +13,11 @@
 }
 
 .actors-layout-footer {
+  min-width: max-content;
   background: transparent;
   text-align: center;
   color: #fff;
+  padding: 0 250px;
+  margin-bottom: 10px;
+  margin-top: 40px;
 }

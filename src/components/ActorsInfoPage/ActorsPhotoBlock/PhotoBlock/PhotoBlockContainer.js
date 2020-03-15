@@ -11,7 +11,7 @@ function ActorsMainPage(props) {
 
   return (
     <div>
-      <div id={id}>
+      <div id={id} className='actor-page-main-box'>
         <div className='filter'>
           {cardInfo.length > 1 ? <FilterCheckbox actions={props.actions} /> : ''}
         </div>

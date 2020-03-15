@@ -24,10 +24,12 @@ function ActorsPageHeader(props) {
   return (
     <Header className='page-nav-header'>
       <div className='logo'>
-        <img
-          src='https://ochen-strannye-dela.online/images/logo-stranger-things.png'
-          alt='logo'
-        ></img>
+        <Link to={`/`}>
+          <img
+            src='https://ochen-strannye-dela.online/images/logo-stranger-things.png'
+            alt='logo'
+          ></img>
+        </Link>
       </div>
       <Menu
         className='page-nav-menu'

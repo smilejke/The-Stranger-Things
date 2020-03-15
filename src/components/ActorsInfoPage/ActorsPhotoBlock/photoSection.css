@@ -1,3 +1,7 @@
+.actor-page-main-box {
+  padding: 0 100px;
+}
+
 .actor-container {
   display: flex;
   flex-wrap: wrap;
@@ -47,6 +51,7 @@
 }
 
 .filter {
+  min-width: 500px;
   margin: 15px 100px 0 0;
   display: flex;
   justify-content: flex-end;
