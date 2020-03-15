@@ -7,6 +7,7 @@ import Footer from '../../../Layout/Footer/Footer.js';
 
 function ActorsMainPage(props) {
   const cardInfo = props.actors;
+
   let { id } = useParams();
 
   return (

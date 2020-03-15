@@ -2,6 +2,7 @@ import React from 'react';
 import { Layout, Menu } from 'antd';
 import '../../../index.css';
 import { Link } from 'react-router-dom';
+import { seasonUrls } from '../../../global/global.js';
 
 const { SubMenu } = Menu;
 const { Header } = Layout;
@@ -9,6 +10,7 @@ const { Header } = Layout;
 function ActorsPageHeader(props) {
   const {
     getActors,
+    getSeason,
     routes: {
       home,
       actors,
@@ -16,18 +18,32 @@ function ActorsPageHeader(props) {
     },
   } = props.data;
 
+  const { seasonOneUrl, seasonTwoUrl, seasonThreeUrl } = seasonUrls;
+
   const linkOptionsToCreate = [
     { adressToCreateLink: home, spanToShow: 'Home', onClick: null },
     {
       adressToCreateLink: actors,
       spanToShow: 'Actors',
-      onClick: () => getActors(),
+      onClick: getActors,
     },
   ];
   const submenu = [
-    { adressToCreateLink: seasonOne, spanToShow: 'Season One', onClick: null },
-    { adressToCreateLink: seasonTwo, spanToShow: 'Season Two', onClick: null },
-    { adressToCreateLink: seasonThree, spanToShow: 'Season Three', onClick: null },
+    {
+      adressToCreateLink: seasonOne,
+      spanToShow: 'Season One',
+      onClick: () => getSeason(seasonOneUrl),
+    },
+    {
+      adressToCreateLink: seasonTwo,
+      spanToShow: 'Season Two',
+      onClick: () => getSeason(seasonTwoUrl),
+    },
+    {
+      adressToCreateLink: seasonThree,
+      spanToShow: 'Season Three',
+      onClick: () => getSeason(seasonThreeUrl),
+    },
   ];
 
   return (
@@ -59,7 +75,7 @@ function ActorsPageHeader(props) {
         <SubMenu key='sub1' title={<span>Watch</span>}>
           {submenu.map((el) => {
             return (
-              <Menu.Item key={'submenuItem' + submenu.indexOf(el)}>
+              <Menu.Item key={'submenuItem' + submenu.indexOf(el)} onClick={el.onClick}>
                 <Link to={el.adressToCreateLink}>
                   <span>{el.spanToShow}</span>
                 </Link>

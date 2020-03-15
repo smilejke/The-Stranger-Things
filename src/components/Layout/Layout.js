@@ -4,6 +4,7 @@ import '../../index.css';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { getActorsData } from '../../store/Layout/actions.js';
+import { getSeasonData } from '../../store/Watch/actions.js';
 import LoadingSpinner from './loadingEffect/loading.js';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Layout } from 'antd';
@@ -21,11 +22,22 @@ import WatchSerial from '../Watch/WatchPage.js';
 const { Content } = Layout;
 
 function MainLayout(props) {
-  const { actorCards, loading, profileToSearch, getActorsData, currentNews } = props;
+  const {
+    actorCards,
+    loading,
+    profileToSearch,
+    getActorsData,
+    currentNews,
+    getSeasonData,
+    currentSeason,
+  } = props;
   const { all, maincast, secondary, male, female } = categoryUrls;
 
   const getActors = () => {
     getActorsData(all);
+  };
+  const getSeason = (url) => {
+    getSeasonData(url);
   };
   const filterActions = {
     getActors,
@@ -45,13 +57,14 @@ function MainLayout(props) {
 
   const navOptions = {
     getActors,
+    getSeason,
     routes: {
       home: '/',
       actors: '/actors/all',
       watch: {
-        seasonOne: '/watch/seasonOne',
-        seasonTwo: '/watch/seasonTwo',
-        seasonThree: '/watch/seasonThree',
+        seasonOne: '/watch/the-stranger-things-season-one',
+        seasonTwo: '/watch/the-stranger-things-season-two',
+        seasonThree: '/watch/the-stranger-things-season-three',
       },
     },
   };
@@ -65,7 +78,7 @@ function MainLayout(props) {
           <Switch>
             {loading ? <LoadingSpinner /> : ''}
             <Route path='/watch'>
-              <WatchSerial />
+              <WatchSerial season={currentSeason} />
             </Route>
             <Route path='/actors/:id'>
               <ActorsMainPage actors={actorCards} actions={filterActions} />
@@ -92,12 +105,14 @@ const mapStateToProps = (state) => {
     loading: state.layout.loading,
     profileToSearch: state.getActor.profileToSearch,
     currentNews: state.newsDataSetter.currentNews,
+    currentSeason: state.getSerialEpisodesData.currentSeason,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getActorsData: bindActionCreators(getActorsData, dispatch),
+    getSeasonData: bindActionCreators(getSeasonData, dispatch),
   };
 };
 

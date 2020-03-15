@@ -15,7 +15,8 @@
   font-size: 1.2rem;
 }
 
-.ant-menu.ant-menu-dark .ant-menu-item-selected {
+.ant-menu.ant-menu-dark .ant-menu-item-selected,
+.ant-menu.ant-menu-dark .ant-menu-item-active {
   background-color: transparent;
 }
 
@@ -28,3 +29,14 @@
   width: 140px;
   margin-right: 30px;
 }
+
+.ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+  background-color: transparent;
+}
+
+/* li[role='menuitem'] {
+  background-color: black;
+} */
+/* ul[role='menu'] {
+  background-color: transparent !important;
+} */
