@@ -1,10 +1,15 @@
 import React from 'react';
 import { Rate } from 'antd';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { vote } from '../../../store/Watch/actions.js';
 
 function WatchHeader(props) {
+  const { totalVotes, totalRank, toVote, voted } = props;
+
   const {
     img: { src, alt },
-    headerTitle: { header, date, allVotes, totalRank, roles },
+    headerTitle: { header, date, roles },
   } = props.header;
 
   return (
@@ -22,11 +27,21 @@ function WatchHeader(props) {
         <div>
           <div className='rate'>
             <div className='rate-stars'>
-              <Rate defaultValue={5} className='stars' />
-              <span>Всего голосов: {allVotes}</span>
+              <Rate
+                className='stars'
+                count={10}
+                allowHalf={true}
+                disabled={voted ? true : false}
+                onChange={(e) => {
+                  if (!voted) {
+                    toVote(e);
+                  }
+                }}
+              />
+              <span>Всего голосов: {totalVotes}</span>
             </div>
 
-            <span className='rate-number'>{totalRank}</span>
+            <span className='rate-number'>{totalRank.toFixed(1)}</span>
           </div>
         </div>
 
@@ -39,4 +54,18 @@ function WatchHeader(props) {
   );
 }
 
-export default WatchHeader;
+const mapStateToProps = (state) => {
+  return {
+    totalVotes: state.getSerialEpisodesData.totalVotes,
+    totalRank: state.getSerialEpisodesData.totalRank,
+    voted: state.getSerialEpisodesData.voted,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    toVote: bindActionCreators(vote, dispatch),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(WatchHeader);

@@ -2,7 +2,6 @@ import React from 'react';
 import { Layout, Menu } from 'antd';
 import '../../../index.css';
 import { Link } from 'react-router-dom';
-
 import { seasonUrls } from '../../../global/global.js';
 
 const { SubMenu } = Menu;

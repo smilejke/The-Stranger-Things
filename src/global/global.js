@@ -6,9 +6,11 @@ export const categoryUrls = {
   female: 'http://localhost:3001/actors?gender=Female',
 };
 
-export function updateObject(oldObject, newValues) {
-  return Object.assign({}, oldObject, newValues);
-}
+export const seasonUrls = {
+  seasonOneUrl: 'http://localhost:3001/watch?id=SEASON_ONE',
+  seasonTwoUrl: 'http://localhost:3001/watch?id=SEASON_TWO',
+  seasonThreeUrl: 'http://localhost:3001/watch?id=SEASON_THREE',
+};
 
 export const seasonImageStyles = {
   first: 'season-description-first-image',
@@ -16,8 +18,13 @@ export const seasonImageStyles = {
   third: 'season-description-third-image',
 };
 
-export const seasonUrls = {
-  seasonOneUrl: 'http://localhost:3001/watch?id=SEASON_ONE',
-  seasonTwoUrl: 'http://localhost:3001/watch?id=SEASON_TWO',
-  seasonThreeUrl: 'http://localhost:3001/watch?id=SEASON_THREE',
+export function updateObject(oldObject, newValues) {
+  return Object.assign({}, oldObject, newValues);
+}
+
+export const updateVotes = (stateElem) => {
+  return stateElem + 1;
+};
+export const updateRank = (rank, votes, newRankValue) => {
+  return (rank * votes + newRankValue) / (votes + 1);
 };
