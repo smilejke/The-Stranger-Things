@@ -7,8 +7,12 @@ const loadSeasonData = (id) => {
   };
 };
 
-export const getSeasonData = (url) => (dispatch) => {
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => dispatch(loadSeasonData(data)));
+export const getSeasonData = (url, loaderOn, loaderOff) => (dispatch) => {
+  dispatch(loaderOn());
+  setTimeout(() => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => dispatch(loadSeasonData(data)))
+      .then(dispatch(loaderOff()));
+  }, 1000);
 };

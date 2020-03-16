@@ -23,7 +23,7 @@ function GreetingsPage(props) {
           .then((data) => setData(data));
       }, 1000);
     }
-    setNewsData(newsData.news);
+    if (newsData) setNewsData(newsData.news);
   });
 
   if (!newsData) return <LoadingSpinner />;

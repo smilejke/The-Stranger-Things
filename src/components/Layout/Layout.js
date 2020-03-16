@@ -3,7 +3,7 @@ import ActorsMainPage from '../ActorsInfoPage/ActorsPhotoBlock/PhotoBlock/PhotoB
 import '../../index.css';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { getActorsData } from '../../store/Layout/actions.js';
+import { getActorsData, stopLoading, startLoading } from '../../store/Layout/actions.js';
 import { getSeasonData } from '../../store/Watch/actions.js';
 import LoadingSpinner from './loadingEffect/loading.js';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -37,7 +37,7 @@ function MainLayout(props) {
     getActorsData(all);
   };
   const getSeason = (url) => {
-    getSeasonData(url);
+    getSeasonData(url, startLoading, stopLoading);
   };
   const filterActions = {
     getActors,

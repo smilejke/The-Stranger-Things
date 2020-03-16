@@ -1,4 +1,5 @@
 import { SET_NEWS_DATA_TO_STORE, GET_CURRENT_NEWS_BY_ID } from './actions.js';
+import { updateObject } from '../../global/global.js';
 
 const defaultState = {
   news: [],
@@ -8,9 +9,11 @@ const defaultState = {
 export const newsDataSetter = (state = defaultState, action) => {
   switch (action.type) {
     case SET_NEWS_DATA_TO_STORE:
-      return { ...state, news: action.payload };
+      return updateObject(state, { news: action.payload });
     case GET_CURRENT_NEWS_BY_ID:
-      return { ...state, currentNews: state.news.find((el) => el.id === action.payload) };
+      return updateObject(state, {
+        currentNews: state.news.find((el) => el.id === action.payload),
+      });
     default:
       return state;
   }
