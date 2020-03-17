@@ -1,20 +1,18 @@
-export const LOAD_SEASON_INFO_DATA = 'LOAD_SEASON_INFO_DATA';
-export const SET_CURRENT_RANKINGS_AND_VOTES = 'SET_CURRENT_VOTES';
+export const GET_SEASON_ID = 'GET_SEASON_ID';
 export const TO_VOTE = 'TO_VOTE';
-export const ALLOW_TO_VOTE_AGAIN = 'ALLOW_TO_VOTE_AGAIN';
+export const SET_SEASON_DATA_TO_STORE = 'SET_SEASON_DATA_TO_STORE';
 
-const loadSeasonData = (data) => {
+export const getSeasonId = (id) => {
   return {
-    type: LOAD_SEASON_INFO_DATA,
-    payload: data,
+    type: GET_SEASON_ID,
+    payload: id,
   };
 };
 
-const setRankAndVotes = (rank, votes) => {
+export const setSeasonData = (data) => {
   return {
-    type: SET_CURRENT_RANKINGS_AND_VOTES,
-    payload: rank,
-    payload_2: votes,
+    type: SET_SEASON_DATA_TO_STORE,
+    payload: data,
   };
 };
 
@@ -23,29 +21,4 @@ export const vote = (vote) => {
     type: TO_VOTE,
     payload: vote,
   };
-};
-
-const allowToVoteAgain = () => {
-  return {
-    type: ALLOW_TO_VOTE_AGAIN,
-  };
-};
-
-export const getSeasonData = (url, loaderOn, loaderOff) => (dispatch) => {
-  dispatch(loaderOn());
-  setTimeout(() => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => dispatch(loadSeasonData(data)))
-      .then((data) =>
-        dispatch(
-          setRankAndVotes(
-            data.payload[0].header.headerTitle.totalRank,
-            data.payload[0].header.headerTitle.allVotes,
-          ),
-        ),
-      )
-      .then(dispatch(loaderOff()))
-      .then(dispatch(allowToVoteAgain()));
-  }, 1000);
 };

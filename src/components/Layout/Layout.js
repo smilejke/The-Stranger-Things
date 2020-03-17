@@ -4,7 +4,6 @@ import '../../index.css';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { getActorsData, stopLoading, startLoading } from '../../store/Layout/actions.js';
-import { getSeasonData } from '../../store/Watch/actions.js';
 import LoadingSpinner from './loadingEffect/loading.js';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Layout } from 'antd';
@@ -89,7 +88,7 @@ function MainLayout(props) {
             <Route path='/news/:id'>
               <CurrentNews current={currentNews} />
             </Route>
-            <Route path='/'>
+            <Route exact path='/'>
               <GreetingsPage />
             </Route>
           </Switch>
@@ -112,7 +111,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getActorsData: bindActionCreators(getActorsData, dispatch),
-    getSeasonData: bindActionCreators(getSeasonData, dispatch),
   };
 };
 

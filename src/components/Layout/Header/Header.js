@@ -2,15 +2,17 @@ import React from 'react';
 import { Layout, Menu } from 'antd';
 import '../../../index.css';
 import { Link } from 'react-router-dom';
-import { seasonUrls } from '../../../global/global.js';
+import { getSeasonId } from '../../../store/Watch/actions.js';
+import { connect, useDispatch } from 'react-redux';
 
 const { SubMenu } = Menu;
 const { Header } = Layout;
 
 function ActorsPageHeader(props) {
+  const dispatch = useDispatch();
+
   const {
     getActors,
-    getSeason,
     routes: {
       home,
       actors,
@@ -18,32 +20,14 @@ function ActorsPageHeader(props) {
     },
   } = props.data;
 
-  const { seasonOneUrl, seasonTwoUrl, seasonThreeUrl } = seasonUrls;
-
   const linkOptionsToCreate = [
-    { adressToCreateLink: home, spanToShow: 'Home', onClick: null },
-    {
-      adressToCreateLink: actors,
-      spanToShow: 'Actors',
-      onClick: getActors,
-    },
+    { adress: home, text: 'Home', onClick: null },
+    { adress: actors, text: 'Actors', onClick: getActors },
   ];
   const submenu = [
-    {
-      adressToCreateLink: seasonOne,
-      spanToShow: 'Season One',
-      onClick: () => getSeason(seasonOneUrl),
-    },
-    {
-      adressToCreateLink: seasonTwo,
-      spanToShow: 'Season Two',
-      onClick: () => getSeason(seasonTwoUrl),
-    },
-    {
-      adressToCreateLink: seasonThree,
-      spanToShow: 'Season Three',
-      onClick: () => getSeason(seasonThreeUrl),
-    },
+    { adress: seasonOne, text: 'Season One', id: 'SEASON_ONE' },
+    { adress: seasonTwo, text: 'Season Two', id: 'SEASON_TWO' },
+    { adress: seasonThree, text: 'Season Three', id: 'SEASON_THREE' },
   ];
 
   return (
@@ -56,17 +40,12 @@ function ActorsPageHeader(props) {
           ></img>
         </Link>
       </div>
-      <Menu
-        className='page-nav-menu'
-        theme='dark'
-        mode='horizontal'
-        // defaultSelectedKeys={['2']}
-      >
+      <Menu className='page-nav-menu' theme='dark' mode='horizontal'>
         {linkOptionsToCreate.map((item) => {
           return (
             <Menu.Item key={'menuItem' + linkOptionsToCreate.indexOf(item)} onClick={item.onClick}>
-              <Link to={item.adressToCreateLink}>
-                <span>{item.spanToShow}</span>
+              <Link to={item.adress}>
+                <span>{item.text}</span>
               </Link>
             </Menu.Item>
           );
@@ -75,9 +54,13 @@ function ActorsPageHeader(props) {
         <SubMenu key='sub1' title={<span>Watch</span>}>
           {submenu.map((el) => {
             return (
-              <Menu.Item key={'submenuItem' + submenu.indexOf(el)} onClick={el.onClick}>
-                <Link to={el.adressToCreateLink}>
-                  <span>{el.spanToShow}</span>
+              <Menu.Item
+                key={'submenuItem' + submenu.indexOf(el)}
+                onClick={() => dispatch(getSeasonId(el.id))}
+                id={el.id}
+              >
+                <Link to={el.adress}>
+                  <span>{el.text}</span>
                 </Link>
               </Menu.Item>
             );
@@ -87,5 +70,10 @@ function ActorsPageHeader(props) {
     </Header>
   );
 }
+const mapStateToProps = (state) => {
+  return {
+    currentSeasonId: state.getSerialEpisodesData.currentSeasonId,
+  };
+};
 
-export default ActorsPageHeader;
+export default connect(mapStateToProps)(ActorsPageHeader);

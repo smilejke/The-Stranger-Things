@@ -6,12 +6,6 @@ export const categoryUrls = {
   female: 'http://localhost:3001/actors?gender=Female',
 };
 
-export const seasonUrls = {
-  seasonOneUrl: 'http://localhost:3001/watch?id=SEASON_ONE',
-  seasonTwoUrl: 'http://localhost:3001/watch?id=SEASON_TWO',
-  seasonThreeUrl: 'http://localhost:3001/watch?id=SEASON_THREE',
-};
-
 export const seasonImageStyles = {
   first: 'season-description-first-image',
   second: 'season-description-second-image',
