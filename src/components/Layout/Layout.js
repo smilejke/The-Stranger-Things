@@ -21,15 +21,7 @@ import WatchSerial from '../Watch/WatchPage.js';
 const { Content } = Layout;
 
 function MainLayout(props) {
-  const {
-    actorCards,
-    loading,
-    profileToSearch,
-    getActorsData,
-    currentNews,
-    getSeasonData,
-    currentSeason,
-  } = props;
+  const { actorCards, loading, profileToSearch, getActorsData, currentNews, getSeasonData } = props;
   const { all, maincast, secondary, male, female } = categoryUrls;
 
   const getActors = () => {
@@ -61,9 +53,9 @@ function MainLayout(props) {
       home: '/',
       actors: '/actors/all',
       watch: {
-        seasonOne: '/watch/the-stranger-things-season-one',
-        seasonTwo: '/watch/the-stranger-things-season-two',
-        seasonThree: '/watch/the-stranger-things-season-three',
+        seasonOne: '/watch/SEASON_ONE',
+        seasonTwo: '/watch/SEASON_TWO',
+        seasonThree: '/watch/SEASON_THREE',
       },
     },
   };
@@ -71,19 +63,19 @@ function MainLayout(props) {
   return (
     <Router>
       <Layout className='actors-layout-heigth'>
-        <ActorsPageHeader data={navOptions} />
+        {loading ? <LoadingSpinner /> : ''}
 
+        <ActorsPageHeader data={navOptions} />
         <Content>
           <Switch>
-            {loading ? <LoadingSpinner /> : ''}
-            <Route path='/watch'>
-              <WatchSerial season={currentSeason} />
+            <Route path='/watch/:id'>
+              <WatchSerial />
+            </Route>
+            <Route path='/actors/:id/:id'>
+              <Profile actor={profileToSearch} />
             </Route>
             <Route path='/actors/:id'>
               <ActorsMainPage actors={actorCards} actions={filterActions} />
-            </Route>
-            <Route path='/actor-profiles/:id'>
-              <Profile actor={profileToSearch} />
             </Route>
             <Route path='/news/:id'>
               <CurrentNews current={currentNews} />
@@ -104,7 +96,6 @@ const mapStateToProps = (state) => {
     loading: state.layout.loading,
     profileToSearch: state.getActor.profileToSearch,
     currentNews: state.newsDataSetter.currentNews,
-    currentSeason: state.getSerialEpisodesData.currentSeason,
   };
 };
 

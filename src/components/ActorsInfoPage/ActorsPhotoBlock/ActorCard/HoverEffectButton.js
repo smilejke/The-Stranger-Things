@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../../index.css';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
 import { getActorsData } from '../../../../store/Actor/actions.js';
 import { startLoading, stopLoading } from '../../../../store/Layout/actions.js';
@@ -10,10 +10,11 @@ function HoverButton(props) {
     urlData: { id },
   } = props;
 
+  let { url } = useRouteMatch();
   const dispatch = useDispatch();
 
   return (
-    <Link to={`/actor-profiles/${id}`}>
+    <Link to={`${url}/${id}`}>
       <button
         className='a-button'
         onClick={() => {

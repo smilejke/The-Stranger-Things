@@ -2,7 +2,6 @@ import { GET_SEASON_ID, TO_VOTE, SET_SEASON_DATA_TO_STORE } from './actions.js';
 import { updateObject, updateVotes, updateRank } from '../../global/global.js';
 
 const defaultState = {
-  currentSeason: 'SEASON_ONE',
   currentSeasonData: false,
   seasonId: false,
   totalVotes: 0,

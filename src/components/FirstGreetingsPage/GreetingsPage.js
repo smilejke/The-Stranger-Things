@@ -16,15 +16,15 @@ function GreetingsPage(props) {
   const { setNewsData } = props;
 
   useEffect(() => {
-    if (!newsData) {
-      setTimeout(() => {
-        fetch('http://localhost:3001/greetings')
-          .then((response) => response.json())
-          .then((data) => setData(data));
-      }, 1000);
-    }
-    if (newsData) setNewsData(newsData.news);
-  });
+    setTimeout(() => {
+      fetch('http://localhost:3001/greetings')
+        .then((response) => response.json())
+        .then((data) => {
+          setData(data);
+          setNewsData(data.news);
+        });
+    }, 1000);
+  }, [setNewsData]);
 
   if (!newsData) return <LoadingSpinner />;
 

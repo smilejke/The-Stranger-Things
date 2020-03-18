@@ -5,24 +5,39 @@ import SerialSidebar from '../FirstGreetingsPage/SerialSidebar/SerialSidebar.js'
 import SeriesBlock from './SeriesBlock/Series.js';
 import SeasonDescription from './SeasonDescription/SeasonDescription.js';
 import { connect } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { startLoading, stopLoading } from '../../store/Layout/actions.js';
+
 import { bindActionCreators } from 'redux';
 import LoadingSpinner from '../Layout/loadingEffect/loading.js';
 import { setSeasonData } from '../../store/Watch/actions.js';
 
 function WatchSerial(props) {
   const [watchData, setData] = useState(false);
-  const { setSeasonData, seasonId } = props;
+  const { setSeasonData, startLoading, stopLoading } = props;
+  const { id } = useParams();
 
   useEffect(() => {
-    if (!watchData || watchData.id !== seasonId) {
-      setTimeout(() => {
-        fetch(`http://localhost:3001/watch?id=${seasonId}`)
-          .then((response) => response.json())
-          .then((data) => setData(data[0]));
-      }, 1000);
-    }
-    if (watchData) setSeasonData(watchData);
-  });
+    startLoading();
+    setTimeout(() => {
+      fetch(`http://localhost:3001/watch?id=${id}`)
+        .then((response) => response.json())
+        .then((data) => {
+          setData(data[0]);
+          setSeasonData(data[0]);
+        })
+        .then(stopLoading());
+    }, 1000);
+  }, [id, setSeasonData, startLoading, stopLoading]);
+
+  // fetch('http://localhost:3001/profiles', {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json;charset=utf-8',
+  //   },
+  //   body: JSON.stringify(user),
+  // }).then((res) => console.log(res));
+
   if (!watchData) return <LoadingSpinner />;
 
   const { header, seriesBlock, description } = watchData;
@@ -54,6 +69,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     setSeasonData: bindActionCreators(setSeasonData, dispatch),
+    startLoading: bindActionCreators(startLoading, dispatch),
+    stopLoading: bindActionCreators(stopLoading, dispatch),
   };
 };
 

@@ -8,6 +8,8 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import rootReducer from './store/reducers.js';
 
+// оценки придумать, получить с сервака
+
 const store = createStore(
   rootReducer,
   compose(

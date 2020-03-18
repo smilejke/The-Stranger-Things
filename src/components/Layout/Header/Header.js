@@ -33,7 +33,7 @@ function ActorsPageHeader(props) {
   return (
     <Header className='page-nav-header'>
       <div className='logo'>
-        <Link to={`/`}>
+        <Link to={home}>
           <img
             src='https://ochen-strannye-dela.online/images/logo-stranger-things.png'
             alt='logo'

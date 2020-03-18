@@ -2,7 +2,8 @@ import React from 'react';
 import '../../../../index.css';
 import ActorInfoList from './ActorInfoList.js';
 import HoverButton from './HoverEffectButton.js';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
+
 import { connect, useDispatch } from 'react-redux';
 import { getActorsData } from '../../../../store/Actor/actions.js';
 import { startLoading, stopLoading } from '../../../../store/Layout/actions.js';
@@ -15,11 +16,12 @@ function Card(props) {
   const identificator = props.options.id;
 
   const dispatch = useDispatch();
+  let { url } = useRouteMatch();
 
   return (
     <div className='actor-photo'>
       {' '}
-      <Link to={`/actor-profiles/${id}`}>
+      <Link to={`${url}/${id}`}>
         <img
           className='img-actor'
           src={src}
