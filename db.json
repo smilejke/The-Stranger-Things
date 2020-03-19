@@ -10,7 +10,7 @@
       "age": 16,
       "from": "Marbella, Spain",
       "role": "Eleven / Jane Hopper",
-      "gender": "Female",
+      "gender": "female",
       "majority": "maincast",
       "id": "MillieTST"
     },
@@ -24,7 +24,7 @@
       "age": 15,
       "from": "Scarsdale, New York",
       "role": "Will Byers",
-      "gender": "Male",
+      "gender": "male",
       "majority": "maincast",
       "id": "NoahTST"
     },
@@ -38,7 +38,7 @@
       "age": 25,
       "from": "Nashville, Tennessee",
       "role": "Nancy Wheeler",
-      "gender": "Female",
+      "gender": "female",
       "majority": "secondary",
       "id": "NataliaTST"
     },
@@ -52,7 +52,7 @@
       "age": 17,
       "from": "Vancouver, Canada",
       "role": "Mike Wheeler",
-      "gender": "Male",
+      "gender": "male",
       "majority": "maincast",
       "id": "FinnTST"
     },
@@ -66,7 +66,7 @@
       "age": 17,
       "from": "Brenham, Texas",
       "role": "Maxine \"Max\" Mayfield",
-      "gender": "Female",
+      "gender": "female",
       "majority": "secondary",
       "id": "SadieTST"
     },
@@ -80,7 +80,7 @@
       "age": 17,
       "from": "New Jersey",
       "role": "Dustin Henderson",
-      "gender": "Male",
+      "gender": "male",
       "majority": "maincast",
       "id": "GatenTST"
     },
@@ -94,7 +94,7 @@
       "age": 21,
       "from": "New York City",
       "role": "Robin Buckley",
-      "gender": "Female",
+      "gender": "female",
       "majority": "secondary",
       "id": "MayaTST"
     },
@@ -108,7 +108,7 @@
       "age": 18,
       "from": "Carmel, New York",
       "role": "Lucas Sinclair",
-      "gender": "Male",
+      "gender": "male",
       "majority": "maincast",
       "id": "CalebTST"
     },
@@ -122,7 +122,7 @@
       "age": 48,
       "from": "Winona, Minnesota",
       "role": "Joyce Byers",
-      "gender": "Female",
+      "gender": "female",
       "majority": "maincast",
       "id": "WinonaTST"
     },
@@ -136,7 +136,7 @@
       "age": 25,
       "from": "Perth, Western Australia",
       "role": "Billy Hargrove",
-      "gender": "Male",
+      "gender": "male",
       "majority": "secondary",
       "id": "DacreTST"
     },
@@ -150,7 +150,7 @@
       "age": 44,
       "from": "White Plains, New York",
       "role": "Jim Hopper",
-      "gender": "Male",
+      "gender": "male",
       "majority": "maincast",
       "id": "DavidTST"
     },
@@ -164,7 +164,7 @@
       "age": 27,
       "from": "Newburyport",
       "role": "Steve Harrington",
-      "gender": "Male",
+      "gender": "male",
       "majority": "secondary",
       "id": "JoeTST"
     },
@@ -178,7 +178,7 @@
       "age": 26,
       "from": "Leeds",
       "role": "Jonathan Byers",
-      "gender": "Male",
+      "gender": "male",
       "majority": "secondary",
       "id": "CharlieTST"
     },
@@ -192,7 +192,7 @@
       "age": 63,
       "from": "New York City",
       "role": "Sam Owens",
-      "gender": "Male",
+      "gender": "male",
       "majority": "secondary",
       "id": "PaulTST"
     },
@@ -206,7 +206,7 @@
       "age": 48,
       "from": "Santa Monica, California",
       "role": "Bob Newby",
-      "gender": "Male",
+      "gender": "male",
       "majority": "secondary",
       "id": "SeanTST"
     }

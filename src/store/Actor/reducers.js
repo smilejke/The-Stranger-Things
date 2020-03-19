@@ -3,7 +3,7 @@ import { updateObject } from '../../global/global.js';
 
 const defaultState = {
   currentActorId: '',
-  profileToSearch: null,
+  profileToSearch: false,
 };
 
 export const getActor = (state = defaultState, action) => {

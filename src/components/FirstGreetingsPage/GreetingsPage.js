@@ -4,29 +4,33 @@ import SerialDescription from './SerialDescription/SerialDescription.js';
 import WatchBlock from './WatchBlock/WatchBlock.js';
 import SerialAnatomy from './Anatomy/Anatomy.js';
 import SerialNews from './SerialNews/SerialNews.js';
-import LoadingSpinner from '../Layout/loadingEffect/loading.js';
 import SerialSidebar from './SerialSidebar/SerialSidebar.js';
 import { setNewsData } from '../../store/News/actions.js';
+import { startLoading, stopLoading } from '../../store/Layout/actions.js';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Footer from '../Layout/Footer/Footer.js';
 
 function GreetingsPage(props) {
   const [newsData, setData] = useState(false);
-  const { setNewsData } = props;
+  const { setNewsData, startLoading, stopLoading } = props;
 
   useEffect(() => {
+    startLoading();
     setTimeout(() => {
       fetch('http://localhost:3001/greetings')
         .then((response) => response.json())
         .then((data) => {
           setData(data);
           setNewsData(data.news);
-        });
-    }, 1000);
-  }, [setNewsData]);
+        })
+        .then(() => {
+          stopLoading();
+        }, 100);
+    }, 900);
+  }, [setNewsData, startLoading, stopLoading]);
 
-  if (!newsData) return <LoadingSpinner />;
+  if (!newsData) return null;
 
   const { header, shortDescription, watchBlock, anatomy, news } = newsData;
 
@@ -58,6 +62,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     setNewsData: bindActionCreators(setNewsData, dispatch),
+    startLoading: bindActionCreators(startLoading, dispatch),
+    stopLoading: bindActionCreators(stopLoading, dispatch),
   };
 };
 

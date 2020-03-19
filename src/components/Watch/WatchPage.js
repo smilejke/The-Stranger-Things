@@ -7,7 +7,6 @@ import SeasonDescription from './SeasonDescription/SeasonDescription.js';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { startLoading, stopLoading } from '../../store/Layout/actions.js';
-
 import { bindActionCreators } from 'redux';
 import LoadingSpinner from '../Layout/loadingEffect/loading.js';
 import { setSeasonData } from '../../store/Watch/actions.js';
@@ -26,8 +25,12 @@ function WatchSerial(props) {
           setData(data[0]);
           setSeasonData(data[0]);
         })
-        .then(stopLoading());
-    }, 1000);
+        .then(
+          setTimeout(() => {
+            stopLoading();
+          }, 100),
+        );
+    }, 900);
   }, [id, setSeasonData, startLoading, stopLoading]);
 
   // fetch('http://localhost:3001/profiles', {

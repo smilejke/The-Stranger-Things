@@ -84,7 +84,6 @@ const mapStateToProps = (state) => {
     male: state.filter.male,
     female: state.filter.female,
     all: state.filter.all,
-    loading: state.layout.loading,
   };
 };
 

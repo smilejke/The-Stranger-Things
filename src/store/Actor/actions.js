@@ -17,11 +17,16 @@ export const findProfile = (profileArray) => {
 
 export const getActorsData = (actorId, loaderOn, loaderOff) => (dispatch) => {
   dispatch(loaderOn());
+
   setTimeout(() => {
     fetch('http://localhost:3001/profiles')
-      .then((response) => response.json())
       .then(dispatch(getCurrentActor(actorId)))
+      .then((response) => response.json())
       .then((data) => dispatch(findProfile(data)))
-      .then(dispatch(loaderOff()));
-  }, 1000);
+      .then(
+        setTimeout(() => {
+          dispatch(loaderOff());
+        }, 100),
+      );
+  }, 900);
 };

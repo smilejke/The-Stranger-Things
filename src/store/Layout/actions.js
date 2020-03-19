@@ -27,6 +27,10 @@ export const getActorsData = (url) => (dispatch) => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => dispatch(uploadInfoForRenderCards(data)))
-      .then(dispatch(stopLoading()));
-  }, 1000);
+      .then(
+        setTimeout(() => {
+          dispatch(stopLoading());
+        }, 100),
+      );
+  }, 900);
 };

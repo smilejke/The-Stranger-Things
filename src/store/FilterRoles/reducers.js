@@ -18,15 +18,15 @@ const defaultState = {
 export const filterReducer = (state = defaultState, action) => {
   switch (action.type) {
     case SELECT_MAINCAST:
-      return updateObject(defaultState, { maincast: action.payload, all: false });
+      return updateObject(defaultState, { maincast: true, all: false });
     case SELECT_SECONDARY:
-      return updateObject(defaultState, { secondary: action.payload, all: false });
+      return updateObject(defaultState, { secondary: true, all: false });
     case SELECT_MALE:
-      return updateObject(defaultState, { male: action.payload, all: false });
+      return updateObject(defaultState, { male: true, all: false });
     case SELECT_FEMALE:
-      return updateObject(defaultState, { female: action.payload, all: false });
+      return updateObject(defaultState, { female: true, all: false });
     case SELECT_ALL_ACTORS:
-      return updateObject(defaultState, { all: action.payload });
+      return updateObject(defaultState, { all: true });
 
     default:
       return state;

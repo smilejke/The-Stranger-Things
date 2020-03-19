@@ -3,7 +3,7 @@ import ActorsMainPage from '../ActorsInfoPage/ActorsPhotoBlock/PhotoBlock/PhotoB
 import '../../index.css';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { getActorsData, stopLoading, startLoading } from '../../store/Layout/actions.js';
+import { getActorsData } from '../../store/Layout/actions.js';
 import LoadingSpinner from './loadingEffect/loading.js';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Layout } from 'antd';
@@ -21,15 +21,13 @@ import WatchSerial from '../Watch/WatchPage.js';
 const { Content } = Layout;
 
 function MainLayout(props) {
-  const { actorCards, loading, profileToSearch, getActorsData, currentNews, getSeasonData } = props;
+  const { loading, getActorsData, currentNews } = props;
   const { all, maincast, secondary, male, female } = categoryUrls;
 
   const getActors = () => {
     getActorsData(all);
   };
-  const getSeason = (url) => {
-    getSeasonData(url, startLoading, stopLoading);
-  };
+
   const filterActions = {
     getActors,
     getMaincast: () => {
@@ -46,36 +44,22 @@ function MainLayout(props) {
     },
   };
 
-  const navOptions = {
-    getActors,
-    getSeason,
-    routes: {
-      home: '/',
-      actors: '/actors/all',
-      watch: {
-        seasonOne: '/watch/SEASON_ONE',
-        seasonTwo: '/watch/SEASON_TWO',
-        seasonThree: '/watch/SEASON_THREE',
-      },
-    },
-  };
-
   return (
     <Router>
       <Layout className='actors-layout-heigth'>
         {loading ? <LoadingSpinner /> : ''}
 
-        <ActorsPageHeader data={navOptions} />
+        <ActorsPageHeader />
         <Content>
           <Switch>
             <Route path='/watch/:id'>
               <WatchSerial />
             </Route>
             <Route path='/actors/:id/:id'>
-              <Profile actor={profileToSearch} />
+              <Profile />
             </Route>
             <Route path='/actors/:id'>
-              <ActorsMainPage actors={actorCards} actions={filterActions} />
+              <ActorsMainPage actions={filterActions} />
             </Route>
             <Route path='/news/:id'>
               <CurrentNews current={currentNews} />
@@ -94,7 +78,6 @@ const mapStateToProps = (state) => {
   return {
     actorCards: state.layout.actorCards,
     loading: state.layout.loading,
-    profileToSearch: state.getActor.profileToSearch,
     currentNews: state.newsDataSetter.currentNews,
   };
 };

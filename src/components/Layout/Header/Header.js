@@ -2,27 +2,23 @@ import React from 'react';
 import { Layout, Menu } from 'antd';
 import '../../../index.css';
 import { Link } from 'react-router-dom';
-import { getSeasonId } from '../../../store/Watch/actions.js';
-import { connect, useDispatch } from 'react-redux';
+import { navOptions } from '../../../global/global.js';
 
 const { SubMenu } = Menu;
 const { Header } = Layout;
 
-function ActorsPageHeader(props) {
-  const dispatch = useDispatch();
-
+function ActorsPageHeader() {
   const {
-    getActors,
     routes: {
       home,
       actors,
       watch: { seasonOne, seasonTwo, seasonThree },
     },
-  } = props.data;
+  } = navOptions;
 
   const linkOptionsToCreate = [
-    { adress: home, text: 'Home', onClick: null },
-    { adress: actors, text: 'Actors', onClick: getActors },
+    { adress: home, text: 'Home' },
+    { adress: actors, text: 'Actors' },
   ];
   const submenu = [
     { adress: seasonOne, text: 'Season One', id: 'SEASON_ONE' },
@@ -43,7 +39,7 @@ function ActorsPageHeader(props) {
       <Menu className='page-nav-menu' theme='dark' mode='horizontal'>
         {linkOptionsToCreate.map((item) => {
           return (
-            <Menu.Item key={'menuItem' + linkOptionsToCreate.indexOf(item)} onClick={item.onClick}>
+            <Menu.Item key={'menuItem' + linkOptionsToCreate.indexOf(item)}>
               <Link to={item.adress}>
                 <span>{item.text}</span>
               </Link>
@@ -54,11 +50,7 @@ function ActorsPageHeader(props) {
         <SubMenu key='sub1' title={<span>Watch</span>}>
           {submenu.map((el) => {
             return (
-              <Menu.Item
-                key={'submenuItem' + submenu.indexOf(el)}
-                onClick={() => dispatch(getSeasonId(el.id))}
-                id={el.id}
-              >
+              <Menu.Item key={'submenuItem' + submenu.indexOf(el)} id={el.id}>
                 <Link to={el.adress}>
                   <span>{el.text}</span>
                 </Link>
@@ -70,10 +62,5 @@ function ActorsPageHeader(props) {
     </Header>
   );
 }
-const mapStateToProps = (state) => {
-  return {
-    currentSeasonId: state.getSerialEpisodesData.currentSeasonId,
-  };
-};
 
-export default connect(mapStateToProps)(ActorsPageHeader);
+export default ActorsPageHeader;

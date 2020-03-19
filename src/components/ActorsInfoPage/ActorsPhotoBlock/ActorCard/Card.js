@@ -3,7 +3,6 @@ import '../../../../index.css';
 import ActorInfoList from './ActorInfoList.js';
 import HoverButton from './HoverEffectButton.js';
 import { Link, useRouteMatch } from 'react-router-dom';
-
 import { connect, useDispatch } from 'react-redux';
 import { getActorsData } from '../../../../store/Actor/actions.js';
 import { startLoading, stopLoading } from '../../../../store/Layout/actions.js';
@@ -13,7 +12,6 @@ function Card(props) {
     img: { src, alt },
     id,
   } = props.options;
-  const identificator = props.options.id;
 
   const dispatch = useDispatch();
   let { url } = useRouteMatch();
@@ -31,7 +29,7 @@ function Card(props) {
           }}
         />
       </Link>
-      <ActorInfoList key={identificator} info={props.options} />
+      <ActorInfoList key={id} info={props.options} />
       <HoverButton urlData={props.options} />
     </div>
   );

@@ -9,7 +9,7 @@ function FilerCheckbox(props) {
     if (category) {
       return null;
     } else {
-      select(!category);
+      select();
       getData();
     }
   };
