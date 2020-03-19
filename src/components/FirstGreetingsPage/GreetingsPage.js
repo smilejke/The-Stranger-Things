@@ -5,30 +5,27 @@ import WatchBlock from './WatchBlock/WatchBlock.js';
 import SerialAnatomy from './Anatomy/Anatomy.js';
 import SerialNews from './SerialNews/SerialNews.js';
 import SerialSidebar from './SerialSidebar/SerialSidebar.js';
-import { setNewsData } from '../../store/News/actions.js';
-import { startLoading, stopLoading } from '../../store/Layout/actions.js';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Footer from '../Layout/Footer/Footer.js';
+import { startLoading, stopLoading } from '../../store/Layout/actions.js';
 
-function GreetingsPage(props) {
+function GreetingsPage() {
   const [newsData, setData] = useState(false);
-  const { setNewsData, startLoading, stopLoading } = props;
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    startLoading();
+    dispatch(startLoading());
     setTimeout(() => {
       fetch('http://localhost:3001/greetings')
         .then((response) => response.json())
         .then((data) => {
           setData(data);
-          setNewsData(data.news);
         })
         .then(() => {
-          stopLoading();
+          dispatch(stopLoading());
         }, 100);
     }, 900);
-  }, [setNewsData, startLoading, stopLoading]);
+  }, [dispatch]);
 
   if (!newsData) return null;
 
@@ -53,18 +50,4 @@ function GreetingsPage(props) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    news: state.newsDataSetter.news,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setNewsData: bindActionCreators(setNewsData, dispatch),
-    startLoading: bindActionCreators(startLoading, dispatch),
-    stopLoading: bindActionCreators(stopLoading, dispatch),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(GreetingsPage);
+export default GreetingsPage;

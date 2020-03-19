@@ -21,7 +21,7 @@ import WatchSerial from '../Watch/WatchPage.js';
 const { Content } = Layout;
 
 function MainLayout(props) {
-  const { loading, getActorsData, currentNews } = props;
+  const { loading, getActorsData } = props;
   const { all, maincast, secondary, male, female } = categoryUrls;
 
   const getActors = () => {
@@ -62,7 +62,7 @@ function MainLayout(props) {
               <ActorsMainPage actions={filterActions} />
             </Route>
             <Route path='/news/:id'>
-              <CurrentNews current={currentNews} />
+              <CurrentNews />
             </Route>
             <Route exact path='/'>
               <GreetingsPage />
@@ -78,7 +78,6 @@ const mapStateToProps = (state) => {
   return {
     actorCards: state.layout.actorCards,
     loading: state.layout.loading,
-    currentNews: state.newsDataSetter.currentNews,
   };
 };
 
