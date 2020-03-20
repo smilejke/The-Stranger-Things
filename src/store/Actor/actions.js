@@ -17,7 +17,6 @@ export const findProfile = (profileArray) => {
 
 export const getActorsData = (actorId, loaderOn, loaderOff) => (dispatch) => {
   dispatch(loaderOn());
-
   setTimeout(() => {
     fetch('http://localhost:3001/profiles')
       .then(dispatch(getCurrentActor(actorId)))

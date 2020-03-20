@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Rate } from 'antd';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { vote } from '../../../store/Watch/actions.js';
+// import { useParams } from 'react-router-dom';
+import { vote, getVotes } from '../../../store/Watch/actions.js';
 
 function WatchHeader(props) {
-  const { totalVotes, totalRank, toVote, voted } = props;
+  const { totalVotes, totalRank, toVote, voted, getVotes } = props;
+
+  useEffect(() => {
+    getVotes(
+      props.header.headerTitle.totalVotes,
+      props.header.headerTitle.totalRank,
+      props.header.headerTitle.marks,
+    );
+  }, [
+    getVotes,
+    props.header.headerTitle.totalVotes,
+    props.header.headerTitle.totalRank,
+    props.header.headerTitle.marks,
+  ]);
 
   const {
     img: { src, alt },
@@ -31,11 +45,10 @@ function WatchHeader(props) {
                 className='stars'
                 count={10}
                 allowHalf={true}
+                defaultValue={0}
                 disabled={voted ? true : false}
                 onChange={(e) => {
-                  if (!voted) {
-                    toVote(e);
-                  }
+                  toVote(e);
                 }}
               />
               <span>Всего голосов: {totalVotes}</span>
@@ -58,6 +71,7 @@ const mapStateToProps = (state) => {
   return {
     totalVotes: state.getSerialEpisodesData.totalVotes,
     totalRank: state.getSerialEpisodesData.totalRank,
+    marks: state.getSerialEpisodesData.marks,
     voted: state.getSerialEpisodesData.voted,
   };
 };
@@ -65,6 +79,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     toVote: bindActionCreators(vote, dispatch),
+    getVotes: bindActionCreators(getVotes, dispatch),
   };
 };
 

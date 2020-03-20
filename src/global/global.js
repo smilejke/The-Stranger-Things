@@ -36,6 +36,8 @@ export function updateObject(oldObject, newValues) {
 export const updateVotes = (stateElem) => {
   return stateElem + 1;
 };
-export const updateRank = (rank, votes, newRankValue) => {
-  return (rank * votes + newRankValue) / (votes + 1);
+export const updateMarks = (arr, mark) => {
+  const newArr = arr;
+  newArr.push(mark);
+  return newArr;
 };

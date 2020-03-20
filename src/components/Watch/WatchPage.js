@@ -8,12 +8,12 @@ import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { startLoading, stopLoading } from '../../store/Layout/actions.js';
 import { bindActionCreators } from 'redux';
-import LoadingSpinner from '../Layout/loadingEffect/loading.js';
 import { setSeasonData } from '../../store/Watch/actions.js';
 
 function WatchSerial(props) {
   const [watchData, setData] = useState(false);
   const { setSeasonData, startLoading, stopLoading } = props;
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -33,15 +33,7 @@ function WatchSerial(props) {
     }, 900);
   }, [id, setSeasonData, startLoading, stopLoading]);
 
-  // fetch('http://localhost:3001/profiles', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json;charset=utf-8',
-  //   },
-  //   body: JSON.stringify(user),
-  // }).then((res) => console.log(res));
-
-  if (!watchData) return <LoadingSpinner />;
+  if (!watchData) return null;
 
   const { header, seriesBlock, description } = watchData;
 

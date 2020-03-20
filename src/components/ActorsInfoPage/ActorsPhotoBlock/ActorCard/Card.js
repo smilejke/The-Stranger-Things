@@ -3,9 +3,6 @@ import '../../../../index.css';
 import ActorInfoList from './ActorInfoList.js';
 import HoverButton from './HoverEffectButton.js';
 import { Link, useRouteMatch } from 'react-router-dom';
-import { connect, useDispatch } from 'react-redux';
-import { getActorsData } from '../../../../store/Actor/actions.js';
-import { startLoading, stopLoading } from '../../../../store/Layout/actions.js';
 
 function Card(props) {
   const {
@@ -13,21 +10,13 @@ function Card(props) {
     id,
   } = props.options;
 
-  const dispatch = useDispatch();
   let { url } = useRouteMatch();
 
   return (
     <div className='actor-photo'>
       {' '}
       <Link to={`${url}/${id}`}>
-        <img
-          className='img-actor'
-          src={src}
-          alt={alt}
-          onClick={() => {
-            dispatch(getActorsData(id, startLoading, stopLoading));
-          }}
-        />
+        <img className='img-actor' src={src} alt={alt} />
       </Link>
       <ActorInfoList key={id} info={props.options} />
       <HoverButton urlData={props.options} />
@@ -35,12 +24,4 @@ function Card(props) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    currentActorId: state.getActor.currentActorId,
-    profileToSearch: state.getActor.profileToSearch,
-    loading: state.layout.loading,
-  };
-};
-
-export default connect(mapStateToProps)(Card);
+export default Card;

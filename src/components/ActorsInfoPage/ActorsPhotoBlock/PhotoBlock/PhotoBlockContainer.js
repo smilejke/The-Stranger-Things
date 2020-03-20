@@ -42,7 +42,7 @@ function ActorsMainPage(props) {
     if (cardInfo.length < 1 && id === 'male') {
       refreshPage(getActorsData, male, selectMale);
     }
-    if (cardInfo.length < 1 && id === 'famale') {
+    if (cardInfo.length < 1 && id === 'female') {
       refreshPage(getActorsData, female, selectFemale);
     }
   }, [

@@ -14,11 +14,11 @@ import { connect } from 'react-redux';
 
 function Profile(props) {
   let { id } = useParams();
-  const { getActorsData, startLoading, stopLoading, profileToSearch } = props;
+  const { getActorsData, profileToSearch } = props;
 
   useEffect(() => {
-    if (!profileToSearch) getActorsData(id, startLoading, stopLoading);
-  }, [id, profileToSearch, getActorsData, startLoading, stopLoading]);
+    if (profileToSearch.id !== id) getActorsData(id, startLoading, stopLoading);
+  }, [id, profileToSearch, getActorsData]);
 
   if (!profileToSearch) return null;
 
@@ -47,8 +47,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getActorsData: bindActionCreators(getActorsData, dispatch),
-    startLoading: bindActionCreators(startLoading, dispatch),
-    stopLoading: bindActionCreators(stopLoading, dispatch),
   };
 };
 

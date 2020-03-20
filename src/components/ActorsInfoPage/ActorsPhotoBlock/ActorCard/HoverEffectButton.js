@@ -1,9 +1,6 @@
 import React from 'react';
 import '../../../../index.css';
 import { Link, useRouteMatch } from 'react-router-dom';
-import { connect, useDispatch } from 'react-redux';
-import { getActorsData } from '../../../../store/Actor/actions.js';
-import { startLoading, stopLoading } from '../../../../store/Layout/actions.js';
 
 function HoverButton(props) {
   const {
@@ -11,28 +8,14 @@ function HoverButton(props) {
   } = props;
 
   let { url } = useRouteMatch();
-  const dispatch = useDispatch();
 
   return (
     <Link to={`${url}/${id}`}>
-      <button
-        className='a-button'
-        onClick={() => {
-          dispatch(getActorsData(id, startLoading, stopLoading));
-        }}
-      >
+      <button className='a-button'>
         <span>Read more</span>
       </button>
     </Link>
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    currentActorId: state.getActor.currentActorId,
-    profileToSearch: state.getActor.profileToSearch,
-    loading: state.layout.loading,
-  };
-};
-
-export default connect(mapStateToProps)(HoverButton);
+export default HoverButton;
