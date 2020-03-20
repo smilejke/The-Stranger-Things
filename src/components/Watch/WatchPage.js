@@ -8,14 +8,13 @@ import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { startLoading, stopLoading } from '../../store/Layout/actions.js';
 import { bindActionCreators } from 'redux';
-import { setSeasonData } from '../../store/Watch/actions.js';
+import { setSeasonData, setVotingData } from '../../store/Watch/actions.js';
 
 function WatchSerial(props) {
   const [watchData, setData] = useState(false);
-  const { setSeasonData, startLoading, stopLoading } = props;
+  const { setSeasonData, startLoading, stopLoading, setVotingData } = props;
 
   const { id } = useParams();
-
   useEffect(() => {
     startLoading();
     setTimeout(() => {
@@ -32,6 +31,14 @@ function WatchSerial(props) {
         );
     }, 900);
   }, [id, setSeasonData, startLoading, stopLoading]);
+
+  useEffect(() => {
+    fetch(`http://localhost:3001/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setVotingData(data.map((el) => el['mark']));
+      });
+  }, [id, setVotingData]);
 
   if (!watchData) return null;
 
@@ -58,12 +65,14 @@ const mapStateToProps = (state) => {
   return {
     seasonId: state.getSerialEpisodesData.seasonId,
     currentSeasonData: state.getSerialEpisodesData.currentSeasonData,
+    marks: state.getSerialEpisodesData.marks,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     setSeasonData: bindActionCreators(setSeasonData, dispatch),
+    setVotingData: bindActionCreators(setVotingData, dispatch),
     startLoading: bindActionCreators(startLoading, dispatch),
     stopLoading: bindActionCreators(stopLoading, dispatch),
   };

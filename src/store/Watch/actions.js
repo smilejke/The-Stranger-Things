@@ -1,6 +1,6 @@
 export const TO_VOTE = 'TO_VOTE';
 export const SET_SEASON_DATA_TO_STORE = 'SET_SEASON_DATA_TO_STORE';
-export const TAKE_VOTING_DATA = 'TAKE_VOTING_DATA';
+export const SET_MARKS_DATA_TO_STORE = 'SET_MARKS_DATA_TO_STORE';
 
 export const setSeasonData = (data) => {
   return {
@@ -9,12 +9,10 @@ export const setSeasonData = (data) => {
   };
 };
 
-export const getVotes = (votes, rank, marks) => {
+export const setVotingData = (data) => {
   return {
-    type: TAKE_VOTING_DATA,
-    payload1: votes,
-    payload2: rank,
-    payload3: marks,
+    type: SET_MARKS_DATA_TO_STORE,
+    payload: data,
   };
 };
 
@@ -23,4 +21,22 @@ export const vote = (vote) => {
     type: TO_VOTE,
     payload: vote,
   };
+};
+
+export const sendDataToServer = (rank, adress, loadingOn, loadingOff) => (dispatch) => {
+  dispatch(vote(rank));
+  dispatch(loadingOn);
+  setTimeout(() => {
+    fetch(`http://localhost:3001/${adress}/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+      },
+      body: JSON.stringify({ mark: rank }),
+    }).then(
+      setTimeout(() => {
+        dispatch(loadingOff);
+      }, 100),
+    );
+  }, 400);
 };

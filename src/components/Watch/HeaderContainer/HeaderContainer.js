@@ -1,19 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Rate } from 'antd';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { useParams } from 'react-router-dom';
-import { vote, getVotes } from '../../../store/Watch/actions.js';
+import { sendDataToServer } from '../../../store/Watch/actions.js';
+import { bindActionCreators } from 'redux';
+import { startLoading, stopLoading } from '../../../store/Layout/actions.js';
 
 function WatchHeader(props) {
-  const { voteCount, rank, toVote, voted, getVotes } = props;
+  const { voted, voteCount, rank, sendDataToServer, startLoading, stopLoading } = props;
   const { id } = useParams();
-
-  useEffect(() => {
-    const { totalVotes, totalRank, marks } = props.header.headerTitle;
-
-    getVotes(totalVotes, totalRank, marks);
-  }, [getVotes, props.header.headerTitle]);
 
   const {
     img: { src, alt },
@@ -39,21 +34,9 @@ function WatchHeader(props) {
                 className='stars'
                 count={10}
                 allowHalf={true}
-                defaultValue={0}
                 disabled={voted ? true : false}
                 onChange={(e) => {
-                  const rank = {
-                    rank: e,
-                    id: Date.now(),
-                  };
-                  fetch(`http://localhost:3001/votes-${id}`, {
-                    method: 'POST',
-                    headers: {
-                      'Content-Type': 'application/json; charset=utf-8',
-                    },
-                    body: JSON.stringify(rank),
-                  });
-                  toVote(e);
+                  sendDataToServer(e, id, startLoading, stopLoading);
                 }}
               />
               <span>Всего голосов: {voteCount}</span>
@@ -74,8 +57,8 @@ function WatchHeader(props) {
 
 const mapStateToProps = (state) => {
   return {
-    voteCount: state.getSerialEpisodesData.totalVotes,
-    rank: state.getSerialEpisodesData.totalRank,
+    voteCount: state.getSerialEpisodesData.voteCount,
+    rank: state.getSerialEpisodesData.rank,
     marks: state.getSerialEpisodesData.marks,
     voted: state.getSerialEpisodesData.voted,
   };
@@ -83,8 +66,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    toVote: bindActionCreators(vote, dispatch),
-    getVotes: bindActionCreators(getVotes, dispatch),
+    sendDataToServer: bindActionCreators(sendDataToServer, dispatch),
+    startLoading: bindActionCreators(startLoading, dispatch),
+    stopLoading: bindActionCreators(stopLoading, dispatch),
   };
 };
 

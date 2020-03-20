@@ -27,26 +27,26 @@ function ActorsMainPage(props) {
     selectAll,
   } = props;
   const { all, maincast, secondary, male, female } = categoryUrls;
-  const cardInfo = props.actorCards;
+  const { actorCards } = props;
 
   useEffect(() => {
-    if (cardInfo.length < 1 && id === 'all') {
+    if (actorCards.length < 1 && id === 'all') {
       refreshPage(getActorsData, all, selectAll);
     }
-    if (cardInfo.length < 1 && id === 'maincast') {
+    if (actorCards.length < 1 && id === 'maincast') {
       refreshPage(getActorsData, maincast, selectMaincast);
     }
-    if (cardInfo.length < 1 && id === 'secondary') {
+    if (actorCards.length < 1 && id === 'secondary') {
       refreshPage(getActorsData, secondary, selectSecondary);
     }
-    if (cardInfo.length < 1 && id === 'male') {
+    if (actorCards.length < 1 && id === 'male') {
       refreshPage(getActorsData, male, selectMale);
     }
-    if (cardInfo.length < 1 && id === 'female') {
+    if (actorCards.length < 1 && id === 'female') {
       refreshPage(getActorsData, female, selectFemale);
     }
   }, [
-    cardInfo,
+    actorCards,
     id,
     getActorsData,
     all,
@@ -65,10 +65,10 @@ function ActorsMainPage(props) {
     <div>
       <div id={id} className='actor-page-main-box'>
         <div className='filter'>
-          {cardInfo.length > 1 ? <FilterCheckbox actions={props.actions} /> : ''}
+          {actorCards.length > 1 ? <FilterCheckbox actions={props.actions} /> : ''}
         </div>
         <div className='actor-container'>
-          {cardInfo.map((actor) => {
+          {actorCards.map((actor) => {
             return <Card key={actor.id} options={actor} />;
           })}
         </div>
