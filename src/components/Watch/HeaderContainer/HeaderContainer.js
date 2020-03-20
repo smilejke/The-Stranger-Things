@@ -2,24 +2,18 @@ import React, { useEffect } from 'react';
 import { Rate } from 'antd';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { vote, getVotes } from '../../../store/Watch/actions.js';
 
 function WatchHeader(props) {
-  const { totalVotes, totalRank, toVote, voted, getVotes } = props;
+  const { voteCount, rank, toVote, voted, getVotes } = props;
+  const { id } = useParams();
 
   useEffect(() => {
-    getVotes(
-      props.header.headerTitle.totalVotes,
-      props.header.headerTitle.totalRank,
-      props.header.headerTitle.marks,
-    );
-  }, [
-    getVotes,
-    props.header.headerTitle.totalVotes,
-    props.header.headerTitle.totalRank,
-    props.header.headerTitle.marks,
-  ]);
+    const { totalVotes, totalRank, marks } = props.header.headerTitle;
+
+    getVotes(totalVotes, totalRank, marks);
+  }, [getVotes, props.header.headerTitle]);
 
   const {
     img: { src, alt },
@@ -48,13 +42,24 @@ function WatchHeader(props) {
                 defaultValue={0}
                 disabled={voted ? true : false}
                 onChange={(e) => {
+                  const rank = {
+                    rank: e,
+                    id: Date.now(),
+                  };
+                  fetch(`http://localhost:3001/votes-${id}`, {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json; charset=utf-8',
+                    },
+                    body: JSON.stringify(rank),
+                  });
                   toVote(e);
                 }}
               />
-              <span>Всего голосов: {totalVotes}</span>
+              <span>Всего голосов: {voteCount}</span>
             </div>
 
-            <span className='rate-number'>{totalRank.toFixed(1)}</span>
+            <span className='rate-number'>{rank.toFixed(1)}</span>
           </div>
         </div>
 
@@ -69,8 +74,8 @@ function WatchHeader(props) {
 
 const mapStateToProps = (state) => {
   return {
-    totalVotes: state.getSerialEpisodesData.totalVotes,
-    totalRank: state.getSerialEpisodesData.totalRank,
+    voteCount: state.getSerialEpisodesData.totalVotes,
+    rank: state.getSerialEpisodesData.totalRank,
     marks: state.getSerialEpisodesData.marks,
     voted: state.getSerialEpisodesData.voted,
   };
