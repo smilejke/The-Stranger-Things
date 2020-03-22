@@ -1,23 +1,25 @@
 import React, { useEffect } from 'react';
 import '../../../index.css';
+import { getActorsData } from '../../../store/Actor/actions.js';
+import { startLoading, stopLoading } from '../../../store/Layout/actions.js';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import Carousel from './Carousel/carousel.js';
 import ShortDescription from './ShortDescription/ShortDescription.js';
 import Biography from './Biography/Biography.js';
 import CharacterInfo from './CharacterInfo/CharacterInfo.js';
 import Filmography from './Filmography/Filmography.js';
-import { useParams } from 'react-router-dom';
 import Footer from '../../Layout/Footer/Footer.js';
-import { getActorsData } from '../../../store/Actor/actions.js';
-import { startLoading, stopLoading } from '../../../store/Layout/actions.js';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 
 function Profile(props) {
   let { id } = useParams();
   const { getActorsData, profileToSearch } = props;
 
   useEffect(() => {
-    if (profileToSearch.id !== id) getActorsData(id, startLoading, stopLoading);
+    if (profileToSearch.id !== id) {
+      getActorsData(id, startLoading, stopLoading);
+    }
   }, [id, profileToSearch, getActorsData]);
 
   if (!profileToSearch) return null;

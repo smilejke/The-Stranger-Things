@@ -1,8 +1,8 @@
 import React from 'react';
-import { Layout, Menu } from 'antd';
 import '../../../index.css';
+import { Layout, Menu } from 'antd';
 import { Link } from 'react-router-dom';
-import { navOptions } from '../../../global/global.js';
+import { navOptions } from '../../../global/utils/global.js';
 
 const { SubMenu } = Menu;
 const { Header } = Layout;

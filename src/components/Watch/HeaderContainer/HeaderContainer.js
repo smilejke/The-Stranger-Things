@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { sendDataToServer } from '../../../store/Watch/actions.js';
 import { bindActionCreators } from 'redux';
-import { success } from '../../../global/global.js';
+import { success } from '../../../global/utils/global.js';
 
 function WatchHeader(props) {
   const { voted, voteCount, rank, sendDataToServer } = props;

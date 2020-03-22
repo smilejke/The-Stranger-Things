@@ -1,5 +1,5 @@
 import { DOWNLOAD_INFO_FOR_ACTORS_CARDS, LAUNCH_LOADING, STOP_LOADING } from './actions.js';
-import { updateObject } from '../../global/global.js';
+import { updateObject } from '../../global/utils/global.js';
 
 const defaultState = {
   loading: false,

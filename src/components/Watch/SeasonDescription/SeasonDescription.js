@@ -1,6 +1,6 @@
 import React from 'react';
 import DescriptionInfoBlock from './DescriptionInfoBlock/DescripionInfoBlock.js';
-import { seasonImageStyles } from '../../../global/global.js';
+import { seasonImageStyles } from '../../../global/utils/global.js';
 
 function SeasonDescription(props) {
   const firstImageBlockData = props.description[0];

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import Footer from '../Layout/Footer/Footer.js';
-import WatchHeader from '../Watch/HeaderContainer/HeaderContainer.js';
-import SerialSidebar from '../FirstGreetingsPage/SerialSidebar/SerialSidebar.js';
-import SeriesBlock from './SeriesBlock/Series.js';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { startLoading, stopLoading } from '../../store/Layout/actions.js';
 import { bindActionCreators } from 'redux';
 import { setSeasonData, setVotingData } from '../../store/Watch/actions.js';
+import { setPageTitle } from '../../global/utils/global.js';
+import Footer from '../Layout/Footer/Footer.js';
+import WatchHeader from '../Watch/HeaderContainer/HeaderContainer.js';
+import SerialSidebar from '../FirstGreetingsPage/SerialSidebar/SerialSidebar.js';
+import SeriesBlock from './SeriesBlock/Series.js';
 
 function WatchSerial(props) {
   const [watchData, setData] = useState(false);
@@ -15,6 +16,7 @@ function WatchSerial(props) {
   const { id } = useParams();
 
   useEffect(() => {
+    setPageTitle('Эпизоды сериала Очень странные дела');
     startLoading();
     setTimeout(() => {
       fetch(`http://localhost:3001/watch?id=${id}`)

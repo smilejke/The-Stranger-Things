@@ -1,6 +1,6 @@
 import React from 'react';
-import EpisodeCard from './EpisodeCard/EpisodeCard.js';
 import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
+import EpisodeCard from './EpisodeCard/EpisodeCard.js';
 import SeasonDescription from '../SeasonDescription/SeasonDescription.js';
 import SerialDescription from '../SerialDescription/SerialDescription.js';
 

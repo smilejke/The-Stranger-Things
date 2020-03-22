@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { startLoading, stopLoading } from '../../store/Layout/actions.js';
+import { fetchUrls, setPageTitle } from '../../global/utils/global.js';
+import Footer from '../Layout/Footer/Footer.js';
 import GreetTittle from './Title/Title.js';
 import SerialDescription from './SerialDescription/SerialDescription.js';
 import WatchBlock from './WatchBlock/WatchBlock.js';
 import SerialAnatomy from './Anatomy/Anatomy.js';
 import SerialNews from './SerialNews/SerialNews.js';
 import SerialSidebar from './SerialSidebar/SerialSidebar.js';
-import { useDispatch } from 'react-redux';
-import Footer from '../Layout/Footer/Footer.js';
-import { startLoading, stopLoading } from '../../store/Layout/actions.js';
-import { fetchUrls } from '../../global/global.js';
 
 function GreetingsPage() {
   const [newsData, setData] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    document.title = 'The Stranger Things';
+    setPageTitle('Очень странные дела');
     dispatch(startLoading());
     setTimeout(() => {
       fetch(fetchUrls.mainPageData)

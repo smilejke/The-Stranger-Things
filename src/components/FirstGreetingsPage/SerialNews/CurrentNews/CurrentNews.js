@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Footer from '../../../Layout/Footer/Footer.js';
 import { startLoading, stopLoading } from '../../../../store/Layout/actions.js';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import Footer from '../../../Layout/Footer/Footer.js';
 
 function CurrentNews() {
   const [newsData, setData] = useState(false);

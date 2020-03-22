@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { seasonIds } from '../../../global/global.js';
+import { seasonIds } from '../../../global/utils/global.js';
 
 function WatchBlock(props) {
   const images = props.images;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { seasonIds } from '../../../global/global.js';
+import { seasonIds } from '../../../global/utils/global.js';
 import { Link } from 'react-router-dom';
 
 function SerialSidebar() {

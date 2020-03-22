@@ -1,5 +1,5 @@
 import { GET_CURRENT_EPISODES_DATA_BY_ID } from './actions.js';
-import { updateObject } from '../../global/global.js';
+import { updateObject } from '../../global/utils/global.js';
 
 const defaultState = {
   currentEpisodeData: false,

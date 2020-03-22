@@ -1,4 +1,4 @@
-import { fetchUrls } from '../../global/global.js';
+import { fetchUrls } from '../../global/utils/global.js';
 export const GET_CURRENT_ACTOR_ID = 'GET_CURRENT_ACTOR_ID';
 export const DOWNLOAD_INFO_FOR_ACTORS_PROFILES = 'DOWNLOAD_INFO_FOR_ACTORS_PROFILES';
 export const FIND_CURRENT_ACTOR_BY_ID = 'FIND_CURRENT_ACTOR_BY_ID';

@@ -1,5 +1,5 @@
 import { TO_VOTE, SET_SEASON_DATA_TO_STORE, SET_MARKS_DATA_TO_STORE } from './actions.js';
-import { updateObject, updateMarks } from '../../global/global.js';
+import { updateObject, updateMarks } from '../../global/utils/global.js';
 
 const defaultState = {
   currentSeasonData: false,

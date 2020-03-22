@@ -5,7 +5,7 @@ import {
   SELECT_FEMALE,
   SELECT_ALL_ACTORS,
 } from './actions.js';
-import { updateObject } from '../../global/global.js';
+import { updateObject } from '../../global/utils/global.js';
 
 const defaultState = {
   maincast: false,

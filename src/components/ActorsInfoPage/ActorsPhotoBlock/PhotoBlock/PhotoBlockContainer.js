@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react';
-import FilterCheckbox from '../CheckboxFilter/Filter.js';
-import Card from '../ActorCard/ActorCardBody/Card.js';
 import '../../../../index.css';
 import { useParams } from 'react-router-dom';
-import Footer from '../../../Layout/Footer/Footer.js';
 import { getActorsData } from '../../../../store/Layout/actions.js';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { categoryUrls, refreshPage } from '../../../../global/global.js';
+import { categoryUrls, refreshPage, setPageTitle } from '../../../../global/utils/global.js';
 import {
   selectMaincast,
   selectSecondary,
@@ -15,6 +12,9 @@ import {
   selectFemale,
   selectAll,
 } from '../../../../store/FilterRoles/actions.js';
+import Footer from '../../../Layout/Footer/Footer.js';
+import FilterCheckbox from '../CheckboxFilter/Filter.js';
+import Card from '../ActorCard/ActorCardBody/Card.js';
 
 function ActorsMainPage(props) {
   let { id } = useParams();
@@ -30,6 +30,7 @@ function ActorsMainPage(props) {
   const { actorCards } = props;
 
   useEffect(() => {
+    setPageTitle('Актеры сериала Очень странные дела');
     if (actorCards.length < 1 && id === 'all') {
       refreshPage(getActorsData, all, selectAll);
     }

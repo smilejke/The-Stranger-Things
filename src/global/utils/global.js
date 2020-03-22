@@ -49,6 +49,10 @@ export const navOptions = {
   },
 };
 
+export const setPageTitle = (name) => {
+  return (document.title = name);
+};
+
 export const refreshPage = (fn1, param, fn2) => {
   fn1(param);
   fn2();

@@ -1,8 +1,8 @@
 import React from 'react';
 import '../../../../../index.css';
+import { Link, useRouteMatch } from 'react-router-dom';
 import ActorInfoList from '../ActorInfoList/ActorInfoList.js';
 import HoverButton from '../CardButton/HoverEffectButton.js';
-import { Link, useRouteMatch } from 'react-router-dom';
 
 function Card(props) {
   const {

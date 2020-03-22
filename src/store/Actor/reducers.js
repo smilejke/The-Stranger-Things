@@ -1,5 +1,5 @@
 import { GET_CURRENT_ACTOR_ID, FIND_CURRENT_ACTOR_BY_ID } from './actions.js';
-import { updateObject } from '../../global/global.js';
+import { updateObject } from '../../global/utils/global.js';
 
 const defaultState = {
   currentActorId: '',
