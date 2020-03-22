@@ -1,4 +1,4 @@
-.series-block-container img {
+.season-block-image {
   width: 200px;
   height: 115px;
   border: 1px solid #fff;
@@ -6,7 +6,7 @@
 }
 
 .series-block-container span,
-.series-block-container img {
+.season-block-image {
   cursor: pointer;
 }
 .series-block-container {

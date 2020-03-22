@@ -6,6 +6,8 @@ export const categoryUrls = {
   female: 'http://localhost:3001/actors?gender=female',
 };
 
+export const seasonIds = ['SEASON_ONE', 'SEASON_TWO', 'SEASON_THREE'];
+
 export const seasonImageStyles = {
   first: 'season-description-first-image',
   second: 'season-description-second-image',

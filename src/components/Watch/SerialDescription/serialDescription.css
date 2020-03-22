@@ -1,0 +1,10 @@
+.serial-description-container {
+  min-width: 600px;
+  color: #fff;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+.serial-description-container h2 {
+  color: #fff;
+  margin: 25px 0 50px 0;
+}

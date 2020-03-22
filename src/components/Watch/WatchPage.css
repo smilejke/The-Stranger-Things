@@ -1,6 +1,7 @@
 @import './HeaderContainer/HeaderContainer.css';
 @import './SeriesBlock/Series.css';
 @import './SeasonDescription/SeasonDescription.css';
+@import './SerialDescription/serialDescription.css';
 
 .watch {
   color: #fff;

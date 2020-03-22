@@ -3,7 +3,6 @@ import Footer from '../Layout/Footer/Footer.js';
 import WatchHeader from '../Watch/HeaderContainer/HeaderContainer.js';
 import SerialSidebar from '../FirstGreetingsPage/SerialSidebar/SerialSidebar.js';
 import SeriesBlock from './SeriesBlock/Series.js';
-import SeasonDescription from './SeasonDescription/SeasonDescription.js';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { startLoading, stopLoading } from '../../store/Layout/actions.js';
@@ -49,8 +48,7 @@ function WatchSerial(props) {
       <div className='watch-page-main-container'>
         <div className='watch-page-left-content'>
           <WatchHeader header={header} />
-          <SeriesBlock series={seriesBlock} />
-          <SeasonDescription description={description} />
+          <SeriesBlock series={seriesBlock} description={description} />
         </div>
         <div className='watch-page-right-content'>
           <SerialSidebar />
