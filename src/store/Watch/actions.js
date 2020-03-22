@@ -23,20 +23,13 @@ export const vote = (vote) => {
   };
 };
 
-export const sendDataToServer = (rank, adress, loadingOn, loadingOff) => (dispatch) => {
+export const sendDataToServer = (rank, adress, callback) => (dispatch) => {
   dispatch(vote(rank));
-  dispatch(loadingOn);
-  setTimeout(() => {
-    fetch(`http://localhost:3001/${adress}/`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json; charset=utf-8',
-      },
-      body: JSON.stringify({ mark: rank }),
-    }).then(
-      setTimeout(() => {
-        dispatch(loadingOff);
-      }, 100),
-    );
-  }, 400);
+  fetch(`http://localhost:3001/${adress}/`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+    },
+    body: JSON.stringify({ mark: rank }),
+  }).then(dispatch(callback));
 };

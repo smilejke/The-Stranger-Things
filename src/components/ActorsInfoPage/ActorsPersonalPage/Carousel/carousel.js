@@ -12,7 +12,7 @@ function ActorCarousel(props) {
 
   return (
     <div className='carousel-box'>
-      <h2>{name}</h2>
+      <h1 className='carousel-name'>{name}</h1>
       <Carousel>
         {carouselData.map((image) => {
           return (

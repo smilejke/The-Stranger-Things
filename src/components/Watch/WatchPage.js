@@ -12,8 +12,8 @@ import { setSeasonData, setVotingData } from '../../store/Watch/actions.js';
 function WatchSerial(props) {
   const [watchData, setData] = useState(false);
   const { setSeasonData, startLoading, stopLoading, setVotingData } = props;
-
   const { id } = useParams();
+
   useEffect(() => {
     startLoading();
     setTimeout(() => {

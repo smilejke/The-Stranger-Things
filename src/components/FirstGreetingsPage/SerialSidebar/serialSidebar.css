@@ -3,13 +3,19 @@
   color: #fff;
 }
 
-.serial-sidebar span {
-  font-size: large;
+.serial-sidebar h2 {
+  color: #fff;
 }
 
 .serial-sidebar ul li {
   list-style-type: none;
   margin: 15px 0;
+  font-size: 1.2em;
   cursor: pointer;
   color: #cdcdcd;
+}
+
+.serial-sidebar ul li:hover {
+  color: #fff;
+  text-decoration: underline;
 }

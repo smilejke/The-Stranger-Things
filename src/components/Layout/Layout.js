@@ -24,12 +24,10 @@ function MainLayout(props) {
   const { loading, getActorsData } = props;
   const { all, maincast, secondary, male, female } = categoryUrls;
 
-  const getActors = () => {
-    getActorsData(all);
-  };
-
   const filterActions = {
-    getActors,
+    getActors: () => {
+      getActorsData(all);
+    },
     getMaincast: () => {
       getActorsData(maincast);
     },

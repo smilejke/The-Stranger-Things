@@ -1,3 +1,4 @@
+import { fetchUrls } from '../../global/global.js';
 export const GET_CURRENT_ACTOR_ID = 'GET_CURRENT_ACTOR_ID';
 export const DOWNLOAD_INFO_FOR_ACTORS_PROFILES = 'DOWNLOAD_INFO_FOR_ACTORS_PROFILES';
 export const FIND_CURRENT_ACTOR_BY_ID = 'FIND_CURRENT_ACTOR_BY_ID';
@@ -18,7 +19,7 @@ export const findProfile = (profileArray) => {
 export const getActorsData = (actorId, loaderOn, loaderOff) => (dispatch) => {
   dispatch(loaderOn());
   setTimeout(() => {
-    fetch('http://localhost:3001/profiles')
+    fetch(fetchUrls.profiles)
       .then(dispatch(getCurrentActor(actorId)))
       .then((response) => response.json())
       .then((data) => dispatch(findProfile(data)))

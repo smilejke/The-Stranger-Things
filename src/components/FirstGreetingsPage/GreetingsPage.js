@@ -8,15 +8,17 @@ import SerialSidebar from './SerialSidebar/SerialSidebar.js';
 import { useDispatch } from 'react-redux';
 import Footer from '../Layout/Footer/Footer.js';
 import { startLoading, stopLoading } from '../../store/Layout/actions.js';
+import { fetchUrls } from '../../global/global.js';
 
 function GreetingsPage() {
   const [newsData, setData] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
+    document.title = 'The Stranger Things';
     dispatch(startLoading());
     setTimeout(() => {
-      fetch('http://localhost:3001/greetings')
+      fetch(fetchUrls.mainPageData)
         .then((response) => response.json())
         .then((data) => {
           setData(data);

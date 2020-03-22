@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import FilterCheckbox from '../CheckboxFilter/Filter.js';
-import Card from '../ActorCard/Card.js';
+import Card from '../ActorCard/ActorCardBody/Card.js';
 import '../../../../index.css';
 import { useParams } from 'react-router-dom';
 import Footer from '../../../Layout/Footer/Footer.js';

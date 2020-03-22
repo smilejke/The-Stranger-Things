@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { sendDataToServer } from '../../../store/Watch/actions.js';
 import { bindActionCreators } from 'redux';
-import { startLoading, stopLoading } from '../../../store/Layout/actions.js';
+import { success } from '../../../global/global.js';
 
 function WatchHeader(props) {
-  const { voted, voteCount, rank, sendDataToServer, startLoading, stopLoading } = props;
+  const { voted, voteCount, rank, sendDataToServer } = props;
   const { id } = useParams();
 
   const {
@@ -36,7 +36,7 @@ function WatchHeader(props) {
                 allowHalf={true}
                 disabled={voted ? true : false}
                 onChange={(e) => {
-                  sendDataToServer(e, id, startLoading, stopLoading);
+                  sendDataToServer(e, id, success);
                 }}
               />
               <span>Всего голосов: {voteCount}</span>
@@ -67,8 +67,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     sendDataToServer: bindActionCreators(sendDataToServer, dispatch),
-    startLoading: bindActionCreators(startLoading, dispatch),
-    stopLoading: bindActionCreators(stopLoading, dispatch),
   };
 };
 

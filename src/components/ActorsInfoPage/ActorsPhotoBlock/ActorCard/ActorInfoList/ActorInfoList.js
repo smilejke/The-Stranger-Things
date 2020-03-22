@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../../../index.css';
-import ListItem from './ListItem.js';
+import '../../../../../index.css';
+import ListItem from '../ActorInfoListItemCreator/ListItem.js';
 
 function ActorInfoList(props) {
   const { name, born, age, from, role } = props.info;

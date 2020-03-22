@@ -2,3 +2,6 @@
   width: 100%;
   color: #fff;
 }
+.serial-description p {
+  line-height: 30px;
+}

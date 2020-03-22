@@ -1,0 +1,13 @@
+.filter {
+  min-width: 500px;
+  margin: 15px 100px 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+}
+.filter span {
+  color: #fff;
+}
+.filter a {
+  margin: 0 5px;
+}

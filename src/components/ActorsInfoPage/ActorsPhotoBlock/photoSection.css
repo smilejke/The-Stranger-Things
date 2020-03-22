@@ -1,3 +1,6 @@
+@import './CheckboxFilter/filter.css';
+@import './ActorCard/ActorCardBody/actorCard.css';
+
 .actor-page-main-box {
   padding: 0 100px;
 }
@@ -11,55 +14,4 @@
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-}
-
-.actor-photo {
-  padding: 20px 20px;
-  width: 240px;
-  height: 480px;
-  text-align: center;
-  cursor: default;
-  margin: 20px 0;
-  transition: all 0.2s ease;
-}
-
-.actor-photo:hover {
-  transform: scale(1.1);
-}
-.actor-photo:hover .img-actor {
-  border: 2px solid #fff;
-}
-.actor-photo:hover .a-button {
-  opacity: 1;
-}
-.actor-photo:hover ul li {
-  color: #fff;
-}
-
-.actor-photo ul {
-  margin-top: 5px;
-  list-style: none;
-}
-.actor-photo ul li {
-  color: #cdcdcd;
-}
-
-.img-actor {
-  width: 190px;
-  height: 290px;
-  cursor: pointer;
-}
-
-.filter {
-  min-width: 500px;
-  margin: 15px 100px 0 0;
-  display: flex;
-  justify-content: flex-end;
-  align-content: center;
-}
-.filter span {
-  color: #fff;
-}
-.filter a {
-  margin: 0 5px;
 }

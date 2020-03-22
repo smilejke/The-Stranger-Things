@@ -21,7 +21,9 @@ function News(props) {
               <strong>{header}</strong>
             </Link>
           </div>
-          <div className='news-body'>{content}</div>
+          <div className='news-body'>
+            <p>{content}</p>
+          </div>
         </div>
       </div>
     </div>

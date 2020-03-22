@@ -20,7 +20,9 @@
 .current-news-header {
   min-width: 600px;
 }
-
+.current-news-content {
+  padding: 0 50px;
+}
 .current-news-container {
   padding: 50px 250px;
   color: #cdcdcd;

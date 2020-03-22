@@ -1,8 +1,10 @@
 @import '~antd/dist/antd.css';
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Play&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
 @import './components/ActorsInfoPage/ActorsPhotoBlock/photoSection.css';
-@import './components/ActorsInfoPage/ActorsPhotoBlock/ActorCard/hoverbutton.css';
+@import './components/ActorsInfoPage/ActorsPhotoBlock/ActorCard/CardButton/hoverbutton.css';
 @import './components/Layout/Layout.css';
 @import './components/Layout/Header/header.css';
 @import './components/Layout/loadingEffect/spin.css';
@@ -10,10 +12,21 @@
 @import './components/ActorsInfoPage/ActorsPersonalPage/Carousel/carousel.css';
 @import './components/FirstGreetingsPage/GreetingsPage.css';
 @import './components/Watch/WatchPage.css';
-/* font-family: 'Play', sans-serif; */
 /* font-family: 'Raleway', sans-serif; */
+/* font-family: 'Play', sans-serif; */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+h2,
+h4,
+h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+p {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.1em;
 }

@@ -17,13 +17,13 @@ function ActorsPageHeader() {
   } = navOptions;
 
   const linkOptionsToCreate = [
-    { adress: home, text: 'Home' },
-    { adress: actors, text: 'Actors' },
+    { adress: home, text: 'Главная' },
+    { adress: actors, text: 'Актеры сериала' },
   ];
   const submenu = [
-    { adress: seasonOne, text: 'Season One', id: 'SEASON_ONE' },
-    { adress: seasonTwo, text: 'Season Two', id: 'SEASON_TWO' },
-    { adress: seasonThree, text: 'Season Three', id: 'SEASON_THREE' },
+    { adress: seasonOne, text: 'Первый сезон', id: 'SEASON_ONE' },
+    { adress: seasonTwo, text: 'Второй сезон', id: 'SEASON_TWO' },
+    { adress: seasonThree, text: 'Третий сезон', id: 'SEASON_THREE' },
   ];
 
   return (
@@ -47,7 +47,7 @@ function ActorsPageHeader() {
           );
         })}
 
-        <SubMenu key='sub1' title={<span>Watch</span>}>
+        <SubMenu key='sub1' title={<span>Обзор эпизодов</span>}>
           {submenu.map((el) => {
             return (
               <Menu.Item key={'submenuItem' + submenu.indexOf(el)} id={el.id}>

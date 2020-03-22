@@ -1,3 +1,17 @@
+import { notification, message } from 'antd';
+
+export const openNotification = () => {
+  notification.open({
+    message: 'Спасибо за ваш отзыв',
+    description:
+      'Обязательно расскажите друзьям о нас. Только вместе мы сможем победить Демогоргона!',
+  });
+};
+
+export const success = () => {
+  message.success('Спасибо за ваше мнение!');
+};
+
 export const categoryUrls = {
   all: 'http://localhost:3001/actors',
   maincast: 'http://localhost:3001/actors?majority=maincast',
@@ -6,12 +20,21 @@ export const categoryUrls = {
   female: 'http://localhost:3001/actors?gender=female',
 };
 
-export const seasonIds = ['SEASON_ONE', 'SEASON_TWO', 'SEASON_THREE'];
+export const seasonIds = [
+  { id: 'SEASON_ONE', text: 'Первый сезон' },
+  { id: 'SEASON_TWO', text: 'Второй сезон' },
+  { id: 'SEASON_THREE', text: 'Третий сезон' },
+];
 
 export const seasonImageStyles = {
   first: 'season-description-first-image',
   second: 'season-description-second-image',
   third: 'season-description-third-image',
+};
+
+export const fetchUrls = {
+  mainPageData: 'http://localhost:3001/greetings',
+  profiles: 'http://localhost:3001/profiles',
 };
 
 export const navOptions = {
