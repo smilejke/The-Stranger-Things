@@ -4,6 +4,7 @@ import { filterReducer } from './FilterRoles/reducers.js';
 import { getActor } from './Actor/reducers.js';
 import { getSerialEpisodesData } from './Watch/reducers.js';
 import { episodes } from './Episodes/reducers.js';
+import { views } from './Views/reducers.js';
 
 export default combineReducers({
   layout: layoutReducer,
@@ -11,4 +12,5 @@ export default combineReducers({
   getActor,
   getSerialEpisodesData,
   episodes,
+  views,
 });

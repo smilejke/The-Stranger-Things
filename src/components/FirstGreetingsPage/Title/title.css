@@ -1,0 +1,11 @@
+.head-example {
+  width: 35px;
+  height: 35px;
+  background: url('../../../global/img/tools-and-utensils.png');
+  background-size: 100%;
+  background-color: transparent;
+}
+.page-title-smallie-eye {
+  display: flex;
+  justify-content: space-between;
+}

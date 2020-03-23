@@ -4,6 +4,7 @@
 @import './SerialSidebar/serialSidebar.css';
 @import './SerialNews/CurrentNews/currentNews.css';
 @import './SerialDescription/serialDescription.css';
+@import './Title/title.css';
 
 .greetings-page-main-container {
   width: 100%;

@@ -35,6 +35,7 @@ export const seasonImageStyles = {
 export const fetchUrls = {
   mainPageData: 'http://localhost:3001/greetings',
   profiles: 'http://localhost:3001/profiles',
+  views: 'http://localhost:3001/views',
 };
 
 export const navOptions = {
