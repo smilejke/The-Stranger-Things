@@ -1,3 +1,8 @@
 .filmography {
   margin: 50px 0;
 }
+.actor-profile-text-decorator ul li {
+  font-family: 'Ubuntu', sans-serif;
+  margin: 2px 0;
+  font-size: 1.1em;
+}

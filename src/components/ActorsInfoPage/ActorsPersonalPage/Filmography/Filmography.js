@@ -8,11 +8,11 @@ function Filmography(props) {
       <h3>Фильмография: </h3>
 
       <div className='actor-profile-text-decorator'>
-        <ol>
+        <ul>
           {films.map((film) => {
             return <li key={'film' + films.indexOf(film)}>{film}</li>;
           })}
-        </ol>
+        </ul>
       </div>
     </div>
   );

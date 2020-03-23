@@ -15,3 +15,7 @@
   min-height: 100vh;
   overflow: hidden;
 }
+.actor-container li,
+.actor-container button {
+  font-family: 'Ubuntu', sans-serif;
+}

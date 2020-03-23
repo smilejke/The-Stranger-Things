@@ -2,6 +2,7 @@ import React from 'react';
 
 function ShortDescription(props) {
   const { height, date, birthplace } = props.shortDescr;
+
   return (
     <div className='short-description'>
       <ul>

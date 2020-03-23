@@ -1,16 +1,14 @@
-.season-description-main-container,
-.season-description-main-container h2 {
-  color: #fff;
+.season-description-main-container {
+  color: #cdcdcd;
+  margin-bottom: 40px;
 }
 .season-description-main-container h2 {
-  margin: 25px 0 50px 0;
+  margin: 35px 0 40px 0;
 }
 .season-description-main-container p {
   text-align: justify;
 }
-.season-description-main-container {
-  margin-bottom: 40px;
-}
+
 .season-description-first-image {
   float: right;
   width: 300px;

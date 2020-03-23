@@ -21,7 +21,7 @@ function EpisodeCard(props) {
     >
       <img src={src} alt={alt} className='season-block-image' />
       <span>{serieName}</span>
-      <span className='series-counter'>{counter}</span>
+      <span>{counter}</span>
     </div>
   );
 }

@@ -1,9 +1,10 @@
 .short-description {
-  font-style: italic;
-  margin: 50px 10px;
+  font-family: 'Caveat', cursive;
+  margin: 40px 10px;
   color: #fff;
 }
 
 .short-description ul li {
   list-style: none;
+  font-size: 1.3em;
 }

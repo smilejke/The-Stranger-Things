@@ -19,7 +19,7 @@ function GreetTittle(props) {
       <h2>{biggie}</h2>
       <div className='page-title-smallie-eye'>
         <h4>{smallie}</h4>
-        <Badge count={views}>
+        <Badge count={views} title='Количество просмотров страницы'>
           <div className='head-example' />
         </Badge>
       </div>
