@@ -3,6 +3,7 @@ import '../../../index.css';
 import { Layout, Menu } from 'antd';
 import { Link } from 'react-router-dom';
 import { navOptions, linkOptionsToCreate, submenu } from '../../../global/utils/global.js';
+import Logo from './Logo/Logo.js';
 
 const { SubMenu } = Menu;
 const { Header } = Layout;
@@ -14,14 +15,7 @@ function ActorsPageHeader() {
 
   return (
     <Header className='page-nav-header'>
-      <div className='logo'>
-        <Link to={home}>
-          <img
-            src='https://ochen-strannye-dela.online/images/logo-stranger-things.png'
-            alt='logo'
-          ></img>
-        </Link>
-      </div>
+      <Logo adress={home} />
       <Menu className='page-nav-menu' theme='dark' mode='horizontal'>
         {linkOptionsToCreate.map((item) => {
           return (

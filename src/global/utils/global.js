@@ -20,6 +20,18 @@ export const categoryUrls = {
   female: 'http://localhost:3001/actors?gender=female',
 };
 
+export const HeaderText = {
+  watchBlock: {
+    announcer: 'Все сезоны',
+    seasonCount: '3 сезона',
+  },
+  anatomy: 'Анатомия сериала "Очень странные дела"',
+  newsHeader: 'Новости сериала',
+  biographyHeader: 'Биография:',
+  characterInfoHeader: 'О сыгранном персонаже:',
+  filmographyHeader: 'Фильмография:',
+};
+
 export const seasonIds = [
   { id: 'SEASON_ONE', text: 'Первый сезон' },
   { id: 'SEASON_TWO', text: 'Второй сезон' },

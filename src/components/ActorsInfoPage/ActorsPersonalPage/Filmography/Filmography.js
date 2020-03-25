@@ -1,11 +1,13 @@
 import React from 'react';
+import { HeaderText } from '../../../../global/utils/global.js';
 
 function Filmography(props) {
   const films = props.films;
+  const { filmographyHeader } = HeaderText;
 
   return (
     <div className='filmography'>
-      <h3>Фильмография: </h3>
+      <h3>{filmographyHeader} </h3>
 
       <div className='actor-profile-text-decorator'>
         <ul>

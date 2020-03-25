@@ -3,6 +3,8 @@ import { startLoading, stopLoading } from '../../../../store/Layout/actions.js';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Footer from '../../../Layout/Footer/Footer.js';
+import CurrentNewsHeader from './CurrentNewsHeader/CurrentNewsHeader';
+import CurrentNewsContent from './CurrentNewsContent/CurrentNewsContent.js';
 
 function CurrentNews() {
   const [newsData, setData] = useState(false);
@@ -28,23 +30,14 @@ function CurrentNews() {
   const {
     header: { text, date },
     paragraphs,
-    image: { src, alt },
+    image,
   } = newsData;
 
   return (
     <div>
       <div className='current-news-container'>
-        <div className='current-news-header'>
-          <h1>{text}</h1>
-          <p>{date}</p>
-        </div>
-
-        <div className='current-news-content'>
-          <img src={src} alt={alt}></img>
-          {paragraphs.map((par) => {
-            return <p key={'newsPar' + paragraphs.indexOf(par)}>{par}</p>;
-          })}
-        </div>
+        <CurrentNewsHeader text={text} date={date} />
+        <CurrentNewsContent content={paragraphs} image={image} />
       </div>
       <Footer />
     </div>

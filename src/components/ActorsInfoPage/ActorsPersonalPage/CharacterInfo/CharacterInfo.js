@@ -1,10 +1,12 @@
 import React from 'react';
+import { HeaderText } from '../../../../global/utils/global.js';
 
 function CharacterInfo(props) {
   const text = props.text;
+  const { characterInfoHeader } = HeaderText;
   return (
     <div className='short-desrc'>
-      <h3>О сыгранном персонаже: </h3>
+      <h3>{characterInfoHeader} </h3>
       <div className='actor-profile-text-decorator'>
         <p>{text}</p>
       </div>
