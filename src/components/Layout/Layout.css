@@ -1,4 +1,4 @@
-.actors-layout-heigth {
+.app-content-main-container {
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -12,7 +12,7 @@
   overflow: auto;
 }
 
-.actors-layout-footer {
+.app-layout-footer {
   min-width: max-content;
   background: transparent;
   text-align: center;

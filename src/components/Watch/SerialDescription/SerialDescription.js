@@ -24,7 +24,7 @@ function SerialDescription(props) {
 const mapStateToProps = (state) => {
   return {
     currentEpisodeData: state.episodes.currentEpisodeData,
-    currentSeasonData: state.getSerialEpisodesData.currentSeasonData,
+    currentSeasonData: state.seasons.currentSeasonData,
   };
 };
 

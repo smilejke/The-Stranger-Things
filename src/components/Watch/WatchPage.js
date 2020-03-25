@@ -63,9 +63,9 @@ function WatchSerial(props) {
 
 const mapStateToProps = (state) => {
   return {
-    seasonId: state.getSerialEpisodesData.seasonId,
-    currentSeasonData: state.getSerialEpisodesData.currentSeasonData,
-    marks: state.getSerialEpisodesData.marks,
+    seasonId: state.seasons.seasonId,
+    currentSeasonData: state.seasons.currentSeasonData,
+    marks: state.seasons.marks,
   };
 };
 

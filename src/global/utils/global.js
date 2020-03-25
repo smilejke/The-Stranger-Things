@@ -50,13 +50,24 @@ export const navOptions = {
   },
 };
 
+export const linkOptionsToCreate = [
+  { adress: '/', text: 'Главная' },
+  { adress: '/actors/all', text: 'Актеры сериала' },
+];
+
+export const submenu = [
+  { adress: '/watch/SEASON_ONE', text: 'Первый сезон', id: 'SEASON_ONE' },
+  { adress: '/watch/SEASON_TWO', text: 'Второй сезон', id: 'SEASON_TWO' },
+  { adress: '/watch/SEASON_THREE', text: 'Третий сезон', id: 'SEASON_THREE' },
+];
+
 export const setPageTitle = (name) => {
   return (document.title = name);
 };
 
-export const refreshPage = (fn1, param, fn2) => {
-  fn1(param);
-  fn2();
+export const refreshPage = (fn1body, fn1Param, fn2body) => {
+  fn1body(fn1Param);
+  fn2body();
 };
 
 export function updateObject(oldObject, newValues) {

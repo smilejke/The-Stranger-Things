@@ -18,6 +18,7 @@ import Card from '../ActorCard/ActorCardBody/Card.js';
 
 function ActorsMainPage(props) {
   let { id } = useParams();
+  const { all, maincast, secondary, male, female } = categoryUrls;
   const {
     getActorsData,
     selectMaincast,
@@ -25,9 +26,26 @@ function ActorsMainPage(props) {
     selectMale,
     selectFemale,
     selectAll,
+    actorCards,
   } = props;
-  const { all, maincast, secondary, male, female } = categoryUrls;
-  const { actorCards } = props;
+
+  const filterActions = {
+    getActors: () => {
+      getActorsData(all);
+    },
+    getMaincast: () => {
+      getActorsData(maincast);
+    },
+    getSecondaryActors: () => {
+      getActorsData(secondary);
+    },
+    getMaleActors: () => {
+      getActorsData(male);
+    },
+    getFemaleActors: () => {
+      getActorsData(female);
+    },
+  };
 
   useEffect(() => {
     setPageTitle('Актеры сериала Очень странные дела');
@@ -66,7 +84,7 @@ function ActorsMainPage(props) {
     <div>
       <div id={id} className='actor-page-main-box'>
         <div className='filter'>
-          {actorCards.length > 1 ? <FilterCheckbox actions={props.actions} /> : ''}
+          {actorCards.length > 1 ? <FilterCheckbox actions={filterActions} /> : ''}
         </div>
         <div className='actor-container'>
           {actorCards.map((actor) => {

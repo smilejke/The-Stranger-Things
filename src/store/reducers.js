@@ -9,8 +9,8 @@ import { views } from './Views/reducers.js';
 export default combineReducers({
   layout: layoutReducer,
   filter: filterReducer,
-  getActor,
-  getSerialEpisodesData,
+  profile: getActor,
+  seasons: getSerialEpisodesData,
   episodes,
   views,
 });

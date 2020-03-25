@@ -1,13 +1,10 @@
 import React from 'react';
 import '../../index.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { getActorsData } from '../../store/Layout/actions.js';
 import { Layout } from 'antd';
-import { categoryUrls } from '../../global/utils/global.js';
 import LoadingSpinner from './loadingEffect/loading.js';
-import ActorsMainPage from '../ActorsInfoPage/ActorsPhotoBlock/PhotoBlock/PhotoBlockContainer.js';
+import ActorsMainPage from '../ActorsInfoPage/ActorsPhotoBlock/PhotoBlock/ActorsMainPage.js';
 import Profile from '../ActorsInfoPage/ActorsPersonalPage/ActorProfile.js';
 import GreetingsPage from '../FirstGreetingsPage/GreetingsPage.js';
 import CurrentNews from '../FirstGreetingsPage/SerialNews/CurrentNews/CurrentNews.js';
@@ -17,50 +14,21 @@ import WatchSerial from '../Watch/WatchPage.js';
 const { Content } = Layout;
 
 function MainLayout(props) {
-  const { loading, getActorsData } = props;
-  const { all, maincast, secondary, male, female } = categoryUrls;
-
-  const filterActions = {
-    getActors: () => {
-      getActorsData(all);
-    },
-    getMaincast: () => {
-      getActorsData(maincast);
-    },
-    getSecondaryActors: () => {
-      getActorsData(secondary);
-    },
-    getMaleActors: () => {
-      getActorsData(male);
-    },
-    getFemaleActors: () => {
-      getActorsData(female);
-    },
-  };
+  const { loading } = props;
 
   return (
     <Router>
-      <Layout className='actors-layout-heigth'>
+      <Layout className='app-content-main-container'>
         {loading ? <LoadingSpinner /> : ''}
 
-        <ActorsPageHeader />
         <Content>
+          <ActorsPageHeader />
           <Switch>
-            <Route path='/watch/:id'>
-              <WatchSerial />
-            </Route>
-            <Route path='/actors/:id/:id'>
-              <Profile />
-            </Route>
-            <Route path='/actors/:id'>
-              <ActorsMainPage actions={filterActions} />
-            </Route>
-            <Route path='/news/:id'>
-              <CurrentNews />
-            </Route>
-            <Route exact path='/'>
-              <GreetingsPage />
-            </Route>
+            <Route path='/watch/:id' children={<WatchSerial />} />
+            <Route path='/actors/:id/:id' children={<Profile />} />
+            <Route path={'/actors/:id'} children={<ActorsMainPage />} />
+            <Route path='/news/:id' children={<CurrentNews />} />
+            <Route exact path='/' children={<GreetingsPage />} />
           </Switch>
         </Content>
       </Layout>
@@ -70,15 +38,8 @@ function MainLayout(props) {
 
 const mapStateToProps = (state) => {
   return {
-    actorCards: state.layout.actorCards,
     loading: state.layout.loading,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getActorsData: bindActionCreators(getActorsData, dispatch),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(MainLayout);
+export default connect(mapStateToProps)(MainLayout);

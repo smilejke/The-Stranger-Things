@@ -8,6 +8,11 @@
   background: transparent;
   line-height: 64px;
 }
+.page-nav-menu span,
+.ant-menu-item span {
+  font-family: 'Neucha', cursive;
+  font-size: 1.3em;
+}
 
 .page-nav-header a,
 .ant-menu-submenu-title {
@@ -21,9 +26,9 @@
 }
 
 .ant-menu-item:hover,
+.ant-menu-submenu-selected,
 .ant-menu-submenu-title:hover {
   color: #fff;
-  text-decoration: underline;
 }
 
 .logo img {

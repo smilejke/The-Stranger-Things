@@ -1,7 +1,3 @@
-.watch-header img {
-  width: 170px;
-  height: 240px;
-}
 .watch-header {
   display: flex;
   width: 100%;
@@ -12,13 +8,17 @@
   color: #fff;
 }
 .watch-header-picture {
-  width: 180px;
+  width: 200px;
   margin-right: 25px;
+  display: flex;
+}
+.watch-header-picture img {
+  width: 199px;
+  height: auto;
 }
 .header-season {
   border-bottom: 1px solid #fff;
 }
-
 .rate {
   display: flex;
   justify-content: space-between;

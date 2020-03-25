@@ -42,7 +42,7 @@ function Profile(props) {
 
 const mapStateToProps = (state) => {
   return {
-    profileToSearch: state.getActor.profileToSearch,
+    profileToSearch: state.profile.profileToSearch,
   };
 };
 

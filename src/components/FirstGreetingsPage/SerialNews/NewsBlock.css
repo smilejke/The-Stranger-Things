@@ -34,9 +34,12 @@
 
 .news-title a {
   color: #fff;
+  font-family: 'Neucha', cursive;
+  font-size: 1.2em;
+  letter-spacing: 1px;
 }
 .news-title a:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid #fff;
 }
 
 .news-body p {
