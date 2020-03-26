@@ -8,3 +8,6 @@
   width: 180px;
   height: 250px;
 }
+.card-container {
+  cursor: pointer;
+}

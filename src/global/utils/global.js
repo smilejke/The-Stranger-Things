@@ -48,6 +48,7 @@ export const fetchUrls = {
   mainPageData: 'http://localhost:3001/greetings',
   profiles: 'http://localhost:3001/profiles',
   views: 'http://localhost:3001/views',
+  news: 'http://localhost:3001/news',
 };
 
 export const navOptions = {

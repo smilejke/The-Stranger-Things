@@ -31,7 +31,7 @@ function GreetingsPage() {
 
   if (!newsData) return null;
 
-  const { header, shortDescription, watchBlock, anatomy, news } = newsData;
+  const { header, shortDescription, watchBlock, anatomy } = newsData;
 
   return (
     <div>
@@ -41,7 +41,7 @@ function GreetingsPage() {
           <SerialDescription description={shortDescription} />
           <WatchBlock images={watchBlock} />
           <SerialAnatomy data={anatomy} />
-          <SerialNews news={news} />
+          <SerialNews />
         </div>
         <div className='greetings-page-right-content'>
           <SerialSidebar />

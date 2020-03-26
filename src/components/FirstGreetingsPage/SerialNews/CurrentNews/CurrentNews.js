@@ -14,11 +14,9 @@ function CurrentNews() {
   useEffect(() => {
     dispatch(startLoading());
     setTimeout(() => {
-      fetch(`http://localhost:3001/greetings`)
+      fetch(`http://localhost:3001/news`)
         .then((response) => response.json())
-        .then((data) => {
-          setData(data.news.find((el) => el.id === id).onOpen);
-        })
+        .then((data) => setData(data.find((el) => id === el.id).onOpen))
         .then(() => {
           dispatch(stopLoading());
         }, 100);

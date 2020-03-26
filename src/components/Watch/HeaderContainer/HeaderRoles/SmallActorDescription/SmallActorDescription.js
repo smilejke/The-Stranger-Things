@@ -5,7 +5,7 @@ function SmallActorDescription(props) {
   console.log(props.image.src);
 
   return (
-    <div>
+    <div className='card-container'>
       <div className='card-img'>
         <img src={props.image.src} alt={props.image.alt} />
       </div>
