@@ -42,6 +42,13 @@
 }
 .season-block-header-roles {
   margin-top: 20px;
+  text-align: justify;
+}
+.season-block-header-roles a {
+  color: #cdcdcd;
+}
+.season-block-header-roles a:hover {
+  color: #fff;
 }
 .stars svg {
   font-size: 1.8rem;
