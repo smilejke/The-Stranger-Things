@@ -1,0 +1,10 @@
+.card-role {
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1rem;
+  margin: 5px 0;
+}
+.card-img img {
+  width: 180px;
+  height: 250px;
+}

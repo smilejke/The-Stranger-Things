@@ -12,7 +12,7 @@ function SerialDescription(props) {
   useEffect(() => {
     const serieDescr = document.getElementById(id);
     if (serieDescr) {
-      serieDescr.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      serieDescr.scrollIntoView({ behavior: 'smooth' });
     }
   }, [id]);
 

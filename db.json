@@ -1274,39 +1274,84 @@
           "roles": [
             {
               "name": "Вайнона Райдер,",
-              "id": "WinonaTST"
+              "id": "WinonaTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/winona_ryder.jpg",
+                "alt": "Winona Ryder"
+              },
+              "role": "Джойс Байерс"
             },
             {
               "name": "Дэвид Харбор,",
-              "id": "DavidTST"
+              "id": "DavidTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/david_harbour.jpg",
+                "alt": "David Harbour"
+              },
+              "role": "шериф Джим Хоппер"
             },
             {
               "name": "Финн Вулфхард,",
-              "id": "FinnTST"
+              "id": "FinnTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/finn_wolfhard.jpg",
+                "alt": "Finn Wolfhard"
+              },
+              "role": "Майк Уилер"
             },
             {
               "name": "Милли Бобби Браун,",
-              "id": "MillieTST"
+              "id": "MillieTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/millie_bobby_brown.jpg",
+                "alt": "Millie Bobby Brown"
+              },
+              "role": "Одиннадцать / Джейн"
             },
             {
               "name": "Гейтен Матараццо,",
-              "id": "GatenTST"
+              "id": "GatenTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/gaten_matarazzo.jpg",
+                "alt": "Gaten Matarazzo"
+              },
+              "role": "Дастин Хендерсон"
             },
             {
               "name": "Ноа Шнапп,",
-              "id": "NoahTST"
+              "id": "NoahTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/noah_schnapp.jpg",
+                "alt": "Noah Schnapp"
+              },
+              "role": "Уилл Байерс"
             },
             {
               "name": "Калеб Маклафлин,",
-              "id": "CalebTST"
+              "id": "CalebTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/caleb_mclaughlin.jpg",
+                "alt": "Caleb McLaughlin"
+              },
+              "role": "Лукас Синклер"
             },
             {
               "name": "Наталия Дайер,",
-              "id": "NataliaTST"
+              "id": "NataliaTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/natalia_dyer.jpg",
+                "alt": "Natalia Dyer"
+              },
+              "role": "Нэнси Уилер"
             },
             {
               "name": "Чарли Хитон.",
-              "id": "CharlieTST"
+              "id": "CharlieTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/charlie_heaton.jpg",
+                "alt": "Charlie Heaton"
+              },
+              "role": "Джонатан Байерс"
             }
           ]
         }
@@ -1491,39 +1536,84 @@
           "roles": [
             {
               "name": "Вайнона Райдер,",
-              "id": "WinonaTST"
+              "id": "WinonaTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/winona_ryder.jpg",
+                "alt": "Winona Ryder"
+              },
+              "role": "Джойс Байерс"
             },
             {
               "name": "Дэвид Харбор,",
-              "id": "DavidTST"
+              "id": "DavidTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/david_harbour.jpg",
+                "alt": "David Harbour"
+              },
+              "role": "шериф Джим Хоппер"
             },
             {
               "name": "Финн Вулфхард,",
-              "id": "FinnTST"
+              "id": "FinnTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/finn_wolfhard.jpg",
+                "alt": "Finn Wolfhard"
+              },
+              "role": "Майк Уилер"
             },
             {
               "name": "Милли Бобби Браун,",
-              "id": "MillieTST"
+              "id": "MillieTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/millie_bobby_brown.jpg",
+                "alt": "Millie Bobby Brown"
+              },
+              "role": "Одиннадцать / Джейн"
             },
             {
               "name": "Гейтен Матараццо,",
-              "id": "GatenTST"
+              "id": "GatenTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/gaten_matarazzo.jpg",
+                "alt": "Gaten Matarazzo"
+              },
+              "role": "Дастин Хендерсон"
             },
             {
               "name": "Ноа Шнапп,",
-              "id": "NoahTST"
+              "id": "NoahTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/noah_schnapp.jpg",
+                "alt": "Noah Schnapp"
+              },
+              "role": "Уилл Байерс"
             },
             {
               "name": "Калеб Маклафлин,",
-              "id": "CalebTST"
+              "id": "CalebTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/caleb_mclaughlin.jpg",
+                "alt": "Caleb McLaughlin"
+              },
+              "role": "Лукас Синклер"
             },
             {
               "name": "Наталия Дайер,",
-              "id": "NataliaTST"
+              "id": "NataliaTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/natalia_dyer.jpg",
+                "alt": "Natalia Dyer"
+              },
+              "role": "Нэнси Уилер"
             },
             {
               "name": "Чарли Хитон.",
-              "id": "CharlieTST"
+              "id": "CharlieTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/charlie_heaton.jpg",
+                "alt": "Charlie Heaton"
+              },
+              "role": "Джонатан Байерс"
             }
           ]
         }
@@ -1723,51 +1813,111 @@
           "roles": [
             {
               "name": "Вайнона Райдер,",
-              "id": "WinonaTST"
+              "id": "WinonaTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/winona_ryder.jpg",
+                "alt": "Winona Ryder"
+              },
+              "role": "Джойс Байерс"
             },
             {
               "name": "Дэвид Харбор,",
-              "id": "DavidTST"
+              "id": "DavidTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/david_harbour.jpg",
+                "alt": "David Harbour"
+              },
+              "role": "шериф Джим Хоппер"
             },
             {
               "name": "Финн Вулфхард,",
-              "id": "FinnTST"
+              "id": "FinnTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/finn_wolfhard.jpg",
+                "alt": "Finn Wolfhard"
+              },
+              "role": "Майк Уилер"
             },
             {
               "name": "Милли Бобби Браун,",
-              "id": "MillieTST"
+              "id": "MillieTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/millie_bobby_brown.jpg",
+                "alt": "Millie Bobby Brown"
+              },
+              "role": "Одиннадцать / Джейн"
             },
             {
               "name": "Гейтен Матараццо,",
-              "id": "GatenTST"
+              "id": "GatenTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/gaten_matarazzo.jpg",
+                "alt": "Gaten Matarazzo"
+              },
+              "role": "Дастин Хендерсон"
             },
             {
               "name": "Ноа Шнапп,",
-              "id": "NoahTST"
+              "id": "NoahTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/noah_schnapp.jpg",
+                "alt": "Noah Schnapp"
+              },
+              "role": "Уилл Байерс"
             },
             {
               "name": "Калеб Маклафлин,",
-              "id": "CalebTST"
+              "id": "CalebTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/caleb_mclaughlin.jpg",
+                "alt": "Caleb McLaughlin"
+              },
+              "role": "Лукас Синклер"
             },
             {
               "name": "Наталия Дайер,",
-              "id": "NataliaTST"
+              "id": "NataliaTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/natalia_dyer.jpg",
+                "alt": "Natalia Dyer"
+              },
+              "role": "Нэнси Уилер"
             },
             {
               "name": "Сэди Синк,",
-              "id": "SadieTST"
+              "id": "SadieTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/sadie_sink.jpg",
+                "alt": "Sadie Sink"
+              },
+              "role": "Максин «Макс» Мэйфилд"
             },
             {
               "name": "Майя Хоук,",
-              "id": "MayaTST"
+              "id": "MayaTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/maya_hawke.jpg",
+                "alt": "Maya Hawke"
+              },
+              "role": "Робин"
             },
             {
               "name": "Дакре Монтгомери,",
-              "id": "DacreTST"
+              "id": "DacreTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/dacre_montgomery.jpg",
+                "alt": "Dacre Montgomery"
+              },
+              "role": "Билли Харгроув"
             },
             {
               "name": "Чарли Хитон.",
-              "id": "CharlieTST"
+              "id": "CharlieTST",
+              "img": {
+                "src": "http://strangerthings.ru/images/hero_and_actors/charlie_heaton.jpg",
+                "alt": "Charlie Heaton"
+              },
+              "role": "Джонатан Байерс"
             }
           ]
         }
@@ -2087,6 +2237,6 @@
     }
   ],
   "views": {
-    "counter": 38
+    "counter": 42
   }
 }
