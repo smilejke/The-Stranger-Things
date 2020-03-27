@@ -1,6 +1,4 @@
 export const DOWNLOAD_INFO_FOR_ACTORS_CARDS = 'DOWNLOAD_INFO_FOR_ACTORS_CARDS';
-export const LAUNCH_LOADING = 'LAUNCH_LOADING';
-export const STOP_LOADING = 'STOP_LOADING';
 
 export const uploadInfoForRenderCards = (data) => {
   return {
@@ -9,27 +7,15 @@ export const uploadInfoForRenderCards = (data) => {
   };
 };
 
-export const startLoading = () => {
-  return {
-    type: LAUNCH_LOADING,
-  };
-};
-
-export const stopLoading = () => {
-  return {
-    type: STOP_LOADING,
-  };
-};
-
-export const getActorsData = (url) => (dispatch) => {
-  dispatch(startLoading());
+export const getActorsData = (url, loadingOn, loadingOff) => (dispatch) => {
+  dispatch(loadingOn);
   setTimeout(() => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => dispatch(uploadInfoForRenderCards(data)))
       .then(
         setTimeout(() => {
-          dispatch(stopLoading());
+          dispatch(loadingOff);
         }, 100),
       );
   }, 900);

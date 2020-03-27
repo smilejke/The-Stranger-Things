@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { startLoading, stopLoading } from '../../../../store/Layout/actions.js';
+import { startLoading, stopLoading } from '../../../../store/LoadingSpinner/actions.js';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Footer from '../../../Layout/Footer/Footer.js';

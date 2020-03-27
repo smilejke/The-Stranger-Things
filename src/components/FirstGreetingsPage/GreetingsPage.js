@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { startLoading, stopLoading } from '../../store/Layout/actions.js';
+import { startLoading, stopLoading } from '../../store/LoadingSpinner/actions.js';
 import { fetchUrls, setPageTitle } from '../../global/utils/global.js';
 import Footer from '../Layout/Footer/Footer.js';
 import GreetTittle from './Title/Title.js';

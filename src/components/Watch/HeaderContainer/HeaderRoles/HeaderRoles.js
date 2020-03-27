@@ -5,7 +5,6 @@ import SmallActorDescription from './SmallActorDescription/SmallActorDescription
 
 function HeaderRoles(props) {
   const roles = props.roles;
-  console.log(roles);
   return (
     <div className='season-block-header-roles'>
       <h2>В ролях:</h2>

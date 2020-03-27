@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import '../../../../index.css';
 import { useParams } from 'react-router-dom';
-import { getActorsData } from '../../../../store/Layout/actions.js';
+import { getActorsData } from '../../../../store/ActorCards/actions.js';
+import { startLoading, stopLoading } from '../../../../store/LoadingSpinner/actions.js';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { categoryUrls, refreshPage, setPageTitle } from '../../../../global/utils/global.js';
@@ -27,42 +28,44 @@ function ActorsMainPage(props) {
     selectFemale,
     selectAll,
     actorCards,
+    startLoading,
+    stopLoading,
   } = props;
 
   const filterActions = {
     getActors: () => {
-      getActorsData(all);
+      getActorsData(all, startLoading, stopLoading);
     },
     getMaincast: () => {
-      getActorsData(maincast);
+      getActorsData(maincast, startLoading, stopLoading);
     },
     getSecondaryActors: () => {
-      getActorsData(secondary);
+      getActorsData(secondary, startLoading, stopLoading);
     },
     getMaleActors: () => {
-      getActorsData(male);
+      getActorsData(male, startLoading, stopLoading);
     },
     getFemaleActors: () => {
-      getActorsData(female);
+      getActorsData(female, startLoading, stopLoading);
     },
   };
 
   useEffect(() => {
     setPageTitle('Актеры сериала Очень странные дела');
     if (actorCards.length < 1 && id === 'all') {
-      refreshPage(getActorsData, all, selectAll);
+      refreshPage(getActorsData, all, startLoading, stopLoading, selectAll);
     }
     if (actorCards.length < 1 && id === 'maincast') {
-      refreshPage(getActorsData, maincast, selectMaincast);
+      refreshPage(getActorsData, maincast, startLoading, stopLoading, selectMaincast);
     }
     if (actorCards.length < 1 && id === 'secondary') {
-      refreshPage(getActorsData, secondary, selectSecondary);
+      refreshPage(getActorsData, secondary, startLoading, stopLoading, selectSecondary);
     }
     if (actorCards.length < 1 && id === 'male') {
-      refreshPage(getActorsData, male, selectMale);
+      refreshPage(getActorsData, male, startLoading, stopLoading, selectMale);
     }
     if (actorCards.length < 1 && id === 'female') {
-      refreshPage(getActorsData, female, selectFemale);
+      refreshPage(getActorsData, female, startLoading, stopLoading, selectFemale);
     }
   }, [
     actorCards,
@@ -78,6 +81,8 @@ function ActorsMainPage(props) {
     selectMale,
     selectFemale,
     selectAll,
+    startLoading,
+    stopLoading,
   ]);
 
   return (
@@ -99,7 +104,7 @@ function ActorsMainPage(props) {
 
 const mapStateToProps = (state) => {
   return {
-    actorCards: state.layout.actorCards,
+    actorCards: state.actorsData.actorCards,
   };
 };
 
@@ -111,6 +116,8 @@ const mapDispatchToProps = (dispatch) => {
     selectMale: bindActionCreators(selectMale, dispatch),
     selectFemale: bindActionCreators(selectFemale, dispatch),
     selectAll: bindActionCreators(selectAll, dispatch),
+    startLoading: bindActionCreators(startLoading, dispatch),
+    stopLoading: bindActionCreators(stopLoading, dispatch),
   };
 };
 

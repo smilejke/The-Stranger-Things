@@ -2,7 +2,6 @@ import React from 'react';
 
 function SmallActorDescription(props) {
   const role = props.role;
-  console.log(props.image.src);
 
   return (
     <div className='card-container'>

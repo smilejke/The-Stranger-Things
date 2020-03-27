@@ -1,12 +1,4 @@
-import { notification, message } from 'antd';
-
-export const openNotification = () => {
-  notification.open({
-    message: 'Спасибо за ваш отзыв',
-    description:
-      'Обязательно расскажите друзьям о нас. Только вместе мы сможем победить Демогоргона!',
-  });
-};
+import { message } from 'antd';
 
 export const success = () => {
   message.success('Спасибо за ваше мнение!');
@@ -78,8 +70,8 @@ export const setPageTitle = (name) => {
   return (document.title = name);
 };
 
-export const refreshPage = (fn1body, fn1Param, fn2body) => {
-  fn1body(fn1Param);
+export const refreshPage = (fn1body, fn1Param, f1param2, fn1param3, fn2body) => {
+  fn1body(fn1Param, f1param2, fn1param3);
   fn2body();
 };
 
