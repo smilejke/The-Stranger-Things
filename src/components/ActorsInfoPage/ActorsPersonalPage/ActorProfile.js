@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import '../../../index.css';
 import { getActorsData } from '../../../store/ActorProfile/actions.js';
-import { startLoading, stopLoading } from '../../../store/Layout/actions.js';
+import { startLoading, stopLoading } from '../../../store/LoadingSpinner/actions.js';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';

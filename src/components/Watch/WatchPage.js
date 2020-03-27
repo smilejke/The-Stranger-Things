@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { startLoading, stopLoading } from '../../store/Layout/actions.js';
+import { startLoading, stopLoading } from '../../store/LoadingSpinner/actions.js';
 import { bindActionCreators } from 'redux';
 import { setSeasonData, setVotingData } from '../../store/Watch/actions.js';
 import { setPageTitle } from '../../global/utils/global.js';
