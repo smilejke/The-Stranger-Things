@@ -2193,24 +2193,28 @@
       "id": "g_FhYrA"
     },
     {
-      "mark": 10,
-      "id": "CKWV0VO"
-    },
-    {
-      "mark": 10,
-      "id": "ZaGlR2F"
-    },
-    {
-      "mark": 8,
-      "id": "2Jbi6vZ"
-    },
-    {
       "mark": 9.5,
       "id": "hX9RIh9"
     },
     {
       "mark": 8.5,
       "id": "ZMTsUhi"
+    },
+    {
+      "mark": 6,
+      "id": "CuqOgv6"
+    },
+    {
+      "mark": 8,
+      "id": "ogbfNVI"
+    },
+    {
+      "mark": 6.5,
+      "id": "rRv33O3"
+    },
+    {
+      "mark": 5.5,
+      "id": "q6NSRYC"
     }
   ],
   "SEASON_TWO": [
@@ -2243,24 +2247,20 @@
       "id": "Q6tnJO_"
     },
     {
-      "mark": 9,
-      "id": "ZPWeVxL"
-    },
-    {
-      "mark": 9,
-      "id": "ScGtgPk"
-    },
-    {
-      "mark": 7.5,
-      "id": "t-zNPgX"
+      "mark": 7,
+      "id": "kh1Tlig"
     },
     {
       "mark": 9.5,
-      "id": "V_Oru63"
+      "id": "moakEcW"
     },
     {
-      "mark": 7,
-      "id": "kh1Tlig"
+      "mark": 10,
+      "id": "uykur1z"
+    },
+    {
+      "mark": 1,
+      "id": "J2jKpkJ"
     }
   ],
   "SEASON_THREE": [
@@ -2299,21 +2299,9 @@
     {
       "mark": 6,
       "id": "SVIRSgc"
-    },
-    {
-      "mark": 9,
-      "id": "HHb-JTU"
-    },
-    {
-      "mark": 1,
-      "id": "oC2fzFR"
-    },
-    {
-      "mark": 10,
-      "id": "R-YG6iZ"
     }
   ],
   "views": {
-    "counter": 47
+    "counter": 51
   }
 }
